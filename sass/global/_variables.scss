@@ -1,0 +1,199 @@
+ 
+//
+
+//*Réglage de la grille de Susy - approche mobile-first
+$total-columns: 8;             // nombre de colonnes de la grille de base
+$column-width: 4em;            // largeur de chaque colonnes
+$gutter-width: 1em;            // taille de la gouttière entre colonnes
+$grid-padding: $gutter-width;  // grid-padding equal to gutters
+
+$container-style: magic; // default to magic. Switch to fluid or fixed if desired
+
+//Réglage du nombre de colonnes pour at-breakpoint() mixin 
+// qui simplifie les media-queries
+
+$med: 10;
+$large: 16;
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- VARIABLES PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+$base-font-size:12px;
+ /*------- TYPOS CUSTOM ---------------*/
+@font-face {
+    font-family : "Arista";
+    src: url(../typos/Arista2.0_light.eot); /* IE */
+    src: local("Arista"), url(../typos/Arista2.0_light.ttf) format('truetype');/* non-IE */
+}
+/*-------- Couleurs charte graphique PF ----*/
+$vert : #ADC91F;
+$violet: #911381;
+$orange : #F29400;
+$orange-fonce: #DE603A;
+$bleu-turquoise: #01ABCF;
+$rouge : #E3001C;
+$rose-fushia : #E30078;
+$jaune : #FAEB0C;
+$gris-clair: #ECECED;
+$gris-clair-moyen : #9898a6;
+$gris-anthracite : #606070;
+$noir: #000000;
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- FONCTIONS PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+// Create em() for setting font-sizes in pixels.
+@function em($target, $context: $base-font-size) {
+@if $target == 0 { @return 0 }
+@return $target / $context + 0em;
+}
+
+/* ==============================
+  Mixins custom PROVENCE FORMATION
+=================================*/
+
+
+/*_____  POLICES _____*/
+$AristaFont : "Arista", Trebuchet MS, sans-serif;
+$TrebuchetFont : Trebuchet MS, Verdana, Helvetica, sans-serif;
+
+/*------------------------------------------------------*
+  *------------ CSS H  ----*
+  *------------------------------------------------------*/
+  
+h1 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(20px);
+}
+  
+h2 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(18px);
+}
+h2.title{
+	margin: 5px;
+	padding: 0;
+	color:#000;
+	font-size: em(18px);
+}
+h2.title a{
+	color:#EF1D1D;
+}
+h3 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(16px);
+}
+h4 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(14px);
+}
+h5 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(12px);
+}
+h6 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(10px);
+}
+
+/*---------- PIE pour CSS3 IE --------------*/
+@mixin PIE {
+    behavior: url(/sites/all/libraries/PIE/PIE.htc);
+}
+/*---------------- TITRES -----------------------*/
+@mixin titre-page ($margin : 0.1em){
+     font-size : x-large;
+     margin: $margin;
+     line-height: em(30px);
+     
+}
+/*------- EFFETS VISUELS GENERIQUES--------------*/
+@mixin ombrage {
+    border: 5px solid #fff;
+    -moz-box-shadow: 8px 8px 12px #aaa;
+    -webkit-box-shadow: 8px 8px 12px #aaa;
+    box-shadow: 8px 8px 12px #555;
+    }
+    
+@mixin ombrage-bas {
+    -moz-box-shadow: 2px 2px 5px #aaa;
+    -webkit-box-shadow: 2px 2px 5px #aaa;
+    box-shadow: 2px 2px 5px #555;
+    }
+    
+@mixin table-tr-ombrage-bas {
+        -moz-box-shadow: 1px 2px 2px #aaa;
+        -webkit-box-shadow: 1px 2px 2px #aaa;
+        box-shadow: 1px 2px 2px #555;
+    }
+    
+@mixin ombrage-bloc {
+    -moz-box-shadow: 2px 2px 5px #aaa;
+    -webkit-box-shadow: 2px 2px 5px #aaa;
+    box-shadow: 2px 2px 5px #555;
+    }
+    
+@mixin ombrage-bas-table-actu{
+    -moz-box-shadow: 2px 2px 5px #aaa;
+    -webkit-box-shadow: 2px 2px 5px #aaa;
+    box-shadow: 2px 2px 5px #555;
+}
+@mixin opacity ($opacite:1){
+ opacity:$opacite;/*0.6*/
+-moz-opacity : $opacite;
+-ms-filter: "alpha(opacity=$opacite)"; /* IE 8 */
+filter : alpha(opacity=$opacite); /* IE < 8 */
+-khtml-opacity : $opacite;
+}
+
+@mixin rgba-background($color, $opacity) {
+    position: relative;
+    background: $color;
+    background: rgba($color, $opacity);
+    -pie-background: rgba($color, $opacity);
+    @include PIE;
+}
+@mixin img-border-shadow ($margin : 0.3em, $bordersize:0.5em, $bordercolor : white,$shadowcolor : #AAAAAA) {
+    margin: $margin;
+    border: $bordersize solid $bordercolor;
+    -moz-box-shadow: $shadowcolor 0px 0px 5px ;
+    -webkit-box-shadow: $shadowcolor 0px 0px 5px;
+    box-shadow: $shadowcolor 0px 0px 5px;
+}
+@mixin arrondis ($angle : 0.5em){
+    -moz-border-radius: $angle;
+    -webkit-border-radius: $angle;
+    border-radius: $angle;
+}
+/*//////////////// BORDER RIGHT \\\\\\\\\\\\\\\\*/
+@mixin border-R-orangePF{border-right: 1px solid #DA5714;}
+@mixin border-R-anthracite{border-left: 1px solid #606171;}
+@mixin border-R-vert{border-right: 1px solid #ADC91F;}
+@mixin border-R-violet{border-right: 1px solid #93117E;}
+/*//////////////// BORDER COLONNE 2 \\\\\\\\\\\\\\\\*/
+@mixin border-rouge-bleu{ border-left: 1px solid #E2001A; border-right: 1px solid #00AAD2;}
+@mixin border-rose-bleu { border-left: 1px solid #E2007A; border-right: 1px solid #00AAD2;}
+@mixin border-noir-vert { border-left: 1px solid #606171; border-right: 1px solid #C8D215;}
+@mixin border-bleu-violet { border-left: 1px solid #00AAD2; border-right: 1px solid #93117E;}
+@mixin border-vert-violet { border-left: 1px solid #ADC91F; border-right: 1px solid #93117E;}
+@mixin border-anthracite-orangePF{border-left: 1px solid #606071;border-right: 1px solid #DA5714;}
+
+/*//////////////// BORDER LEFT \\\\\\\\\\\\\\\\*/
+@mixin border-L-bleu{border-left: 1px solid #02A7D5;}
+@mixin border-L-grisclair{border-left: 1px solid #CFD0D2;}
+@mixin border-L-vert{border-left: 1px solid #ADC91F;}
+@mixin border-L-violet{border-left: 1px solid #93117E;}
+@mixin border-L-anthracite{border-left: 1px solid #606171;}

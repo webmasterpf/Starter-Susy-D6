@@ -1,0 +1,187 @@
+// Importer les fichiers scss partiels (avec _) afin de compiler le
+// fichier css final utile pour le thème
+// Activer compass via 
+// webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+
+
+html {
+ margin: 0;
+ padding: 0;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $TrebuchetFont;
+	font-size: 12px;
+	background-color: #FFF;
+	color: #000;
+}
+
+ /*------------------------------------------------------*
+  *--------    CSS BLOCS     						 ----*
+  *------------------------------------------------------*/
+
+/*-- LAYOUT PRINCIPAL --*/
+#general{
+    //Approche mobile-first,réglage pour mobile
+    @include container;
+    @include susy-grid-background;
+    #header{}
+    #header-inner{}
+    #content-global{}
+    #left-content{}
+    #content-inner{}
+    #right-content{}
+    #footer{}
+    @include at-breakpoint($large) {/*    //Dimensions pour les pc*/
+           @include set-container-width;
+  
+        #header{@include span-columns($large,$large);}
+        #header-inner{}
+        #content-global{@include span-columns($large,$large);}
+        #left-content{@include span-columns(2 alpha,$large);}
+        #content-inner{@include span-columns(10,$large);}
+        #right-content{@include span-columns(2 omega,$large);}
+        #footer{@include span-columns($large,$large);}
+     }
+     @include at-breakpoint($med) {/*     //Dimensions pour les tablettes*/
+            @include set-container-width;
+  
+         #header{}
+         #header-inner{}
+         #content-global{}
+         #left-content{}
+         #content-inner{}
+         #right-content{}
+         #footer{}
+     }
+}
+    
+
+/*Haut de page  HEADER*/
+
+#header{
+	margin:0 auto;
+	padding:0;
+	background-color:#FFCC66;
+}
+
+/*Contenu de page  CONTENT */
+
+#content-global {
+	margin:0 auto;
+	background-color:RosyBrown;
+}
+#content-inner,#left-content,#right-content{
+height: 100%;
+}
+/*//////SOUS ENTETE/////*/
+#content-top{
+	margin:0 auto;
+	padding:em(5px);
+	background-color: #999;
+}
+#content-top-node{
+    
+    background-color: #999;
+    margin: 0 auto;
+    padding: em(5px);  
+        }	
+/*/// debut des colonnes ///*/
+#left-content{
+	
+	background-color:#00CC99;
+	
+	left:0px;
+}
+
+/*/// partie de droite ///*/
+#right-content{
+	
+	background-color:#FF66CC;
+	
+}
+/*inner content*/
+#content-inner{
+
+background-color: #CFD0D2;
+}
+/*///    partie du centre   ///*/
+#middle-content{
+	
+	background-color:yellow;
+	
+	padding:em(5px);
+}
+
+
+/*PIED DE CONTENU*/
+#content-bottom{
+background:#C0c0c0;
+
+}
+
+/*Bas de page  FOOTER*/
+
+#footer{
+	margin:0 auto;
+	padding:em(30px) 0;
+	
+	background:image-url("bg_footer.jpg") no-repeat scroll right bottom grey;
+	text-align: center;
+	color: #FFF;
+}
+#bloc_stats{
+    color:red;
+    margin:0 auto;
+    
+}
+/*--------------------------------------------
+---- LAYOUT POUR PAGE.TPL ET NODE.TPL OVERRIDE
+**********************************************
+-------------- GENERIQUE --------------------*/
+
+/*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
+********** LAYOUT NODE.TPL OVERRIDE **********
+\\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
+/*//////////////// COLONNE 1 \\\\\\\\\\\\\\\\*/
+#colonne-1{
+    width: em(200px);
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.col1_layout_200_590_200{}
+.col1_layout_330_all{}
+.col1_layout_18_56_25{}
+/*//////////////// COLONNE 2 \\\\\\\\\\\\\\\\*/
+#colonne-2, #middle-content-override{
+    width: em(550px);
+    float: left;
+    margin: 0;
+    padding: 0;
+
+}
+.col2_layout_200_590_200{}
+.col2_layout_330_all{}
+.col2_layout_18_56_25{}
+/*//////////////// COLONNE 3 \\\\\\\\\\\\\\\\*/
+#colonne-3{
+    width: em(200px);
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.col3_layout_200_590_200{}
+.col3_layout_330_all{}
+.col3_layout_18_56_25{}
+/*  PAGE STORY TPL  */
+#middle-content-story{
+    width: 95%;
+    margin: 0 auto;
+}
+.story{
+    
+}
