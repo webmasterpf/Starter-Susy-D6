@@ -29,7 +29,7 @@ Mettre a jour les images du theme
 Compilation des fichiers scss
 -----------------------------
 dans le terminal :
-webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+webmaster@vm-server1:~$ compass watch /PATH/TO/THEMENAMEFOLDER/
 
 Usage des mixins de Susy
 ------------------------
