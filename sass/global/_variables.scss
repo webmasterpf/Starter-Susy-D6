@@ -2,18 +2,17 @@
 //
 
 //*Réglage de la grille de Susy - approche mobile-first
-$total-columns: 8;             // nombre de colonnes de la grille de base
+$total-columns: 4;             // nombre de colonnes de la grille de base
 $column-width: 4em;            // largeur de chaque colonnes
 $gutter-width: 1em;            // taille de la gouttière entre colonnes
 $grid-padding: $gutter-width;  // grid-padding equal to gutters
 
-$container-style: magic; // default to magic. Switch to fluid or fixed if desired
-
 //Réglage du nombre de colonnes pour at-breakpoint() mixin 
 // qui simplifie les media-queries
+$mobile   : 4;
+$tablet   : 10;
+$desktop  : 16;
 
-$med: 10;
-$large: 16;
 
 /*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
 ----- VARIABLES PROVENCE FORMATION -----
@@ -58,18 +57,18 @@ $noir: #000000;
 $AristaFont : "Arista", Trebuchet MS, sans-serif;
 $TrebuchetFont : Trebuchet MS, Verdana, Helvetica, sans-serif;
 
-/*------------------------------------------------------*
-  *------------ CSS H  ----*
-  *------------------------------------------------------*/
+/*====================================|
+==             CSS H                ==|
+=====================================*/
   
-h1 {
+h1, .h1 {
 	margin: 0;
 	padding: 0;
 	color:#000;
 	font-size: em(20px);
 }
   
-h2 {
+h2, .h2 {
 	margin: 0;
 	padding: 0;
 	color:#000;
@@ -80,35 +79,39 @@ h2.title{
 	padding: 0;
 	color:#000;
 	font-size: em(18px);
-}
-h2.title a{
+
+ a{
 	color:#EF1D1D;
 }
-h3 {
+}
+h3, .h3{
 	margin: 0;
 	padding: 0;
 	color:#000;
 	font-size: em(16px);
 }
-h4 {
+h4, .h4{
 	margin: 0;
 	padding: 0;
 	color:#000;
 	font-size: em(14px);
 }
-h5 {
+h5, .h5 {
 	margin: 0;
 	padding: 0;
 	color:#000;
 	font-size: em(12px);
 }
-h6 {
+h6, .h6 {
 	margin: 0;
 	padding: 0;
 	color:#000;
 	font-size: em(10px);
 }
-
+/*-------- IMAGES ADAPTABLES -----------*/
+@mixin adaptable-img {
+    max-width: 100%;
+}
 /*---------- PIE pour CSS3 IE --------------*/
 @mixin PIE {
     behavior: url(/sites/all/libraries/PIE/PIE.htc);

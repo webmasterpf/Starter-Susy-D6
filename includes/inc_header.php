@@ -24,51 +24,49 @@
      <section id="general">
 
     <!-- ______________________ HEADER _______________________ -->
-	 <header id="header">
+    <header id="header">
 
-		<div id="header-inner">
 
         <div class="headHaut">
 
-          <div class="logoHead">
-	           <?php if (!empty($logo)): ?>
-		           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/></a>
-	          <?php endif; ?>
-	       </div>
+            <div class="logoHead">
+                <?php if (!empty($logo)): ?>
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/></a>
+                <?php endif; ?>
+            </div>
 
-         <div class="menuImg">
-              <?php if (!empty($navStatic)): ?>
-		           <?php print $navStatic; ?>
-	          <?php endif; ?>
-          </div>
+            <div class="menuImg">
+                <?php if (!empty($navStatic)): ?>
+                    <?php print $navStatic; ?>
+                <?php endif; ?>
+            </div>
 
-          </div><!-- /headHaut -->
-		 <div class="headBas">
+        </div><!-- /headHaut -->
+        <div class="headBas">
 
-	<?php if (!empty($site_slogan)): ?>
-            <div class="site-slogan">
-	<?php print $site_slogan; ?>
-            </div><!-- /site-slogan -->
+            <?php if (!empty($site_slogan)): ?>
+                <div class="site-slogan">
+                    <?php print $site_slogan; ?>
+                </div><!-- /site-slogan -->
             <?php endif; ?>
 
 
             <div class="headSearch">
-		  <?php if (!empty($search_box)): ?>
-		  <?php print $search_box ?>
-		  <?php endif; ?>
-		  </div><!-- /recherche -->
+                <?php if (!empty($search_box)): ?>
+                    <?php print $search_box ?>
+                <?php endif; ?>
+            </div><!-- /recherche -->
 
 
-                  <nav class="menuHead">
-	        <?php if (!empty($menuDyn)): ?>
-			   <?php print $menuDyn; ?>
-            <?php endif; ?>
+            <nav class="menuHead">
+                <?php if (!empty($menuDyn)): ?>
+                    <?php print $menuDyn; ?>
+                <?php endif; ?>
 
-                  </nav><!-- /menuHead -->
-
-
-		</div><!-- /headBas -->
+            </nav><!-- /menuHead -->
 
 
-	  </div> <!-- /header-inner -->
-   </header> <!-- /header -->
+        </div><!-- /headBas -->
+
+
+    </header> <!-- /header -->

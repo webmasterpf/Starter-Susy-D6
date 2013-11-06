@@ -1,0 +1,69 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       FRONTPAGE                      |
+|--------------------------------------*/
+
+#mainPage {
+    @include span-columns($mobile);
+    clear: none;
+    background: image-url ("bg_content_etoile.gif") no-repeat left bottom;
+    .HPDiapo{@include span-columns($mobile);}
+    .HPBasGauche{@include span-columns($mobile);}
+    .HPBasDroit{@include span-columns($mobile);}
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+        @include span-columns($desktop);
+        .HPDiapo{@include span-columns($desktop);}
+        .HPBasGauche{@include span-columns($desktop/2,$desktop);background: #CCC;}
+        .HPBasDroit{@include span-columns($desktop/2 omega,$desktop);background: #CFDEFF;}
+    }
+    @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        @include span-columns($tablet);
+        .HPDiapo{@include span-columns($tablet);}
+        .HPBasGauche{@include span-columns($tablet/2,$tablet);}
+        .HPBasDroit{@include span-columns($tablet/2 omega,$tablet);}
+    }
+}
+
+/********************/
+/*ZONES PAGE ACCUEIL*/
+
+.content-bottom-home a {
+  color: gray;
+  font-weight: bold;
+}
+
+.HPDiapo {
+  @include span-columns($desktop,$desktop);
+  padding: em(10px) 0 0;
+}
+
+/****************/
+
+
+.HPBasDroit {
+  
+  background: none;
+}
+
+.HPBasGauche {
+  
+  background: none;
+  color: black;
+  ul li {
+    list-style: square;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.HPBasDroit a {
+  text-decoration: none;
+}
+
+.HPBasGauche a:hover, .HPBasDroit a:hover {
+  text-decoration: underline;
+}

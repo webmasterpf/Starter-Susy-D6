@@ -1,0 +1,132 @@
+/*-------------------------------------|
+|       HEADER DU SITE                 |
+|--------------------------------------*/
+
+// Layout du header et de ses parties haute et basse (logique mobile first)
+ #header {
+     .headHaut {@include span-columns($mobile);
+                .logoHead { @include span-columns(1,$mobile);}
+                .menuImg {  @include span-columns(3 omega,$mobile);}
+     }
+     .headBas {@include span-columns($mobile);
+               .site-slogan{@include span-columns($mobile);}
+               .headSearch{@include span-columns($mobile);}
+               .menuHead{@include span-columns($mobile);}
+     }                
+ 
+ 
+
+@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+ .headHaut {@include span-columns($desktop);
+                .logoHead { @include span-columns(4,$desktop);}
+                .menuImg {  @include span-columns(12 omega,$desktop);}
+     }
+     .headBas {@include span-columns($desktop);
+               .site-slogan{@include span-columns(7,$desktop);}
+               .headSearch{@include span-columns(9 omega,$desktop);}
+               .menuHead{@include span-columns($desktop);}
+     }  }
+@include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/}
+ }
+  
+ 
+/*---- HEADER HAUT ----*/
+ 
+
+
+.logoHead {
+   img {
+    @include adaptable-img;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/*Menu pictos header*/
+
+.menuImg {
+     background: transparent;
+  }
+
+.navPicto {
+    border: 0;
+
+    td {
+        border: 0;
+        padding: em(5px);
+    }
+    ul{@include horizontal-list;
+       overflow: hidden;
+    }
+    li{@include isolate-grid(1);
+    }
+    a {
+        border: 0;
+        font-family: $AristaFont;
+        color: $gris-anthracite;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $orange-fonce;
+    }
+    img{@include adaptable-img;}
+}
+
+/*---- HEADER BAS ----*/
+
+.headBas {
+ background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
+    margin: em(5px) 0 0 0;
+  background: #cfd0d2 image-url ("bg_menu_rp.gif") repeat-x top left;
+}
+
+/*Menu principal haut du header*/
+
+.menuHead {
+  float: none;
+  height: auto;
+  padding: 0;
+  
+}
+
+.headSearch {
+  text-align: right;
+  margin: em(2px) 0 0 0;
+  background: image-url ("bg_recherche.gif") no-repeat left em(5px);
+    
+}
+
+.search {
+ 
+  padding: 0 em(3px) 0 0;
+}
+
+.name-and-slogan {
+
+  vertical-align: bottom;
+  
+}
+
+.site-name {
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+  }
+  padding: em(160px) 0 0 em(10px);
+  margin: 0;
+}
+
+.site-slogan {
+  color: white;
+  padding: em(3px) 0 0 em(4px);
+ 
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+/*FIN CSS HEADER*/
+/*****************/

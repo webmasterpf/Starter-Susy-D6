@@ -9,6 +9,8 @@ core = 6.x
 engine = phptemplate
 
 scripts[] = js/general.js
+scripts[] = js/responsive-nav.js
+scripts[] = js/tinynav.min.js
 
 stylesheets[all][] = css/application.css
 
@@ -30,6 +32,8 @@ stylesheets[all][] = css/css_galeries/views_showcase.css
 stylesheets[all][] = css/css_galeries/views_slideshow.css
 ;CSS Slideshow Contenu Star
 stylesheets[all][] = css/css_galeries/slideshow-content-star.css
+; CSS pour utiliser NavJS (responsive menu)
+stylesheets[all][] = css/navigation/responsive-nav.css
 
 regions[header] = Header
 regions[menuDyn] = Menu Header - Menu dynamique JS
