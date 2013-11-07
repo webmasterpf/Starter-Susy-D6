@@ -47,7 +47,7 @@
 .menuImg {
      background: transparent;
   }
-
+//Navigation horizontale secondaire, responsive pour mobile
 .navPicto {
     border: 0;
 
@@ -55,22 +55,34 @@
         border: 0;
         padding: em(5px);
     }
-    ul{@include horizontal-list;
-       overflow: hidden;
-    }
-    li{@include isolate-grid(1);
-    }
-    a {
-        border: 0;
-        font-family: $AristaFont;
-        color: $gris-anthracite;
-        text-decoration: none;
-    }
-    a:hover {
-        color: $orange-fonce;
-    }
-    img{@include adaptable-img;}
+       
 }
+aside.navPicto{
+     ul.horizontal-nav {
+        @include horizontal-list;
+        li {
+            padding: 0;
+            @include span-columns(1);
+            img{@include adaptable-img;}
+            a {
+                // vertical alignment
+                margin: 0 em(1px);
+                border: 0;
+                font-family: $AristaFont;
+                color: $gris-anthracite;
+                text-decoration: none;
+                display: block;
+                @include adjust-font-size-to(25px);
+                &:hover {
+                    color: $orange-fonce;
+
+
+                }
+            }
+        }
+    }
+}
+
 
 /*---- HEADER BAS ----*/
 

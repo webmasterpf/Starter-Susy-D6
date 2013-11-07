@@ -16,7 +16,10 @@
        <!--[if IE]>
       <link rel="stylesheet" type="text/css" href="<?php print $base_path . path_to_theme() ?>/css/for_ie.css" />
       <![endif]-->
-
+ <?php
+$theme_path = drupal_get_path('theme', 'THEME_NAME'); 
+include ($theme_path.'/js/google_font.php');
+?>
   </head>
 
  <body class="<?php print $body_classes; ?>">

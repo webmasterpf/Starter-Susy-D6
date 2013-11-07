@@ -8,9 +8,12 @@ version = VERSION
 core = 6.x
 engine = phptemplate
 
+;chargement des js utiles
 scripts[] = js/general.js
 scripts[] = js/responsive-nav.js
 scripts[] = js/tinynav.min.js
+scripts[] = js/jquery.navobile.min.js
+scripts[] = js/jquery.jpanelmenu.min.js
 
 stylesheets[all][] = css/application.css
 

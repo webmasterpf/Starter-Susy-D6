@@ -8,20 +8,21 @@
 
 #mainPage {
     @include span-columns($mobile);
-    clear: none;
     background: image-url ("bg_content_etoile.gif") no-repeat left bottom;
-    .HPDiapo{@include span-columns($mobile);}
+    .HPDiapo{@include span-columns($mobile); overflow : hidden;}
     .HPBasGauche{@include span-columns($mobile);}
     .HPBasDroit{@include span-columns($mobile);}
+   
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
         @include span-columns($desktop);
-        .HPDiapo{@include span-columns($desktop);}
+        .HPDiapo{@include span-columns($desktop); overflow : hidden;}
         .HPBasGauche{@include span-columns($desktop/2,$desktop);background: #CCC;}
         .HPBasDroit{@include span-columns($desktop/2 omega,$desktop);background: #CFDEFF;}
     }
+   
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         @include span-columns($tablet);
-        .HPDiapo{@include span-columns($tablet);}
+        .HPDiapo{@include span-columns($tablet); overflow : hidden;}
         .HPBasGauche{@include span-columns($tablet/2,$tablet);}
         .HPBasDroit{@include span-columns($tablet/2 omega,$tablet);}
     }
@@ -35,35 +36,108 @@
   font-weight: bold;
 }
 
-.HPDiapo {
-  @include span-columns($desktop,$desktop);
-  padding: em(10px) 0 0;
-}
 
 /****************/
+.HPBasGauche, .HPBasDroit {
 
+    background: none;
+    color: black;
+    ul li {
+        list-style: square;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
-.HPBasDroit {
-  
-  background: none;
+}
+/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
+
+//Layout du diaporama dynamique (Views slideshow)
+@include at-breakpoint($mobile) {/*    //Dimensions pour les mobiles*/
+    aside.DiapoHP{
+        img{@include adaptable-img;}
+}
+    #transparency{@include span-columns($mobile);}
+    #contenu-diapo{@include span-columns($mobile);}
 }
 
-.HPBasGauche {
+@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    aside.DiapoHP{
+        img{@include adaptable-img;}
+}
+    #transparency{ @include span-columns($desktop);}
+    #contenu-diapo{@include span-columns($desktop);}
+}
+@include at-breakpoint($tablet) {/*    //Dimensions pour les tablettes*/
+    aside.DiapoHP{
+        img{@include adaptable-img;}
+}
+    #transparency{ @include span-columns($tablet);}
+    #contenu-diapo{}
+}
+
+
+// Style du diaporama dynamique
+
+#transparency{
+background:none repeat scroll 0 0 $orange;/*Couleur du fond*/
+height:em(65px);
+bottom:em(70px); 
+left:em(12px);
+position:absolute;
+z-index:15;
+@include opacity(0.6);
+}
+#contenu-diapo {
+  position: relative;
+  left: em(10px);
+  color: white;
+  z-index: 20;
   
-  background: none;
-  color: black;
-  ul li {
-    list-style: square;
+  
+  h2 {
+    color: white;
+    padding: em(5px);
+    font-family: $AristaFont;
+     position: inherit;
+     bottom:em(85px);
   }
   a {
+    
     text-decoration: none;
   }
 }
 
-.HPBasDroit a {
-  text-decoration: none;
+.view-diaporama-homepage{
+height:em(200px);
+margin:0 auto;
+position:inherit;
+
 }
 
-.HPBasGauche a:hover, .HPBasDroit a:hover {
-  text-decoration: underline;
+/*-- DEFILANT ACCUEIL --*/
+#annonce {
+  color: $color-defilant;
+  display: block;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 11px 0 0;
+  text-align: center;
+  @include adjust-font-size-to(16px);
+  a {
+    color: $color-defilant-a;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
+/*DEFILANT CLASSIQUE*/
+#block-views-liste_annonce_accueil-block_1{display: block;margin: 5px 0;height: 50px;}
+/*DEFILANT CONTENU PONCTUEL*/
+#block-views-liste_annonce_accueil-block_2{font-size: 16px;color: #E2017B;width: auto;display: block;text-align: center;font-weight: bold;margin: 10px 0;background: #CFD0D2;padding: 5px;height: 40px;}
+#block-views-liste_annonce_accueil-block_2 #ponctuel{display: block;width: auto;}

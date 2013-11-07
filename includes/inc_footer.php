@@ -18,9 +18,11 @@ include ($theme_path.'/js/code_stats.php');
 <!--	<script>
 		var nav = responsiveNav(".nav-collapse");
       	</script>-->
-        <script>          $(function () {
+<!--        <script>          $(function () {
     $(".navfixe").tinyNav();
-  });</script>
+  });</script>-->
+    <script>$('.horizontal-nav').navobile();</script>
+    <script>$('#header').navobile();</script>
 	<?php print $closure ?>
   </body>
 </html>

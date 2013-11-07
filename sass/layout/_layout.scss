@@ -10,13 +10,9 @@ html {
 }
 
 
-body {
-	margin: 0;
-	padding: 0;
+body {	
 	font-family: $TrebuchetFont;
-	font-size: 12px;
-	background-color: #FFF;
-	color: #000;
+	
 }
 
  /*------------------------------------------------------*
@@ -24,10 +20,11 @@ body {
   *------------------------------------------------------*/
 
 /*-- LAYOUT PRINCIPAL --*/
-#general{
+body #general{
     //Approche mobile-first,réglage pour mobile
     @include container;
     padding-top: 2em;
+    background: transparent;
     @include susy-grid-background;
     #header{@include span-columns($mobile);}
     #content-global{}
@@ -36,27 +33,32 @@ body {
     #right-content{}
     #footer{@include span-columns($mobile);
     @include background-size;}
-    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-           @include set-container-width($desktop);
-           background: transparent;
-        #header{@include span-columns($desktop);}
+}   
+@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    body #general{
+        @include set-container-width;
+        //@include container($desktop);
+        background: transparent;
+        #header{@include span-columns($desktop);background: seashell;}
         #content-global{@include span-columns($desktop);}
         #left-content{@include span-columns(2 alpha,$desktop);}
         #content-inner{@include span-columns(10,$desktop);}
         #right-content{@include span-columns(2 omega,$desktop);}
         #footer{@include span-columns($desktop);
-        @include background-size(auto);}
-     }
-     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-            @include container($tablet);
-  
-         #header{}
-         #content-global{}
-         #left-content{}
-         #content-inner{}
-         #right-content{}
-         #footer{}
-     }
+                @include background-size(auto);
+        }
+    }
+}
+@include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
+    body #general{
+        @include container($tablet);
+        #header{}
+        #content-global{}
+        #left-content{}
+        #content-inner{}
+        #right-content{}
+        #footer{}
+    }
 }
     
 
@@ -65,8 +67,7 @@ body {
 #header{
 	margin:0 auto;
 	padding:0;
-	background-color:#FFCC66;
-}
+	}
 
 /*Contenu de page  CONTENT */
 
@@ -84,35 +85,27 @@ height: 100%;
 	background-color: #999;
 }
 #content-top-node{
-    
     background-color: #999;
     margin: 0 auto;
     padding: em(5px);  
         }	
 /*/// debut des colonnes ///*/
 #left-content{
-	
 	background-color:#00CC99;
-	
 	left:0px;
 }
 
 /*/// partie de droite ///*/
 #right-content{
-	
-	background-color:#FF66CC;
-	
+background-color:#FF66CC;
 }
 /*inner content*/
 #content-inner{
-
 background-color: #CFD0D2;
 }
 /*///    partie du centre   ///*/
 #middle-content{
-	
 	background-color:yellow;
-	
 	padding:em(5px);
 }
 

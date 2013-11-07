@@ -1,0 +1,94 @@
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- TYPOS PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+// Rythme vertical pour la taille de typo selon compass
+$base-font-size:16px;
+$base-line-height: 24px;
+@include establish-baseline;
+
+ /*------- TYPOS CUSTOM ---------------*/
+@font-face {
+    font-family : "Arista";
+    src: url(../typos/Arista2.0_light.eot); /* IE */
+    src: local("Arista"), url(../typos/Arista2.0_light.ttf) format('truetype');/* non-IE */
+}
+/*_____  POLICES _____*/
+$AristaFont : "Arista", Trebuchet MS, sans-serif;
+$TrebuchetFont : Trebuchet MS, Verdana, Helvetica, sans-serif;
+
+/*====================================|
+==             CSS H                ==|
+=====================================*/
+  
+h1, .h1 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(20px);
+}
+  
+h2, .h2 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(18px);
+}
+h2.title{
+	margin: 5px;
+	padding: 0;
+	color:#000;
+	font-size: em(18px);
+
+ a{
+	color:#EF1D1D;
+}
+}
+h3, .h3{
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(16px);
+}
+h4, .h4{
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(14px);
+}
+h5, .h5 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(12px);
+}
+h6, .h6 {
+	margin: 0;
+	padding: 0;
+	color:#000;
+	font-size: em(10px);
+}
+/*---------------- TITRES -----------------------*/
+@mixin titre-page ($margin : 0.1em){
+     font-size : x-large;
+     margin: $margin;
+     line-height: em(30px);
+     
+}
+/*------------ PARAGRAPHES ---------------*/
+#general{
+    p{@include leader();}
+    #header{@include adjust-font-size-to(12px);}
+    #content-global{}
+    #left-content{}
+    #content-inner{}
+    #right-content{}
+    #footer{@include adjust-font-size-to(10px);
+        p{@include trailer();}
+    }
+}
+.HPBasGauche, .HPBasDroit {
+        p{
+        @include adjust-font-size-to(12px);
+    }
+}

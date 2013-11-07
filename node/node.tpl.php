@@ -1,4 +1,4 @@
-<div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
+<article class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
   <div class="node-inner">
 
     <?php if (!$page): ?>
@@ -24,4 +24,4 @@
     <?php endif; ?>
 
   </div> <!-- /node-inner -->
-</div> <!-- /node-->
+</article> <!-- /node-->

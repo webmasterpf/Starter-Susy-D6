@@ -25,7 +25,12 @@ modular-scale (1.0.6)
 
 // Import des partiels compass
 @import "compass/reset";
+// Import des réglages susy
 @import "global/variables";
+
+// Import des styles et polices Provence Formation
+@import "global/typos";
+@import "global/style";
 
 // Import des partiels du layout du thème Drupal
 
@@ -36,8 +41,10 @@ modular-scale (1.0.6)
 @import "ui/search";
 @import "ui/style-backoffice";
 
+
+
 // Import des partiels pour les node.tpl
 
 //@import "content-type/node-TYPE";
+@import "content-type/views";
 @import "content-type/node-front";
-
