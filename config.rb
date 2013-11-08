@@ -28,6 +28,7 @@ javascripts_dir = "js"
 #require 'ninesixty'
 require 'susy'
 require 'modular-scale'
+require 'compass-recipes'
 
 # Assuming this theme is in sites/*/themes/THEMENAME, you can add the partials
 # included with a module by uncommenting and modifying one of the lines below:
@@ -44,6 +45,11 @@ require 'modular-scale'
 # output_style = :expanded or :nested or :compact or :compressed
 output_style = (environment == :development) ? :expanded : :compressed
 
+#pour produire la css de production décommenter la ligne inférieure et commenter la supérieure
+#utiliser la commande
+#compass compile -e production --force
+#output_style = (environment == :production) ? :compressed : :expanded
+
 # To enable relative paths to assets via compass helper functions. Since Drupal
 # themes can be installed in multiple locations, we don't need to worry about
 # the absolute path to the theme from the server root.
@@ -51,7 +57,9 @@ relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
+ line_comments = true
 
 # Pass options to sass. For development, we turn on the FireSass-compatible
 # debug_info if the firesass config variable above is true.
-sass_options = (environment == :development && firesass == true) ? {:debug_info => true} : {}
+#sass_options = (environment == :development && firesass == true) ? {:debug_info => true} : {}
+#sass_options = (environment == :development) ? {:debug_info => true} : {}

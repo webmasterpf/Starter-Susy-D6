@@ -25,19 +25,19 @@ body #general{
     @include container;
     padding-top: 2em;
     background: transparent;
-    @include susy-grid-background;
+
     #header{@include span-columns($mobile);}
     #content-global{}
     #left-content{}
     #content-inner{}
     #right-content{}
     #footer{@include span-columns($mobile);
-    @include background-size;}
-}   
-@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    body #general{
+            @include background-size;}
+
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+
         @include set-container-width;
-        //@include container($desktop);
+
         background: transparent;
         #header{@include span-columns($desktop);background: seashell;}
         #content-global{@include span-columns($desktop);}
@@ -47,11 +47,50 @@ body #general{
         #footer{@include span-columns($desktop);
                 @include background-size(auto);
         }
+
+    }
+    @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
+
+
+        #header{}
+        #content-global{}
+        #left-content{}
+        #content-inner{}
+        #right-content{}
+        #footer{}
+
+    }
+}
+
+//Pour le dev, code visuel sur les blocs selon le breakpoint
+// à commenter ou supprimer pour la production
+
+body #general{
+    //Approche mobile-first,réglage pour mobile
+    @include susy-grid-background;
+    #header{background: tan;}
+    #content-global{}
+    #left-content{}
+    #content-inner{}
+    #right-content{}
+    #footer{background: teal;}
+}   
+@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    body #general{
+        @include susy-grid-background;
+        
+        #header{background: seashell;}
+        #content-global{}
+        #left-content{background: tomato;}
+        #content-inner{}
+        #right-content{background: violet;}
+        #footer{background: yellowgreen;}
     }
 }
 @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
     body #general{
-        @include container($tablet);
+        @include susy-grid-background;
+        
         #header{}
         #content-global{}
         #left-content{}
@@ -60,8 +99,7 @@ body #general{
         #footer{}
     }
 }
-    
-
+/////////////////////////////////////////////
 /*Haut de page  HEADER*/
 
 #header{

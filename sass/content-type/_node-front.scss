@@ -7,17 +7,18 @@
 |--------------------------------------*/
 
 #mainPage {
-    @include span-columns($mobile);
-    background: image-url ("bg_content_etoile.gif") no-repeat left bottom;
-    .HPDiapo{@include span-columns($mobile); overflow : hidden;}
-    .HPBasGauche{@include span-columns($mobile);}
+    background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
+    @include set-container-width;
+    
+    .HPDiapo{@include set-container-width; overflow : hidden;}
+    .HPBasGauche{@include set-container-width;}
     .HPBasDroit{@include span-columns($mobile);}
    
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        @include span-columns($desktop);
+        @include set-container-width;
         .HPDiapo{@include span-columns($desktop); overflow : hidden;}
-        .HPBasGauche{@include span-columns($desktop/2,$desktop);background: #CCC;}
-        .HPBasDroit{@include span-columns($desktop/2 omega,$desktop);background: #CFDEFF;}
+        .HPBasGauche{@include span-columns($desktop/2,$desktop);}
+        .HPBasDroit{@include span-columns($desktop/2 omega,$desktop);}
     }
    
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
@@ -27,7 +28,26 @@
         .HPBasDroit{@include span-columns($tablet/2 omega,$tablet);}
     }
 }
-
+//Pour le dev, code visuel sur les blocs selon le breakpoint
+// à commenter ou supprimer pour la production
+#mainPage {
+        
+    .HPDiapo{}
+    .HPBasGauche{background: #C8D215;}
+    .HPBasDroit{background: salmon;}
+   
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    .HPDiapo{}
+    .HPBasGauche{background:gold;}
+    .HPBasDroit{background:bisque;}
+    }
+   
+    @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        .HPDiapo{}
+    .HPBasGauche{background: #C8D215;}
+    .HPBasDroit{background: salmon;}
+    }
+}
 /********************/
 /*ZONES PAGE ACCUEIL*/
 
@@ -57,35 +77,37 @@
 
 //Layout du diaporama dynamique (Views slideshow)
 @include at-breakpoint($mobile) {/*    //Dimensions pour les mobiles*/
-    aside.DiapoHP{
+aside.DiapoHP{
+        
         img{@include adaptable-img;}
-}
-    #transparency{@include span-columns($mobile);}
-    #contenu-diapo{@include span-columns($mobile);}
+        #transparency{@include set-container-width;}
+        #contenu-diapo{@include set-container-width;}
+    }
 }
 
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    aside.DiapoHP{
+aside.DiapoHP{
+    @include set-container-width($desktop);
         img{@include adaptable-img;}
+    #transparency{ @include set-container-width;}
+    #contenu-diapo{@include set-container-width;}
 }
-    #transparency{ @include span-columns($desktop);}
-    #contenu-diapo{@include span-columns($desktop);}
-}
+    }
 @include at-breakpoint($tablet) {/*    //Dimensions pour les tablettes*/
-    aside.DiapoHP{
+aside.DiapoHP{
         img{@include adaptable-img;}
-}
-    #transparency{ @include span-columns($tablet);}
-    #contenu-diapo{}
-}
 
+        #transparency{ @include span-columns($tablet);}
+        #contenu-diapo{}
+    }
+}
 
 // Style du diaporama dynamique
 
 #transparency{
 background:none repeat scroll 0 0 $orange;/*Couleur du fond*/
 height:em(65px);
-bottom:em(70px); 
+bottom:em(40px); 
 left:em(12px);
 position:absolute;
 z-index:15;
@@ -103,7 +125,7 @@ z-index:15;
     padding: em(5px);
     font-family: $AristaFont;
      position: inherit;
-     bottom:em(85px);
+     bottom:em(60px);
   }
   a {
     

@@ -5,8 +5,10 @@
 // Layout du header et de ses parties haute et basse (logique mobile first)
  #header {
      .headHaut {@include span-columns($mobile);
-                .logoHead { @include span-columns(1,$mobile);}
-                .menuImg {  @include span-columns(3 omega,$mobile);}
+                .logoHead {  @include set-container-width;
+                img{margin: 0 auto;display: block;}
+                }
+                .menuImg {  @include set-container-width;}
      }
      .headBas {@include span-columns($mobile);
                .site-slogan{@include span-columns($mobile);}
@@ -17,19 +19,47 @@
  
 
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
- .headHaut {@include span-columns($desktop);
-                .logoHead { @include span-columns(4,$desktop);}
-                .menuImg {  @include span-columns(12 omega,$desktop);}
+ .headHaut {@include set-container-width;
+                .logoHead { @include span-columns(3,$desktop);}
+                .menuImg {  @include span-columns(7 omega,$desktop);}
      }
      .headBas {@include span-columns($desktop);
                .site-slogan{@include span-columns(7,$desktop);}
                .headSearch{@include span-columns(9 omega,$desktop);}
                .menuHead{@include span-columns($desktop);}
-     }  }
+     } 
+}
 @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/}
  }
-  
+
+ //Pour le dev, code visuel sur les blocs selon le breakpoint
+// à commenter ou supprimer pour la production
  
+#header {
+     .headHaut {
+                .logoHead { }
+                .menuImg {  }
+     }
+     .headBas {background: red;
+               .site-slogan{}
+               .headSearch{}
+               .menuHead{}
+     }                
+}
+ 
+@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+   #header {
+     .headHaut {
+                .logoHead { }
+                .menuImg { background: #FFCCFF; }
+     }
+     .headBas {background: #00CC99;
+               .site-slogan{}
+               .headSearch{}
+               .menuHead{}
+     }                
+}
+}
 /*---- HEADER HAUT ----*/
  
 
@@ -42,11 +72,7 @@
   }
 }
 
-/*Menu pictos header*/
 
-.menuImg {
-     background: transparent;
-  }
 //Navigation horizontale secondaire, responsive pour mobile
 .navPicto {
     border: 0;
@@ -72,7 +98,7 @@ aside.navPicto{
                 color: $gris-anthracite;
                 text-decoration: none;
                 display: block;
-                @include adjust-font-size-to(25px);
+                @include adjust-font-size-to(20px);
                 &:hover {
                     color: $orange-fonce;
 
@@ -87,7 +113,7 @@ aside.navPicto{
 /*---- HEADER BAS ----*/
 
 .headBas {
- background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
+ //background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
     margin: em(5px) 0 0 0;
   background: #cfd0d2 image-url ("bg_menu_rp.gif") repeat-x top left;
 }
