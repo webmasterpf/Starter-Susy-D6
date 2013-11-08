@@ -5,7 +5,7 @@ include ($theme_path.'/includes/inc_header.php');
 <!-- ______________________ LAYOUT HOMEPAGE HORIZONTAL _______________________ -->
  <!-- ______________________ CONTENU _______________________ -->
     
-	<div id="mainPage">
+	<div id="mainContent">
 
           <?php if ($content_top): ?>
             <div class="content-top">

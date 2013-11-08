@@ -32,7 +32,7 @@ modular-scale (1.0.6)
 // Import des styles et polices Provence Formation
 @import "global/typos";
 @import "global/style";
-
+@import "global/sub-nav";
 // Import des partiels du layout du thème Drupal
 
 @import "layout/layout";
@@ -48,4 +48,4 @@ modular-scale (1.0.6)
 
 //@import "content-type/node-TYPE";
 @import "content-type/views";
-@import "content-type/node-front";
+@import "content-type/frontpage";

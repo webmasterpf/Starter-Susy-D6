@@ -3,62 +3,62 @@
 |--------------------------------------*/
 
 // Layout du header et de ses parties haute et basse (logique mobile first)
+ //Imbrication à 100% (full nested)
  #header {
-     .headHaut {@include span-columns($mobile);
-                .logoHead {  @include set-container-width;
+     .headHaut {//@include span-columns($mobile);
+                .logoHead {  @include span-columns($mobile);
                 img{margin: 0 auto;display: block;}
                 }
-                .menuImg {  @include set-container-width;}
+                .menuImg {  @include span-columns($mobile);}
      }
      .headBas {@include span-columns($mobile);
+                //@include set-container-width; marche pas
                .site-slogan{@include span-columns($mobile);}
                .headSearch{@include span-columns($mobile);}
                .menuHead{@include span-columns($mobile);}
      }                
  
- 
-
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
- .headHaut {@include set-container-width;
-                .logoHead { @include span-columns(3,$desktop);}
-                .menuImg {  @include span-columns(7 omega,$desktop);}
+ .headHaut {@include span-columns($desktop);
+                .logoHead { @include span-columns(5,$desktop);}
+                .menuImg {  @include span-columns(9 omega,$desktop);}
      }
      .headBas {@include span-columns($desktop);
-               .site-slogan{@include span-columns(7,$desktop);}
-               .headSearch{@include span-columns(9 omega,$desktop);}
+               .site-slogan{@include span-columns(6,$desktop);}
+               .headSearch{@include span-columns(7 omega,$desktop);}
                .menuHead{@include span-columns($desktop);}
      } 
 }
 @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/}
  }
 
+
  //Pour le dev, code visuel sur les blocs selon le breakpoint
 // à commenter ou supprimer pour la production
  
 #header {
-     .headHaut {
-                .logoHead { }
-                .menuImg {  }
-     }
-     .headBas {background: red;
-               .site-slogan{}
-               .headSearch{}
-               .menuHead{}
-     }                
+    .headHaut {
+        .logoHead { }
+        .menuImg {  }
+    }
+    .headBas {background: red;
+              .site-slogan{}
+              .headSearch{}
+              .menuHead{}
+    }                
 }
- 
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-   #header {
-     .headHaut {
-                .logoHead { }
-                .menuImg { background: #FFCCFF; }
-     }
-     .headBas {background: #00CC99;
-               .site-slogan{}
-               .headSearch{}
-               .menuHead{}
-     }                
-}
+    #header {
+        .headHaut {
+            .logoHead { }
+            .menuImg { background: #FFCCFF; }
+        }
+        .headBas {background: #00CC99;
+                  .site-slogan{}
+                  .headSearch{}
+                  .menuHead{}
+        }                
+    }
 }
 /*---- HEADER HAUT ----*/
  
@@ -73,40 +73,13 @@
 }
 
 
-//Navigation horizontale secondaire, responsive pour mobile
 .navPicto {
     border: 0;
 
     td {
         border: 0;
         padding: em(5px);
-    }
-       
-}
-aside.navPicto{
-     ul.horizontal-nav {
-        @include horizontal-list;
-        li {
-            padding: 0;
-            @include span-columns(1);
-            img{@include adaptable-img;}
-            a {
-                // vertical alignment
-                margin: 0 em(1px);
-                border: 0;
-                font-family: $AristaFont;
-                color: $gris-anthracite;
-                text-decoration: none;
-                display: block;
-                @include adjust-font-size-to(20px);
-                &:hover {
-                    color: $orange-fonce;
-
-
-                }
-            }
-        }
-    }
+    }  
 }
 
 

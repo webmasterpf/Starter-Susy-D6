@@ -6,31 +6,35 @@
 |       FRONTPAGE                      |
 |--------------------------------------*/
 
-#mainPage {
+
+//Code imbriqué à 100%
+#mainContent {
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
-    @include set-container-width;
-    
-    .HPDiapo{@include set-container-width; overflow : hidden;}
-    .HPBasGauche{@include set-container-width;}
-    .HPBasDroit{@include span-columns($mobile);}
-   
+       
+    .HPDiapo{@include span-columns($mobile);
+             overflow : hidden;}
+    .HPBasGauche{}
+    .HPBasDroit{}
+}
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        @include set-container-width;
-        .HPDiapo{@include span-columns($desktop); overflow : hidden;}
+    //Taille du conteneur du groupe    
+        @include set-container-width();
+        .HPDiapo{@include set-container-width; overflow : hidden;}
         .HPBasGauche{@include span-columns($desktop/2,$desktop);}
         .HPBasDroit{@include span-columns($desktop/2 omega,$desktop);}
     }
-   
+  
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-        @include span-columns($tablet);
+        //Taille du conteneur du groupe
+     @include set-container-width;
         .HPDiapo{@include span-columns($tablet); overflow : hidden;}
         .HPBasGauche{@include span-columns($tablet/2,$tablet);}
         .HPBasDroit{@include span-columns($tablet/2 omega,$tablet);}
-    }
+    
 }
 //Pour le dev, code visuel sur les blocs selon le breakpoint
 // à commenter ou supprimer pour la production
-#mainPage {
+#mainContent {
         
     .HPDiapo{}
     .HPBasGauche{background: #C8D215;}
