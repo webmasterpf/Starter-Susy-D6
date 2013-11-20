@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="<?php print $base_path . path_to_theme() ?>/css/for_ie.css" />
       <![endif]-->
  <?php
-$theme_path = drupal_get_path('theme', 'THEME_NAME'); 
+$theme_path = drupal_get_path('theme', 'starterd6_pf_rwd'); 
 include ($theme_path.'/js/google_font.php');
 ?>
   </head>

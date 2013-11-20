@@ -22,7 +22,7 @@ body {
 /*-- LAYOUT PRINCIPAL --*/
 body #general{
     //Approche mobile-first,réglage pour mobile
-    @include container;
+    @include container($total-columns, $desktop, $tablet);
     padding-top: 2em;
     background: transparent;
 
