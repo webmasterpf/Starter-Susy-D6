@@ -6,135 +6,125 @@
  *---  Provence Formation 2011 --*
  *------------------------------------------------*/
 
-
 /**----HEADER---***/
 
-
 /**----MIDDLE---***/
-#middle-content p{
-	color:#000;
-	padding: 3px;
 
+#middle-content p {
+  color: #000;
+  padding: em(3px);
 }
 
-.item-list ul li {
-list-style-image:none;
-list-style-position:none;
-list-style-type:none;
-margin:0 0 0.25em 1.5em;
-padding:0;
-}
-
-.item-list ul{
-	margin: 0;
-	padding: 0;
-	list-style-type:none;
+.item-list ul {
+  li {
+    list-style-image: none;
+    list-style-position: none;
+    list-style-type: none;
+    margin: 0 0 0.25em 1.5em;
+    padding: 0;
+  }
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 /*style lien en savoir plus*/
-li.node_read_more a{
-color : red;
-text-decoration: none;
-text-align:left;
+
+li.node_read_more a {
+  color: red;
+  text-decoration: none;
+  text-align: left;
+  &:hover {
+    text-decoration: underline;
+  }
 }
-li.node_read_more a:hover{
-text-decoration: underline;
-}
+
 /*
 BLOC CONNEXION COLORBOX==================================
 */
-#colorbox #user-login .item-list{}
-#colorbox #user-login .item-list a{color: #E85134;text-decoration: none;}
-#colorbox #user-login .item-list a:hover{text-decoration: underline;}
 
+#colorbox #user-login .item-list a {
+  color: #E85134;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
 /*---------------------------*/
 /**----CONTENT TOP---***/
-#content-header{
-padding: 5px;
+
+#content-header {
+  padding: em(5px);
 }
+
 /**style du fil d'ariane**/
+
 .breadcrumb {
-color:#C0c0c0;
-text-decoration:none;
+  color: #C0c0c0;
+  text-decoration: none;
+  a {
+    color: #FFF;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
 }
-.breadcrumb a{
-color:#FFF;
-text-decoration:none;
-}
-.breadcrumb a:hover{
-color:#000;
-text-decoration:underline;
-}
+
 /**----CONTENT BOTTOM---***/
-#content-top{}
-.taxonomy{
-text-align:right;
-padding: 3px;
-margin: 0px;
+
+#content-top {}
+
+.taxonomy {
+  text-align: right;
+  padding: em(3px);
+  margin: 0px;
+  a {
+    color: #FF00FF;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
-.taxonomy a{
-color: #FF00FF;
-text-decoration:none;
-}
-.taxonomy a:hover{
-text-decoration:underline;
-}
+
 /*----page login------*/
-#user-login{
-margin: auto;
-width: 450px;
-padding:10px 0;
+
+#user-login {
+  margin: auto;
+  width: em(450px);
+  padding: em(10px) 0;
 }
+
 /**----COLONNE GAUCHE---***/
-#left-content p{
-	color:#000;
 
+#left-content, #right-content {
+  p {
+    color: #000;
+  }
+  a {
+    color: #666666;
+    text-decoration: none;
+    &:hover {
+      color: #990000;
+      text-decoration: underline;
+    }
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 }
-#left-content a{
-	color:#666666;
-	text-decoration:none;
-}
-#left-content a:hover{
-	color:#990000;
-	text-decoration:underline;
-}
-#left-content li{
-	margin:0;
-	padding: 0;
-	list-style:none;
-}
+
 /**----COLONNE DROITE---***/
-#right-content p{
-	color:#000;
 
-}
-#right-content a{
-	color:#666666;
-	text-decoration:none;
-}
-#right-content a:hover{
-	color:#990000;
-	text-decoration:underline;
-}
-#right-content li{
-	margin:0;
-	padding: 0;
-	list-style:none;
-}
-/**----FOOTER---***/
-#footer a{
-color: #FFF;
-text-decoration:none;
-}
-#footer a:hover{
-color: #FFCCFF;
+.titre_page {
+  line-height: em(30px);
 }
 
- 
-.titre_page{
-      line-height: 30px;
-}
 /*--------------------------------------------
 ---- STYLE POUR PAGE.TPL ET NODE.TPL OVERRIDE
 **********************************************
@@ -144,23 +134,9 @@ color: #FFCCFF;
 ********** STYLE NODE.TPL OVERRIDE **********
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 /*//////////////// COLONNE 1 \\\\\\\\\\\\\\\\*/
-#colonne-1 p{}
-#colonne-1 a{}
-#colonne-1 a:hover{}
-#colonne-1 h2{}
-#colonne-1 h3{}
-#colonne-1 h4{}
-#colonne-1 ul{}
-#colonne-1 li{}
-#colonne-1 hr{}
 
 
 /*//////////////// COLONNE 2 \\\\\\\\\\\\\\\\*/
-#colonne-2{
 
 
-}
 /*//////////////// COLONNE 3 \\\\\\\\\\\\\\\\*/
-#colonne-3{
-
-}

@@ -10,6 +10,12 @@
     @include span-columns($mobile);
     img{@include adaptable-img;}
 }
+.view-diaporama-homepage{
+height:em(200px);
+margin:0 auto;
+position:inherit;
+}
+
 #views_slideshow_singleframe_main_diaporama_homepage-block_1{
     padding: 0;
 }

@@ -33,10 +33,12 @@ modular-scale (1.0.6)
 @import "global/typos";
 @import "global/style";
 @import "global/sub-nav";
+
 // Import des partiels du layout du thème Drupal
 
 @import "layout/layout";
 @import "layout/layout-header";
+@import "layout/layout-footer";
 
 @import "ui/maintenance";
 @import "ui/search";

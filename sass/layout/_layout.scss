@@ -39,7 +39,7 @@ body #general{
         @include set-container-width;
 
         background: transparent;
-        #header{@include span-columns($desktop);background: seashell;}
+        #header{@include span-columns($desktop);}
         #content-global{@include span-columns($desktop);}
         #left-content{@include span-columns(2 alpha,$desktop);}
         #content-inner{@include span-columns(10,$desktop);}
@@ -84,7 +84,8 @@ body #general{
         #left-content{background: tomato;}
         #content-inner{}
         #right-content{background: violet;}
-        #footer{background: yellowgreen;}
+        #footer{//background: yellowgreen;
+        }
     }
 }
 @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
@@ -154,23 +155,6 @@ background:#C0c0c0;
 
 }
 
-/*Bas de page  FOOTER*/
-
-#footer{
-	margin:0 auto;
-	padding:em(30px) 0;
-	background: wheat image-url("bg_footer.jpg") no-repeat scroll right bottom;
-        
-	text-align: center;
-	color: #FFF;
-       
-        
-}
-#bloc_stats{
-    color:red;
-    margin:0 auto;
-    
-}
 /*--------------------------------------------
 ---- LAYOUT POUR PAGE.TPL ET NODE.TPL OVERRIDE
 **********************************************
