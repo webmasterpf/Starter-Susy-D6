@@ -15,7 +15,15 @@ scripts[] = js/tinynav.min.js
 scripts[] = js/jquery.navobile.min.js
 scripts[] = js/jquery.jpanelmenu.min.js
 
+
 stylesheets[all][] = css/application.css
+
+;Pour utiliser Buttons (librairie de bouttons CSS3)
+stylesheets[all][] = 3rdparty/buttons/css/buttons.css
+stylesheets[all][] = 3rdparty/buttons/css/font-awesome-ie7.min.css
+stylesheets[all][] = 3rdparty/buttons/css/font-awesome.min.css
+scripts[] = 3rdparty/buttons/js/buttons.js
+
 
 ; CSS pour utiliser NiceMenu
 ;stylesheets[all][] = css/navigation/nice_menus_custom.css

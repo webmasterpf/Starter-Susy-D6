@@ -1,8 +1,8 @@
-/*
-Import de toutes les feuilles SCSS partielles dédiées.
-Cette seule feuille est chargée par Drupal
-Compass va compiler les partiels pour fabriquer cette feuille
-*/
+
+//Import de toutes les feuilles SCSS partielles dédiées.
+//Cette seule feuille est chargée par Drupal
+//Compass va compiler les partiels pour fabriquer cette feuille
+
 // Importer les fichiers scss partiels (avec _) afin de compiler le
 // fichier css final utile pour le thème
 // Activer compass via 
@@ -14,7 +14,12 @@ compass (0.12.2)
 sass (3.2.12)
 susy (1.0.9)
 modular-scale (1.0.6)
+compass-recipes (0.3.0)
+zocial (0.0.3)
 ---------------------*/
+
+//Reset des propriétés
+@import "normalize";
 
 // Import de Compass
 @import "compass";
@@ -22,10 +27,9 @@ modular-scale (1.0.6)
 //Import des plugins de Compass
 @import "susy";
 @import 'modular-scale';
-//@import "recipes";
+@import "recipes";
 
-// Import des partiels compass
-@import "compass/reset";
+
 // Import des réglages susy
 @import "global/variables";
 

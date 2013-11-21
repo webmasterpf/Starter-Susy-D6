@@ -88,7 +88,7 @@
 .headBas {
  //background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
     margin: em(5px) 0 0 0;
-  background: #cfd0d2 image-url ("bg_menu_rp.gif") repeat-x top left;
+  background: #cfd0d2 image-url ('bg_menu_rp.gif') repeat-x top left;
 }
 
 /*Menu principal haut du header*/
@@ -103,7 +103,7 @@
 .headSearch {
   text-align: right;
   margin: em(2px) 0 0 0;
-  background: image-url ("bg_recherche.gif") no-repeat left em(5px);
+  background: image-url ('bg_recherche.gif') no-repeat left em(5px);
     
 }
 

@@ -10,9 +10,13 @@
 #footer{
     margin:0 auto;
     padding:em(30px) 0;
-    background: image-url("bg_footer.jpg") no-repeat scroll right bottom;
     color: #FFF;
+    background: transparent image-url('bg_footer.jpg') no-repeat scroll right bottom;
+    aside{
+       
+    }
     p{
+        
     }
     a {
         color: #FFF;
@@ -22,11 +26,17 @@
         }
     }
     @include at-breakpoint ($mobile){
-         @include background-size;
+        aside{
+        background: teal;     
+    }      
+         @include background-size();
     }
     @include at-breakpoint ($desktop){
-        
- @include background-size(auto);
+         @include background-size(auto);
+          aside{
+      background: yellowgreen;
+    }  
+         
     }
     @include at-breakpoint ($tablet){}
 }

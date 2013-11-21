@@ -77,3 +77,9 @@ Ordre et hierarchie des blocs du layout
     #footer
     #bloc_stats
 </pre>
+
+Compass plugins
+---------------
+
+Zocial : pour les boutons des RS
+Compass Recipes : mixin css3

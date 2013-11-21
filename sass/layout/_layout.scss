@@ -73,7 +73,7 @@ body #general{
     #left-content{}
     #content-inner{}
     #right-content{}
-    #footer{background: teal;}
+    #footer{}
 }   
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
     body #general{
@@ -84,8 +84,7 @@ body #general{
         #left-content{background: tomato;}
         #content-inner{}
         #right-content{background: violet;}
-        #footer{//background: yellowgreen;
-        }
+        #footer{}
     }
 }
 @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/

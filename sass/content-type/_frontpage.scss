@@ -48,18 +48,23 @@
    
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         .HPDiapo{}
-    .HPBasGauche{background: #C8D215;}
-    .HPBasDroit{background: salmon;}
+        .HPBasGauche{background: #C8D215;}
+        .HPBasDroit{background: salmon;}
     }
 }
 /********************/
 /*ZONES PAGE ACCUEIL*/
 
-.content-bottom-home a {
-  color: gray;
-  font-weight: bold;
+.content-bottom-home {
+    table{width: auto;}
+    a {
+        //@include zocial;
+    }
+    ul{
+         @include horizontal-list;
+        li{}
+    }
 }
-
 
 /****************/
 .HPBasGauche, .HPBasDroit {
