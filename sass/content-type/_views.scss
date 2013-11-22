@@ -4,11 +4,22 @@
 |--------------------------------------*/
 
 
+
 //Vue diaporama homepage
 // Classe ajoutée dans views sur le champ image à afficher
 .vue-diapo-hp-img{
-    @include span-columns($mobile);
-    img{@include adaptable-img;}
+     //@include set-container-width();
+       img{@include adaptable-img;}
+       @include at-breakpoint ($mobile){
+          @include set-container-width();
+       }
+       @include at-breakpoint ($desktop){
+         @include set-container-width();
+         //@include span-columns($desktop);
+       }
+       @include at-breakpoint ($tablet){
+           @include set-container-width();
+       }
 }
 .view-diaporama-homepage{
 height:em(200px);
@@ -23,3 +34,5 @@ position:inherit;
     position: relative;
     z-index:1;
 }
+#views_slideshow_cycle_main_Diaporama_homepage-block_2{}
+#views_slideshow_cycle_teaser_section_Diaporama_homepage-block_2{}

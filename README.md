@@ -83,3 +83,11 @@ Compass plugins
 
 Zocial : pour les boutons des RS
 Compass Recipes : mixin css3
+
+ Breakpoints pour SUSY
+----------------------------------
+<pre>
+ @include at-breakpoint ($mobile){}
+ @include at-breakpoint ($desktop){}
+ @include at-breakpoint ($tablet){}
+</pre>

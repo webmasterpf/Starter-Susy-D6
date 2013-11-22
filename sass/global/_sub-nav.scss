@@ -1,6 +1,6 @@
 //Navigation horizontale secondaire, responsive pour mobile
 
-aside.navPicto{
+aside.navStatic{
      ul.horizontal-nav {
         @include horizontal-list;
         li {

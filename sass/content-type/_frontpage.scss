@@ -12,6 +12,7 @@
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
        
     .HPDiapo{@include span-columns($mobile);
+                       
              overflow : hidden;}
     .HPBasGauche{}
     .HPBasDroit{}
