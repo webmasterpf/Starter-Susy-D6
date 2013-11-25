@@ -11,8 +11,8 @@
 #mainContent {
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
        
-    .HPDiapo{@include span-columns($mobile);
-                       
+    .HPDiapo{@include span-columns($mobile);//image ok sur mob mais pas sur desk
+             //@include set-container-width(); bloc diapo disparait sur desktop
              overflow : hidden;}
     .HPBasGauche{}
     .HPBasDroit{}

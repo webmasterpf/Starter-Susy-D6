@@ -7,7 +7,7 @@ Active trail sur élément de la rubrique = OK
 */
 .sf-menu.sf-style-blue {/*Bloc UL du menu*/
   float: left;
-  margin: 8px 0;
+  margin: 0;
   padding: 0;
   background: #EFEFEF;
   width: 100%;
@@ -17,10 +17,11 @@ Active trail sur élément de la rubrique = OK
 }
 .sf-menu.sf-style-blue ul {
   padding-left: 0;
+  margin: 1.5em 0 0;//débattement pour la liste du sous-menu
 }
 .sf-menu.sf-style-blue a{
  border: none;
- // width: 130px;/*largeur des a*/
+  width: 7.5em;/*largeur des a*/
   height: 2.4em;/*hauteur des a*/
   text-align: center;
   text-transform:uppercase;
@@ -29,6 +30,7 @@ Active trail sur élément de la rubrique = OK
   padding: 5px;
   text-decoration: none;
   line-height: 1.3em;
+  margin: 0.5em 0;
 }
 .sf-menu.sf-style-blue a.sf-with-ul{
   padding-right: 2.25em;
