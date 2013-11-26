@@ -82,7 +82,7 @@ Ordre et hierarchie des blocs du layout
 Compass plugins
 ---------------
 
-Zocial : pour les boutons des RS
+Buttons : pour les boutons des RS,
 Compass Recipes : mixin css3
 
  Breakpoints pour SUSY
