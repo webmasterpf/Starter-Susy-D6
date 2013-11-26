@@ -7,14 +7,13 @@ include ($theme_path.'/includes/inc_header.php');
 
       <div id="content-global">
 
-         
+        
 
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
 
 
-       <div id="content-inner" class="page-MODELE">
-           
-            <!-- ______________________ CONTENT TOP _______________________ -->
+        <div id="content-inner" class="page-MODELE">
+              <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
             <div id="content-top">
 	<span id="ariane"> <?php print $breadcrumb; ?></span>
@@ -48,7 +47,7 @@ include ($theme_path.'/includes/inc_header.php');
             </div> <!-- /#content-header -->
           <?php endif; ?>
 		  <!-- ______________________ CONTENU CENTRAL _______________________ -->
-          <div class="middle-content page-MODELE">
+         <div class="middle-content page-MODELE">
 
             <?php print $content; ?>
               <?php print $feed_icons; ?>
@@ -63,6 +62,7 @@ include ($theme_path.'/includes/inc_header.php');
             <?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); } ?>
           </div> <!-- /navigation -->
         <?php endif; ?>
+
 
     	 <br clear="all"/>
          <!-- ______________________ CONTENU BAS _______________________ -->

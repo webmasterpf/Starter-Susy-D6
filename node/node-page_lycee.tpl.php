@@ -1,28 +1,30 @@
 <?php
-/* Ce template permet la création d'un layout multicolonne pour le spages de base, en permettant la disposition facile
+/* Ce template permet la création d'un layout multicolonne pour les pages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
 */?>
 <!--______________NODE TPL POUR PAGE.TPL CUSTOM________________ -->
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
     <div class="node-inner">
         <!--______________COLONNE 1________________ -->
-        <?php /* choix du layout selon nombre de colonne
-         * .col1_layout_200_590_200{} .col1_layout_330_all{} .col1_layout_18_56_25{}
-         * .col2_layout_200_590_200{} .col2_layout_330_all{} .col2_layout_18_56_25{}
-         * .col3_layout_200_590_200{} .col3_layout_330_all{} .col3_layout_18_56_25{}
+        <?php /* choix du layout selon la largeur des colonnes
+         * .col1_layout_3_8_3{} .col1_layout_4_5_5{} .col1_layout_5_9{}
+         * .col2_layout_3_8_3{} .col2_layout_4_5_5{} .col2_layout_5_9{}
+         * .col3_layout_3_8_3{} .col3_layout_4_5_5{}
          */?>
-        <div id="colonne-1" class="CHOIX_DU_LAYOUT">
+        <div class="colonne-1 col1_layout_3_8_3">
             <?php if ($title): /*copier le titre dans la colonne desirée*/?>
             <h1 class="titre_page"><?php print $title; ?></h1>
             <?php endif; ?>
-             <?php
-              global $theme_path;
-              include ($theme_path.'/includes/inc_region_col_G1.php');
-              ?>
+        
+            <?php 
+  //$theme_path = drupal_get_path('theme', 'NOM_THEME');
+  global $theme_path;
+include($theme_path .'/includes/inc_region_col_1.php');
+?>
         </div>
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="colonne-2" class="CHOIX_DU_LAYOUT">
+        <div class="colonne-2 col2_layout_3_8_3">
 
             <?php print $picture; ?>
 
@@ -37,7 +39,7 @@
         </div>
 
         <!--______________COLONNE 3________________ -->
-        <div id="colonne-3" class="CHOIX_DU_LAYOUT">
+        <div class="colonne-3 col3_layout_3_8_3">
             <!--***********!!!!!!  EXEMPLE DE CHAMP CCK INCLUS AVEC CONDITION !!!!!!!!************ -->
             <?php if ($node->nom_du_champ[0]['view']): ?>
             <div id="nom-css">

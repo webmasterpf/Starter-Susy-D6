@@ -8,18 +8,17 @@
 //Vue diaporama homepage
 // Classe ajoutée dans views sur le champ image à afficher
 .vue-diapo-hp-img{
-     //@include set-container-width();
+     //pas besoin de mixin de taille pour les élèments enfants.
      clear: both;
        img{@include adaptable-img;}
        @include at-breakpoint ($mobile){
-          @include set-container-width();
+         //@include set-container-width();
        }
        @include at-breakpoint ($desktop){
-        @include set-container-width();
-         //@include span-columns($desktop);
+        
        }
        @include at-breakpoint ($tablet){
-          @include set-container-width();
+          
        }
 }
 .view-diaporama-homepage{

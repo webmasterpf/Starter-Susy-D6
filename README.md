@@ -68,11 +68,12 @@ Ordre et hierarchie des blocs du layout
                 .menuHead
     #content-global
         #left-content
+        .content-top
+        .content-top-node
         #content-inner
-            .content-top
             .content-header
             .middle-content
-            .content-bottom
+        .content-bottom
         #right-content
     #footer
     #bloc_stats

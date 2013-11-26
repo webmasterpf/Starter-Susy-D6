@@ -18,10 +18,13 @@ scripts[] = js/jquery.jpanelmenu.min.js
 
 stylesheets[all][] = css/application.css
 
+;Pour utiliser Buttons compilé (librairie de bouttons CSS3)
+stylesheets[all][] = css/vendor/buttons.css
+
 ;Pour utiliser Buttons (librairie de bouttons CSS3)
-stylesheets[all][] = 3rdparty/buttons/css/buttons.css
-stylesheets[all][] = 3rdparty/buttons/css/font-awesome-ie7.min.css
-stylesheets[all][] = 3rdparty/buttons/css/font-awesome.min.css
+;stylesheets[all][] = 3rdparty/buttons/css/buttons.css
+;stylesheets[all][] = 3rdparty/buttons/css/font-awesome-ie7.min.css
+;stylesheets[all][] = 3rdparty/buttons/css/font-awesome.min.css
 scripts[] = 3rdparty/buttons/js/buttons.js
 
 
