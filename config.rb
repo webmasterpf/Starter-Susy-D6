@@ -28,7 +28,7 @@ javascripts_dir = "js"
 require 'susy'
 require 'modular-scale'
 require 'compass-recipes'
-require 'zocial'
+#require 'zocial'
 
 # Assuming this theme is in sites/*/themes/THEMENAME, you can add the partials
 # included with a module by uncommenting and modifying one of the lines below:

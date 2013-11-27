@@ -7,10 +7,7 @@ include ($theme_path.'/includes/inc_header.php');
 
       <div id="content-global">
 
-        
-
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
-
 
         <div id="content-inner" class="page-MODELE">
               <!-- ______________________ CONTENT TOP _______________________ -->
