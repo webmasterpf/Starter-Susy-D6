@@ -1,0 +1,173 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       FRONTPAGE INSTITUTIONNEL       |
+|--------------------------------------*/
+
+  //@include at-breakpoint ($mobile){}
+  //@include at-breakpoint ($desktop){}
+  //@include at-breakpoint ($tablet){}
+
+//Code imbriqué à 100%
+#mainContent {
+    background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
+       
+    .HPDiapo{@include span-columns($mobile);//image ok sur mob mais pas sur desk
+             //@include set-container-width(); bloc diapo disparait sur desktop
+             overflow : hidden;}
+    .HPBasGauche{}
+    .HPBasDroit{}
+}
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    //Taille du conteneur du groupe    
+        @include set-container-width();
+        .HPDiapo{@include set-container-width; overflow : hidden;}
+        .HPBasGauche{@include span-columns($desktop/2,$desktop);}
+        .HPBasDroit{@include span-columns($desktop/2 omega,$desktop);}
+    }
+  
+    @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        //Taille du conteneur du groupe
+     @include set-container-width;
+        .HPDiapo{@include span-columns($tablet); overflow : hidden;}
+        .HPBasGauche{@include span-columns($tablet/2,$tablet);}
+        .HPBasDroit{@include span-columns($tablet/2 omega,$tablet);}
+    
+}
+//Pour le dev, code visuel sur les blocs selon le breakpoint
+// à commenter ou supprimer pour la production
+#mainContent {
+        
+    .HPDiapo{}
+    .HPBasGauche{background: #C8D215;}
+    .HPBasDroit{background: salmon;}
+   
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    .HPDiapo{}
+    .HPBasGauche{background:gold;}
+    .HPBasDroit{background:bisque;}
+    }
+   
+    @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        .HPDiapo{}
+        .HPBasGauche{background: #C8D215;}
+        .HPBasDroit{background: salmon;}
+    }
+}
+/********************/
+/*ZONES PAGE ACCUEIL*/
+
+.content-bottom-home {
+    table{width: auto;}
+    a {
+        //@include zocial;
+    }
+    ul{
+         @include horizontal-list;
+        li{}
+    }
+}
+
+/****************/
+.HPBasGauche, .HPBasDroit {
+
+    background: none;
+    color: black;
+    ul li {
+        list-style: square;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
+
+//Layout du diaporama dynamique (Views slideshow)
+@include at-breakpoint($mobile) {/*    //Dimensions pour les mobiles*/
+aside.DiapoHP{
+        
+        img{@include adaptable-img;}
+        #transparency{@include set-container-width;}
+        #contenu-diapo{@include set-container-width;}
+    }
+}
+
+@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+aside.DiapoHP{
+    @include set-container-width($desktop);
+        img{@include adaptable-img;}
+    #transparency{ @include set-container-width;}
+    #contenu-diapo{@include set-container-width;}
+}
+    }
+@include at-breakpoint($tablet) {/*    //Dimensions pour les tablettes*/
+aside.DiapoHP{
+        img{@include adaptable-img;}
+
+        #transparency{ @include span-columns($tablet);}
+        #contenu-diapo{}
+    }
+}
+
+// Style du diaporama dynamique
+
+#transparency{
+background:none repeat scroll 0 0 $orange;/*Couleur du fond*/
+height:em(65px);
+bottom:em(40px); 
+left:em(12px);
+position:absolute;
+z-index:15;
+@include opacity(0.6);
+}
+#contenu-diapo {
+  position: relative;
+  left: em(10px);
+  color: white;
+  z-index: 20;
+  
+  
+  h2 {
+    color: white;
+    padding: em(5px);
+    font-family: $AristaFont;
+     position: inherit;
+     bottom:em(60px);
+  }
+  a {
+    
+    text-decoration: none;
+  }
+}
+
+
+
+/*-- DEFILANT ACCUEIL --*/
+#annonce {
+  color: $color-defilant;
+  display: block;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 11px 0 0;
+  text-align: center;
+  @include adjust-font-size-to(16px);
+  a {
+    color: $color-defilant-a;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+/*DEFILANT CLASSIQUE*/
+#block-views-liste_annonce_accueil-block_1{display: block;margin: 5px 0;height: 50px;}
+/*DEFILANT CONTENU PONCTUEL*/
+#block-views-liste_annonce_accueil-block_2{font-size: 16px;color: #E2017B;width: auto;display: block;text-align: center;font-weight: bold;margin: 10px 0;background: #CFD0D2;padding: 5px;height: 40px;}
+#block-views-liste_annonce_accueil-block_2 #ponctuel{display: block;width: auto;}

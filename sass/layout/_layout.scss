@@ -133,12 +133,19 @@ body #general{
 height: 100%;
 }
 /*//////SOUS ENTETE/////*/
-#content-top{
-	margin:0 auto;
-	padding:em(5px);
-	background-color: #999;
+.content-top{}
+//classe sur le bloc
+aside.content_top{
+    clear: both;
+    @include set-container-width();
+    background-color: #999;
+  @include at-breakpoint ($mobile){}
+  @include at-breakpoint ($desktop){
+        @include set-container-width($desktop);
+  }
+  @include at-breakpoint ($tablet){}
 }
-#content-top-node{
+.content-top-node{
     background-color: #999;
     margin: 0 auto;
     padding: em(5px);  

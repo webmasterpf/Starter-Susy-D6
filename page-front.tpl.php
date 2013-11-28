@@ -2,55 +2,58 @@
 global $theme_path;
 include ($theme_path.'/includes/inc_header.php');
 ?>
-<!-- ______________________ LAYOUT HOMEPAGE HORIZONTAL _______________________ -->
- <!-- ______________________ CONTENU _______________________ -->
-    
-	<div id="mainContent">
+<!--<div id="mainContent">-->
 
-          <?php if ($content_top): ?>
+ <!-- ______________________ CONTENU HAUT _______________________ -->
+ 
+   <?php if ($content_top): ?>
             <div class="content-top">
               <?php print $content_top; ?>
-            </div> <!-- /#content-top -->
+  </div> <!--/#content-top -->
           <?php endif; ?>
-
+ <!-- ______________________ LAYOUT HOMEPAGE VERTICAL G_______________________ -->       
    <!-- ______________________ ZONE DIAPO _______________________ -->
 			
-              <?php if ($DiapoHP): ?>
-                 <div class="HPDiapo"><?php print $DiapoHP; ?></div>
+            <?php if ($DiapoHP): ?>
+       <div class="HPDiapoVerticalGauche"><?php print $DiapoHP; ?></div>
               <?php endif; ?>
-              
-            
-         
-<br clear="all"/>
-
-
-<!-- ______________________ PARTIE BAS GAUCHE _______________________ -->
-                 <?php if ($HPBasGauche): ?>
-                 <div class="HPBasGauche"><?php print $HPBasGauche; ?></div>
-              <?php endif; ?>  
-		 
-<!-- ______________________ PARTIE BAS DROITE _______________________ -->
+        	 
+<!-- ______________________ PARTIE DROITE _______________________ -->
       
-	  
+	<div class="HPDroite">
 	 
-        <?php if ($HPBasDroit): ?>
-     <div class="HPBasDroit"><?php print $HPBasDroit; ?></div>
+        <?php if ($PartieDroite1): ?>
+     <div class="HPDroite1"><?php print $PartieDroite1; ?></div>
         <?php endif; ?>
 		
-     
+     <?php if ($PartieDroite2): ?>
+     <div class="HPDroite2"><?php print $PartieDroite2; ?></div>
+        <?php endif; ?>
+
+     <?php if ($PartieDroite3): ?>
+     <div class="HPDroite3"><?php print $PartieDroite3; ?></div>
+        <?php endif; ?>
 	  
-   
+</div><!--    /Partie Droite -->
 	<br clear="all"/>
-	<!-- ______________________ CONTENU BAS _______________________ -->
+    <!-- ______________________ FIN LAYOUT PAGE _______________________ -->
+        
+
+
+
+        
+<!-- ______________________ CONTENU BAS _______________________ -->
     <?php if ($content_bottom_home): ?>
     <div class="content-bottom-home">
       <?php print $content_bottom_home; ?>
-         <?php print $feed_icons; ?>
+        <?php print $feed_icons; ?>
+         <?php endif; ?>
+  
     </div><!-- /#content-bottom -->
-    <?php endif; ?>
+   
 	
 	
-	 </div> <!-- /mainPage -->
+<!--	 </div>  /mainPage -->
     <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_footer.php');

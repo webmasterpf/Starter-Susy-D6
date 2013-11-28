@@ -13,36 +13,37 @@ include ($theme_path.'/includes/inc_header.php');
               <?php print $content_top; ?>
             </div> <!-- /#content-top -->
           <?php endif; ?>
+<!--     ______________________ LAYOUT HOMEPAGE VERTICAL D_______________________ 
+ 
 
-            <!-- ______________________ PARTIE GAUCHE _______________________ -->
+             ______________________ PARTIE GAUCHE _______________________ 
 
-	<div id="HPGauche">
+	<div class="HPGauche">
 
         <?php if ($PartieGauche1): ?>
-     <div id="HPGauche1"><?php print $PartieGauche1; ?></div>
+     <div class="HPGauche1"><?php print $PartieGauche1; ?></div>
         <?php endif; ?>
 
      <?php if ($PartieGauche2): ?>
-     <div id="HPGauche2"><?php print $PartieGauche2; ?></div>
+     <div class="HPGauche2"><?php print $PartieGauche2; ?></div>
         <?php endif; ?>
 
      <?php if ($PartieGauche3): ?>
-     <div id="HPGauche3"><?php print $PartieGauche3; ?></div>
+     <div class="HPGauche3"><?php print $PartieGauche3; ?></div>
         <?php endif; ?>
 
-   </div><!-- /Partie Gauche -->
+   </div> /Partie Gauche 
 
-   <!-- ______________________ ZONE DIAPO DROITE_______________________ -->
+    ______________________ ZONE DIAPO DROITE_______________________ 
 
-              <?php if ($DiapoHP): ?>
-                 <div id="HPDiapo"><?php print $DiapoHP; ?></div>
+               <?php if ($DiapoHP): ?>
+       <div class="HPDiapoVerticalDroite"><?php print $DiapoHP; ?></div>
               <?php endif; ?>
 
-
-
-
-
 	<br clear="all"/>
+    ______________________ FIN LAYOUT PAGE _______________________ -->
+
+
 	<!-- ______________________ CONTENU BAS _______________________ -->
     <?php if ($content_bottom_home): ?>
     <div id="content-bottom-home">

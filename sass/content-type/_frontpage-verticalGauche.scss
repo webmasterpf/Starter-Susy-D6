@@ -3,7 +3,7 @@
 
 /*-------------------------------------|
 |       CONTENU CUSTOM NODE.TPL        |
-|       FRONTPAGE                      |
+|     FRONTPAGE  VERTICAL GAUCHE       |
 |--------------------------------------*/
 
   //@include at-breakpoint ($mobile){}
@@ -11,49 +11,65 @@
   //@include at-breakpoint ($tablet){}
 
 //Code imbriqué à 100%
-#mainContent {
+body #general {
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
        
-    .HPDiapo{@include span-columns($mobile);//image ok sur mob mais pas sur desk
+    .HPDiapoVerticalGaucheVerticalGauche{@include span-columns($mobile);//image ok sur mob mais pas sur desk
              //@include set-container-width(); bloc diapo disparait sur desktop
              overflow : hidden;}
-    .HPBasGauche{}
-    .HPBasDroit{}
+    .HPDroite{}
+    .HPDroite1{}
+    .HPDroite2{}
+    .HPDroite3{}
 }
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
     //Taille du conteneur du groupe    
-        @include set-container-width();
-        .HPDiapo{@include set-container-width; overflow : hidden;}
-        .HPBasGauche{@include span-columns($desktop/2,$desktop);}
-        .HPBasDroit{@include span-columns($desktop/2 omega,$desktop);}
+        //@include set-container-width(); inutile
+        .HPDiapoVerticalGauche{@include set-container-width($desktop/2,$desktop);}
+        .HPDroite{@include span-columns($desktop/2 omega,$desktop);}
+        .HPDroite1{
+           // @include set-container-width();
+        }
+        .HPDroite2{
+           // @include set-container-width();
+        }
+        .HPDroite3{}
     }
   
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         //Taille du conteneur du groupe
      @include set-container-width;
-        .HPDiapo{@include span-columns($tablet); overflow : hidden;}
-        .HPBasGauche{@include span-columns($tablet/2,$tablet);}
-        .HPBasDroit{@include span-columns($tablet/2 omega,$tablet);}
+        .HPDiapoVerticalGauche{@include span-columns($tablet/2);}
+        .HPDroite{@include span-columns($tablet/2 omega );}
+        .HPDroite1{}
+        .HPDroite2{}
+        .HPDroite3{}
     
 }
 //Pour le dev, code visuel sur les blocs selon le breakpoint
 // à commenter ou supprimer pour la production
-#mainContent {
-        
-    .HPDiapo{}
-    .HPBasGauche{background: #C8D215;}
-    .HPBasDroit{background: salmon;}
-   
+body #general {
+
+    .HPDiapoVerticalGauche{}
+    .HPDroite{}
+    .HPDroite1{background: #C8D215;}
+    .HPDroite2{background: salmon;}
+    .HPDroite3{}
+
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    .HPDiapo{}
-    .HPBasGauche{background:gold;}
-    .HPBasDroit{background:bisque;}
+        .HPDiapoVerticalGauche{}
+        .HPDroite{}
+        .HPDroite1{background: gold;}
+        .HPDroite2{background: bisque;}
+        .HPDroite3{background: inactiveborder;}
     }
-   
+
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-        .HPDiapo{}
-        .HPBasGauche{background: #C8D215;}
-        .HPBasDroit{background: salmon;}
+        .HPDiapoVerticalGauche{}
+        .HPDroite{background: #C8D215;}
+        .HPDroite1{background: royalblue;}
+        .HPDroite2{background: #00CC99;}
+        .HPDroite3{}
     }
 }
 /********************/
@@ -71,7 +87,7 @@
 }
 
 /****************/
-.HPBasGauche, .HPBasDroit {
+.HPDroite {
 
     background: none;
     color: black;
@@ -89,45 +105,53 @@
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
 
 //Layout du diaporama dynamique (Views slideshow)
-@include at-breakpoint($mobile) {/*    //Dimensions pour les mobiles*/
+//Code imbriqué à 100%
 aside.DiapoHP{
-        
-        img{@include adaptable-img;}
-        #transparency{@include set-container-width;}
-        #contenu-diapo{@include set-container-width;}
+     img{@include adaptable-img;}
+    @include at-breakpoint($mobile) {    //Dimensions pour les mobiles    
+       @include set-container-width;
+        #transparency{
+            //@include set-container-width;
+        }
+        #contenu-diapo{
+            //@include set-container-width;
+        }
     }
-}
+    @include at-breakpoint($desktop) {    //Dimensions pour les pc
 
-@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-aside.DiapoHP{
-    @include set-container-width($desktop);
-        img{@include adaptable-img;}
-    #transparency{ @include set-container-width;}
-    #contenu-diapo{@include set-container-width;}
-}
+       // @include set-container-width($desktop/2); pas besoin si parent bien réglé
+      @include set-container-width;
+        #transparency{
+            @include set-container-width();
+        }
+        #contenu-diapo{
+            @include set-container-width();    
+        }
+
     }
-@include at-breakpoint($tablet) {/*    //Dimensions pour les tablettes*/
-aside.DiapoHP{
-        img{@include adaptable-img;}
-
-        #transparency{ @include span-columns($tablet);}
+    @include at-breakpoint($tablet) {    //Dimensions pour les tablettes
+        #transparency{ }
         #contenu-diapo{}
+
     }
 }
 
 // Style du diaporama dynamique
 
+/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE----*/
+
 #transparency{
 background:none repeat scroll 0 0 $orange;/*Couleur du fond*/
-height:em(65px);
-bottom:em(40px); 
+height:em(50px);
+bottom:em(65px); 
 left:em(12px);
-position:absolute;
+position:relative;
 z-index:15;
 @include opacity(0.6);
 }
 #contenu-diapo {
   position: relative;
+  bottom:em(105px);
   left: em(10px);
   color: white;
   z-index: 20;
@@ -137,8 +161,6 @@ z-index:15;
     color: white;
     padding: em(5px);
     font-family: $AristaFont;
-     position: inherit;
-     bottom:em(60px);
   }
   a {
     

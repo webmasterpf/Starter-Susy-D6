@@ -53,8 +53,15 @@ zocial (0.0.3)
 
 // Import des partiels pour les node.tpl
 
+//Import Homepage - choisir quel layout utiliser
+
+//@import "content-type/frontpage-pano";
+//@import "content-type/frontpage-verticalDroit";
+@import "content-type/frontpage-verticalGauche";
+//@import "content-type/frontpage-institutionnel";
+
 //@import "content-type/node-TYPE";
 @import "content-type/views";
-@import "content-type/frontpage";
+
 @import "content-type/page-lycee";
 //@import "content-type/contenu-vdl";

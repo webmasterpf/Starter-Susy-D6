@@ -51,10 +51,24 @@ stylesheets[all][] = css/navigation/responsive-nav.css
 
 regions[header] = Header
 regions[menuDyn] = Menu Header - Menu dynamique JS
-regions[navStatic] = Navigation par images - Bloc
+regions[navStatic] = Navigation statique - Bloc
+
+;Diaporama HP selon layout choisi (décommenter pour choisir)
 regions[DiapoHP] = Diaporama Homepage - Bloc
-regions[HPBasGauche] = Zone Bas Gauche HP - Bloc
-regions[HPBasDroit] = Zone Bas Droit HP - Bloc
+;Diaporama panoramique
+;regions[HPBasGauche] = Zone Bas Gauche HP - Bloc
+;regions[HPBasDroit] = Zone Bas Droit HP - Bloc
+
+;Diaporama vertical Gauche
+regions[PartieDroite1] = Zone Droite 1 HP - Bloc
+regions[PartieDroite2] = Zone Droite 2 HP - Bloc
+regions[PartieDroite3] = Zone Droite 3 HP - Bloc
+
+;Diaporama vertical Droite
+;regions[PartieGauche1] = Zone Gauche 1 HP - Bloc
+;regions[PartieGauche2] = Zone Gauche 2 HP - Bloc
+;regions[PartieGauche3] = Zone Gauche 3 HP - Bloc
+
 regions[content_top] = Content top
 regions[formulaire] = Zone formulaire bloc
 regions[left] = Colonne Gauche
@@ -74,6 +88,7 @@ regions[intervenants] = Zone pour les Intervenants - Vue Bloc
 regions[formulaire] = Formulaire (centre) - Webform Bloc
 ;Region pour slideshow
 regions[frontpageSlideshow] = Zone Frontpage Slideshow
+
 
 
 settings[basic_zen_tabs]             = 1
