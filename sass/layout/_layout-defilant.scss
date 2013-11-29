@@ -1,0 +1,46 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|           DEFILANT VIEW              |
+|--------------------------------------*/
+
+  //@include at-breakpoint ($mobile){}
+  //@include at-breakpoint ($desktop){}
+  //@include at-breakpoint ($tablet){}
+
+.annonce-container{}
+/*-- DEFILANT ACCUEIL --*/
+//.content-top #annonce
+aside.content_top .annonce-container #annonce
+{
+     @include set-container-width();
+  color: $color-defilant;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  @include adjust-font-size-to(16px);
+  a {
+    color: $color-defilant-a;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include at-breakpoint ($mobile){
+      @include set-container-width();
+      //@include span-columns($mobile);
+  }
+  @include at-breakpoint ($desktop){
+     // @include span-columns($desktop);
+      @include set-container-width();
+  }
+  @include at-breakpoint ($tablet){@include span-columns($tablet);}
+}
+/*DEFILANT CLASSIQUE*/
+//#block-views-liste_annonce_accueil-block_1{display: block;margin: 5px 0;height: 50px;}
+/*DEFILANT CONTENU PONCTUEL*/
+//#block-views-liste_annonce_accueil-block_2{font-size: 16px;color: #E2017B;width: auto;display: block;text-align: center;font-weight: bold;margin: 10px 0;background: #CFD0D2;padding: 5px;height: 40px;}
+//#block-views-liste_annonce_accueil-block_2 #ponctuel{display: block;width: auto;}

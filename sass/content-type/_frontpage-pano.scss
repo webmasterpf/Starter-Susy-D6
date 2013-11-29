@@ -145,29 +145,3 @@ z-index:15;
     text-decoration: none;
   }
 }
-
-
-
-/*-- DEFILANT ACCUEIL --*/
-#annonce {
-  color: $color-defilant;
-  display: block;
-  font-weight: bold;
-  margin: 0 auto;
-  padding: 11px 0 0;
-  text-align: center;
-  @include adjust-font-size-to(16px);
-  a {
-    color: $color-defilant-a;
-    text-decoration: none;
-    font-weight: bold;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-/*DEFILANT CLASSIQUE*/
-#block-views-liste_annonce_accueil-block_1{display: block;margin: 5px 0;height: 50px;}
-/*DEFILANT CONTENU PONCTUEL*/
-#block-views-liste_annonce_accueil-block_2{font-size: 16px;color: #E2017B;width: auto;display: block;text-align: center;font-weight: bold;margin: 10px 0;background: #CFD0D2;padding: 5px;height: 40px;}
-#block-views-liste_annonce_accueil-block_2 #ponctuel{display: block;width: auto;}

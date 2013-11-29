@@ -32,6 +32,13 @@ body #general{
     @include at-breakpoint ($mobile){
     padding-top: 0em;    
     #header{@include span-columns($mobile);}
+    .content-top{//ok fonctionne 29/11
+        //@include span-columns($mobile);
+        @include set-container-width;
+        clear: both;
+    }
+    .content-bottom{}
+    .content-bottom-home{}
     #content-global{}
     #left-content{}
     #content-inner{}
@@ -40,7 +47,7 @@ body #general{
     #footer{@include span-columns($mobile);
             @include background-size;}
     }
-    
+
 
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
         padding-top: 2em;
@@ -49,6 +56,13 @@ body #general{
         background: transparent;
         #header{@include span-columns($desktop);}
         #content-global{@include span-columns($desktop);}
+        .content-top{
+            //@include span-columns($desktop);
+            @include set-container-width;
+            clear: both;
+        }
+        .content-bottom{}
+        .content-bottom-home{}
         #left-content{@include span-columns(2 alpha,$desktop);}
         #content-inner{
             //@include span-columns(10,$desktop);
@@ -56,7 +70,7 @@ body #general{
         }
         .middle-content{
             @include span-columns($desktop);
-            }
+        }
         #right-content{@include span-columns(2 omega,$desktop);}
         #footer{@include span-columns($desktop);
                 @include background-size(auto);
@@ -65,9 +79,11 @@ body #general{
     }
     @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
 
-
         #header{}
         #content-global{}
+        .content-top{}
+        .content-bottom{}
+        .content-bottom-home{}
         #left-content{}
         #content-inner{}
         #right-content{}
@@ -84,6 +100,9 @@ body #general{
     @include susy-grid-background;
     #header{background: tan;}
     #content-global{}
+    .content-top{}
+        .content-bottom{}
+        .content-bottom-home{}
     #left-content{}
     #content-inner{}
     .middle-content{background-color:deeppink;}
@@ -96,6 +115,9 @@ body #general{
         
         #header{background: seashell;}
         #content-global{}
+        .content-top{background-color: #999;}
+        .content-bottom{}
+        .content-bottom-home{}
         #left-content{background: tomato;}
         #content-inner{}
         .middle-content{background-color:yellow;}
@@ -136,14 +158,7 @@ height: 100%;
 .content-top{}
 //classe sur le bloc
 aside.content_top{
-    clear: both;
-    @include set-container-width();
-    background-color: #999;
-  @include at-breakpoint ($mobile){}
-  @include at-breakpoint ($desktop){
-        @include set-container-width($desktop);
-  }
-  @include at-breakpoint ($tablet){}
+ text-align: center;
 }
 .content-top-node{
     background-color: #999;

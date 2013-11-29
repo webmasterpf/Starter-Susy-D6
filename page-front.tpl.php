@@ -7,10 +7,10 @@ include ($theme_path.'/includes/inc_header.php');
  <!-- ______________________ CONTENU HAUT _______________________ -->
  
    <?php if ($content_top): ?>
-            <div class="content-top">
-              <?php print $content_top; ?>
-  </div> <!--/#content-top -->
-          <?php endif; ?>
+     <div class="content-top">
+         <?php print $content_top; ?>
+     </div> <!--/#content-top -->
+ <?php endif; ?>
  <!-- ______________________ LAYOUT HOMEPAGE VERTICAL G_______________________ -->       
    <!-- ______________________ ZONE DIAPO _______________________ -->
 			
