@@ -89,6 +89,15 @@ regions[formulaire] = Formulaire (centre) - Webform Bloc
 ;Region pour slideshow
 regions[frontpageSlideshow] = Zone Frontpage Slideshow
 
+;Region pour les node.tpl (ajouter dans template.php)
+regions[actuAssociation] = Zone pour RSS issu du site PF - Vue Bloc RSS
+regions[col_G1] = Bloc pour colonne 1
+regions[col_G2] = Bloc pour colonne 2
+regions[col_G3] = Bloc pour colonne 3
+;Region pour page poles formation (ajouter dans template.php)
+regions[pole_bloc_G] = Bloc pour pole Gauche
+regions[pole_bloc_C] = Bloc pour pole Centre
+regions[pole_bloc_D] = Bloc pour pole Droit
 
 
 settings[basic_zen_tabs]             = 1

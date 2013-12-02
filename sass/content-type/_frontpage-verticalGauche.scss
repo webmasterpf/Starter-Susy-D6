@@ -26,15 +26,27 @@ body #general {
     //Taille du conteneur du groupe    
         //@include set-container-width(); inutile
         
-        .HPDiapoVerticalGauche{@include set-container-width($desktop/2,$desktop);}
-        .HPDroite{@include span-columns($desktop/2 omega,$desktop);}
+        .HPDiapoVerticalGauche{
+            //@include set-container-width($desktop/2);
+            @include span-columns(7, 14);
+        }
+        .HPDroite{
+           //@include span-columns($desktop/2 omega);
+            @include span-columns(7, 14);
+            clear: both;
+        }
         .HPDroite1{
            // @include set-container-width();
+            
         }
         .HPDroite2{
            // @include set-container-width();
+            //@include span-columns($desktop/2 omega);
+            
         }
-        .HPDroite3{}
+        .HPDroite3{
+            
+        }
     }
   
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
@@ -51,14 +63,14 @@ body #general {
 // à commenter ou supprimer pour la production
 body #general {
 
-    .HPDiapoVerticalGauche{}
+    .HPDiapoVerticalGauche{background: orangered;}
     .HPDroite{}
     .HPDroite1{background: #C8D215;}
     .HPDroite2{background: salmon;}
     .HPDroite3{}
 
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        .HPDiapoVerticalGauche{}
+        .HPDiapoVerticalGauche{background: rosybrown;}
         .HPDroite{}
         .HPDroite1{background: gold;}
         .HPDroite2{background: bisque;}
@@ -113,9 +125,11 @@ aside.DiapoHP{
        @include set-container-width;
         #transparency{
             //@include set-container-width;
+            display: none;
         }
         #contenu-diapo{
             //@include set-container-width;
+            display: none;
         }
     }
     @include at-breakpoint($desktop) {    //Dimensions pour les pc
@@ -123,10 +137,10 @@ aside.DiapoHP{
        // @include set-container-width($desktop/2); pas besoin si parent bien réglé
       @include set-container-width;
         #transparency{
-            @include set-container-width();
+           @include set-container-width($desktop/3);
         }
         #contenu-diapo{
-            @include set-container-width();    
+            @include set-container-width($desktop/3);
         }
 
     }
@@ -142,7 +156,7 @@ aside.DiapoHP{
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE----*/
 
 #transparency{
-background:none repeat scroll 0 0 $orange;/*Couleur du fond*/
+background:none repeat scroll 0 0 $rose-fushia;/*Couleur du fond*/
 height:em(50px);
 bottom:em(65px); 
 left:em(12px);
@@ -151,6 +165,7 @@ z-index:15;
 @include opacity(0.6);
 }
 #contenu-diapo {
+  
   position: relative;
   bottom:em(105px);
   left: em(10px);
