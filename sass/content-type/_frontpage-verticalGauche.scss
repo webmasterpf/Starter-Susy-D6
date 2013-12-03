@@ -28,11 +28,11 @@ body #general {
         
         .HPDiapoVerticalGauche{
             //@include set-container-width($desktop/2);
-            @include span-columns(7, 14);
+            @include span-columns(7,14);
         }
         .HPDroite{
            //@include span-columns($desktop/2 omega);
-            @include span-columns(7, 14);
+            @include span-columns(7,14);
             clear: both;
         }
         .HPDroite1{
@@ -52,8 +52,8 @@ body #general {
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         //Taille du conteneur du groupe
      @include set-container-width;
-        .HPDiapoVerticalGauche{@include span-columns($tablet/2);}
-        .HPDroite{@include span-columns($tablet/2 omega );}
+        .HPDiapoVerticalGauche{@include span-columns(5);}
+        .HPDroite{@include span-columns(5 omega);}
         .HPDroite1{}
         .HPDroite2{}
         .HPDroite3{}
@@ -121,8 +121,8 @@ body #general {
 //Code imbriqué à 100%
 aside.DiapoHP{
      img{@include adaptable-img;}
-    @include at-breakpoint($mobile) {    //Dimensions pour les mobiles    
-       @include set-container-width;
+    @include at-breakpoint($mobile) {
+        @include set-container-width;
         #transparency{
             //@include set-container-width;
             display: none;
@@ -132,20 +132,20 @@ aside.DiapoHP{
             display: none;
         }
     }
-    @include at-breakpoint($desktop) {    //Dimensions pour les pc
+    @include at-breakpoint($desktop) { 
 
        // @include set-container-width($desktop/2); pas besoin si parent bien réglé
       @include set-container-width;
         #transparency{
-           @include set-container-width($desktop/3);
+           @include set-container-width(3);
         }
         #contenu-diapo{
-            @include set-container-width($desktop/3);
+            @include set-container-width(3);
         }
 
     }
-    @include at-breakpoint($tablet) {    //Dimensions pour les tablettes
-        #transparency{ }
+    @include at-breakpoint($tablet) {
+        #transparency{}
         #contenu-diapo{}
 
     }

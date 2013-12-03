@@ -13,7 +13,7 @@
 .annonce-container{}
 /*-- DEFILANT ACCUEIL --*/
 //.content-top #annonce
-aside.content_top .annonce-container #annonce
+aside.content_top .annonce-container .annonce
 {
   //@include set-container-width();
   color: $color-defilant;

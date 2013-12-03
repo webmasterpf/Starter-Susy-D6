@@ -14,19 +14,19 @@
          */?>
         <div class="colonne-1 col1_layout_3_8_3">
             <?php if ($title): /*copier le titre dans la colonne desirée*/?>
-            <h1 class="titre_page"><?php print $title; ?></h1>
+            <h1 class="vdl_titre"><?php print $title; ?></h1>
             <?php endif; ?>
             
                       
             <?php if ($node->field_passerelle_form[0]['view']): ?>
-            <div id="vdl-passerelle">
+            <div class="vdl-passerelle">
    <?php  print  $node->content['field_passerelle_form']['field']['#title'].'<br/>'.$node->field_passerelle_form[0]['view'];  ?>
             </div>
             <?php endif;?>
             
             
             <?php if ($node->field_illustration_vdl[0]['view']): ?>
-            <div id="vdl-illustration">
+            <div class="vdl-illustration">
                     <?php  print $node->field_illustration_vdl[0]['view']  ?>
             </div>
             <?php endif;?>
@@ -64,22 +64,17 @@
                 
                 
             </div>
+             <?php
+              global $theme_path;
+              include ($theme_path.'/includes/inc_region_col_2.php');
+              ?>
 
         </div>
 
         <!--______________COLONNE 3________________ -->
         <div class="colonne-3 col3_layout_3_8_3">
             
-             <?php
-              global $theme_path;
-              include ($theme_path.'/includes/inc_vdl_docs.php');
-              ?>
-            
-             <?php
-              global $theme_path;
-              include ($theme_path.'/includes/inc_gasquet_actus.php');
-              ?>
-            <?php
+                    <?php
               global $theme_path;
               include ($theme_path.'/includes/inc_region_col_3.php');
               ?>

@@ -9,4 +9,5 @@
 if ($col_G2): ?>
     <?php  print $col_G2; ?>
 <?php endif; ?>
+<h3>La colonne 2 existe !</h3>
 <br clear="all"/>

@@ -9,7 +9,7 @@ include ($theme_path.'/includes/inc_header.php');
           <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
             <div id="content-top">
-	<span id="ariane"> <?php print $breadcrumb; ?></span>
+	<span class="ariane"> <?php print $breadcrumb; ?></span>
 
               <?php print $content_top; ?>
             </div> <!-- /#content-top -->
@@ -23,7 +23,7 @@ include ($theme_path.'/includes/inc_header.php');
             <?php endif; ?>
   
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
-<div id="content-inner" class="page-MODELE">
+<div id="content-inner">
     
           <?php if ($mission || $messages || $help || $tabs): ?>
             <div id="content-header">

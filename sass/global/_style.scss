@@ -1,86 +1,20 @@
 /*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
------ MIXINS DE STYLES PROVENCE FORMATION -----
+----- STYLES PROVENCE FORMATION -----
 ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+// Styles globaux
 
-/*---------- PIE pour CSS3 IE --------------*/
-@mixin PIE {
-    behavior: url(/sites/all/libraries/PIE/PIE.htc);
-}
+/**-- style du fil d'ariane --**/
 
-/*------- EFFETS VISUELS GENERIQUES--------------*/
-@mixin ombrage {
-    border: 5px solid #fff;
-    -moz-box-shadow: 8px 8px 12px #aaa;
-    -webkit-box-shadow: 8px 8px 12px #aaa;
-    box-shadow: 8px 8px 12px #555;
+.ariane .breadcrumb {
+  padding: 0 0 0 0.3em;
+  color: #C0c0c0;
+  text-decoration: none;
+  a {
+    color: #FFF;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+      text-decoration: underline;
     }
-    
-@mixin ombrage-bas {
-    -moz-box-shadow: 2px 2px 5px #aaa;
-    -webkit-box-shadow: 2px 2px 5px #aaa;
-    box-shadow: 2px 2px 5px #555;
-    }
-    
-@mixin table-tr-ombrage-bas {
-        -moz-box-shadow: 1px 2px 2px #aaa;
-        -webkit-box-shadow: 1px 2px 2px #aaa;
-        box-shadow: 1px 2px 2px #555;
-    }
-    
-@mixin ombrage-bloc {
-    -moz-box-shadow: 2px 2px 5px #aaa;
-    -webkit-box-shadow: 2px 2px 5px #aaa;
-    box-shadow: 2px 2px 5px #555;
-    }
-    
-@mixin ombrage-bas-table-actu{
-    -moz-box-shadow: 2px 2px 5px #aaa;
-    -webkit-box-shadow: 2px 2px 5px #aaa;
-    box-shadow: 2px 2px 5px #555;
+  }
 }
-@mixin opacity ($opacite:1){
- opacity:$opacite;/*0.6*/
--moz-opacity : $opacite;
--ms-filter: "alpha(opacity=$opacite)"; /* IE 8 */
-filter : alpha(opacity=$opacite); /* IE < 8 */
--khtml-opacity : $opacite;
-}
-
-@mixin rgba-background($color, $opacity) {
-    position: relative;
-    background: $color;
-    background: rgba($color, $opacity);
-    -pie-background: rgba($color, $opacity);
-    @include PIE;
-}
-@mixin img-border-shadow ($margin : 0.3em, $bordersize:0.5em, $bordercolor : white,$shadowcolor : #AAAAAA) {
-    margin: $margin;
-    border: $bordersize solid $bordercolor;
-    -moz-box-shadow: $shadowcolor 0px 0px 5px ;
-    -webkit-box-shadow: $shadowcolor 0px 0px 5px;
-    box-shadow: $shadowcolor 0px 0px 5px;
-}
-@mixin arrondis ($angle : 0.5em){
-    -moz-border-radius: $angle;
-    -webkit-border-radius: $angle;
-    border-radius: $angle;
-}
-/*//////////////// BORDER RIGHT \\\\\\\\\\\\\\\\*/
-@mixin border-R-orangePF{border-right: 1px solid #DA5714;}
-@mixin border-R-anthracite{border-left: 1px solid #606171;}
-@mixin border-R-vert{border-right: 1px solid #ADC91F;}
-@mixin border-R-violet{border-right: 1px solid #93117E;}
-/*//////////////// BORDER COLONNE 2 \\\\\\\\\\\\\\\\*/
-@mixin border-rouge-bleu{ border-left: 1px solid #E2001A; border-right: 1px solid #00AAD2;}
-@mixin border-rose-bleu { border-left: 1px solid #E2007A; border-right: 1px solid #00AAD2;}
-@mixin border-noir-vert { border-left: 1px solid #606171; border-right: 1px solid #C8D215;}
-@mixin border-bleu-violet { border-left: 1px solid #00AAD2; border-right: 1px solid #93117E;}
-@mixin border-vert-violet { border-left: 1px solid #ADC91F; border-right: 1px solid #93117E;}
-@mixin border-anthracite-orangePF{border-left: 1px solid #606071;border-right: 1px solid #DA5714;}
-
-/*//////////////// BORDER LEFT \\\\\\\\\\\\\\\\*/
-@mixin border-L-bleu{border-left: 1px solid #02A7D5;}
-@mixin border-L-grisclair{border-left: 1px solid #CFD0D2;}
-@mixin border-L-vert{border-left: 1px solid #ADC91F;}
-@mixin border-L-violet{border-left: 1px solid #93117E;}
-@mixin border-L-anthracite{border-left: 1px solid #606171;}
