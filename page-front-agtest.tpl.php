@@ -24,7 +24,7 @@ include ($theme_path.'/js/google_font.php');
 
  <body class="<?php print $body_classes; ?>">
 
-     <section class="container">
+     <section id="general" class="container">
 
 <h1>The 10 column complex nested grid AG test</h1>
 

@@ -1,16 +1,18 @@
 
 
 //*Réglage de la grille de Susy - approche mobile-first
-$total-columns: 4;             // nombre de colonnes de la grille de base
-$column-width: 3.70em;            // largeur de chaque colonnes (px,em,%)
+$total-columns: 12;             // nombre de colonnes de la grille de base
+$column-width: 3.80em;            // largeur de chaque colonnes (px,em,%)
 $gutter-width: 0.75em;            // taille de la gouttière entre colonnes (px,em,%)
-$grid-padding: $gutter-width;  // grid-padding equal to gutters
+$grid-padding: $gutter-width/2;  // grid-padding equal to gutters
+
+$container-style: magic; // default to magic. Switch to fluid or fixed if desired
 
 //Réglage du nombre de colonnes pour at-breakpoint() mixin 
 // qui simplifie les media-queries
 $mobile   : 4;
-$tablet   : 10;
-$desktop  : 14;
+$tablet   : 8;
+$desktop  : 12;
 
 
 
