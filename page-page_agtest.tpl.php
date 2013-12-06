@@ -23,53 +23,135 @@ include ($theme_path.'/js/google_font.php');
   </head>
 
  <body class="<?php print $body_classes; ?>">
+     
+     <section class="conteneur">
+     <!-- ______________________ HEADER _______________________ -->
+    <header id="header">
 
-     <section class="container">
 
-<h1>The 10 column complex nested grid AG test</h1>
+        <div class="headHaut">
 
-<div class="ag ag1">
-  <h2>AG 1</h2>
-</div>
-<!-- /ag1 -->
+            <div class="logoHead">
+                <?php if (!empty($logo)): ?>
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/></a>
+                <?php endif; ?>
+            </div>
 
-<!-- ag3 to ag7 are nested within ag2.-->
-<div class="ag ag2">
-  <h2>AG 2</h2>
-  <div class="ag ag4">
-    <h2>AG 4</h2>
-  </div>
-  <div class="ag ag5">
-    <h2>AG 5</h2>
-  </div>
-  <div class="ag ag6">
-    <h2>AG 6</h2>
-  </div>
+            <div class="menuImg">
+                <?php if (!empty($navStatic)): ?>
+                    <?php print $navStatic; ?>
+                <?php endif; ?>
+            </div>
 
-  <!-- ag8, ag9 and ag10 are nested within ag7 -->
-  <div class="ag ag7">
-    <h2>AG 7</h2>
-    <div class="ag ag8">
-      <h2>AG 8</h2>
-    </div>
-    <div class="ag ag9">
-      <h2>AG 9</h2>
-    </div>
-    <div class="ag ag10">
-      <h2>AG 10</h2>
-    </div>
-  </div>
-  <!-- /ag7 -->
-</div>
-<!-- /ag2 -->
+        </div><!-- /headHaut -->
+        <div class="headBas">
 
-<div class="ag ag3">
-  <h2>AG 3</h2>
-</div>
-<!-- /ag3 -->
+            <?php if (!empty($site_slogan)): ?>
+                <div class="site-slogan">
+                    <?php print $site_slogan; ?>
+                </div><!-- /site-slogan -->
+            <?php endif; ?>
 
-     </section>
-<!-- /container -->
-<?php print $closure ?>
+
+            <div class="headSearch">
+                <?php if (!empty($search_box)): ?>
+                    <?php print $search_box ?>
+                <?php endif; ?>
+            </div><!-- /recherche -->
+
+
+            <nav class="menuHead">
+                <?php if (!empty($menuDyn)): ?>
+                    <?php print $menuDyn; ?>
+                <?php endif; ?>
+
+            </nav><!-- /menuHead -->
+
+
+        </div><!-- /headBas -->
+
+
+    </header> <!-- /header -->
+    <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
+
+
+       <div id="content-inner" class="page-MODELE">
+           
+            <!-- ______________________ CONTENT TOP _______________________ -->
+      <?php if ($breadcrumb ||$content_top): ?>
+            <div id="content-top">
+	<span class="ariane"> <?php print $breadcrumb; ?></span>
+
+              <?php print $content_top; ?>
+            </div> <!-- /#content-top -->
+            <?php endif; ?>
+
+  <!-- ______________________ CONTENT TOP NODE_______________________ -->
+               <?php if ($content_top_node): ?>
+            <div id="content-top-node">
+	              <?php print $content_top_node; ?>
+            </div> <!-- /#content-top-node -->
+            <?php endif; ?>
+
+          <?php if ($mission || $messages || $help || $tabs): ?>
+            <div class="content-header">
+
+              <?php if ($mission): ?>
+                <div id="mission"><?php print $mission; ?></div>
+              <?php endif; ?>
+
+              <?php print $messages; ?>
+
+              <?php print $help; ?>
+
+              <?php if ($tabs): ?>
+                <div class="tabs"><?php print $tabs; ?></div>
+              <?php endif; ?>
+
+            </div> <!-- /#content-header -->
+          <?php endif; ?>
+
+  <!-- ______________________ CONTENU CENTRAL _______________________ -->
+         <div class="middle-content page-MODELE">
+
+            <?php print $content; ?>
+              <?php print $feed_icons; ?>
+          </div> <!-- /#middle-content -->  
+  
+
+
+        <?php if (!empty($primary_links) or !empty($secondary_links)): ?>
+          <div id="navigation" class="menu <?php if (!empty($primary_links)) { print "with-main-menu"; } if (!empty($secondary_links)) { print " with-sub-menu"; } ?>">
+            <?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
+            <?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); } ?>
+          </div> <!-- /navigation -->
+        <?php endif; ?>
+
+    	 <br clear="all"/>
+         <!-- ______________________ CONTENU BAS _______________________ -->
+<?php if ($content_bottom): ?>
+            <div class="content-bottom">
+              <?php print $content_bottom; ?>
+            </div><!-- /#content-bottom -->
+          <?php endif; ?>
+    </div> <!-- /content-inner /content -->
+<!-- ______________________ FOOTER _______________________ -->
+      <?php if(!empty($footer_message) || !empty($footer_block)): ?>
+<footer id="footer">
+          <?php print $footer_message; ?>
+          <?php print $footer_block; ?>
+     <div id="bloc_stats">
+      V&eacute;rifier les codes pour les stats
+      <?php
+global $theme_path;
+include ($theme_path.'/js/code_stats.php');
+?>
+     </div>
+</footer> <!-- /footer -->
+      <?php endif; ?>
+     
+
+ </section><!-- /container -->
+ <?php print $closure ?>
   </body>
 </html>

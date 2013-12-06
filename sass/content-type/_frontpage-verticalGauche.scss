@@ -12,7 +12,7 @@
   //@include at-breakpoint ($tablet){}
 
 //Code imbriqué à 100%
-body #general {
+body .conteneur {
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
        
     .HPDiapoVerticalGaucheVerticalGauche{@include span-columns($mobile);//image ok sur mob mais pas sur desk
@@ -29,11 +29,11 @@ body #general {
         
         .HPDiapoVerticalGauche{
             //@include set-container-width($desktop/2);
-            @include span-columns(7,14);
+            @include span-columns(6);
         }
         .HPDroite{
            //@include span-columns($desktop/2 omega);
-            @include span-columns(7,14);
+            @include span-columns(6 omega,12);
             clear: both;
         }
         .HPDroite1{
@@ -62,7 +62,7 @@ body #general {
 }
 //Pour le dev, code visuel sur les blocs selon le breakpoint
 // à commenter ou supprimer pour la production
-body #general {
+body .conteneur {
 
     .HPDiapoVerticalGauche{background: orangered;}
     .HPDroite{}

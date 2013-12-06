@@ -11,22 +11,30 @@
                 }
                 .menuImg {  @include span-columns($mobile);}
      }
-     .headBas {@include span-columns($mobile);
-                //@include set-container-width; marche pas
+     .headBas {
+         //@include span-columns($mobile);
+           @include set-container-width;
+           clear: both;
                .site-slogan{@include span-columns($mobile);}
                .headSearch{@include span-columns($mobile);}
-               .menuHead{@include span-columns($mobile);}
+               .menuHead{clear: both;}
      }                
  
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
- .headHaut {@include span-columns($desktop);
-                .logoHead { @include span-columns(5,$desktop);}
-                .menuImg {  @include span-columns(9 omega,$desktop);}
+ .headHaut {@include set-container-width;
+            overflow: hidden; 
+                .logoHead { @include span-columns(4,$desktop);}
+                .menuImg {  @include span-columns(8 omega,$desktop);
+                padding-top: 1em;
+                }
      }
-     .headBas {@include span-columns($desktop);
-               .site-slogan{@include span-columns(6,$desktop);}
-               .headSearch{@include span-columns(7 omega,$desktop);}
-               .menuHead{@include span-columns($desktop);}
+     .headBas {//@include span-columns($desktop);
+                @include set-container-width;
+               // clear: both;
+               overflow: hidden; 
+               .site-slogan{@include span-columns(5,$desktop);}
+               .headSearch{@include span-columns(6 omega);}
+               .menuHead{clear: both;}
      } 
 }
 @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/}

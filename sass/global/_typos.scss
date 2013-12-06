@@ -82,7 +82,7 @@ h6, .h6 {
      
 }
 /*------------ PARAGRAPHES ---------------*/
-#general{
+.conteneur{
     p{@include leader();}
     #header{@include adjust-font-size-to(12px);}
     #content-global{}

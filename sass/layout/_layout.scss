@@ -28,26 +28,32 @@ body {
 // sinon problèmes dans la grille !
  
 /*-- LAYOUT PRINCIPAL --*/
-body #general{
+body .conteneur{
     //Approche mobile-first,réglage pour mobile
     @include container($total-columns, $desktop, $tablet);
     background: transparent;
     
     @include at-breakpoint ($mobile){
-        @include set-container-width;
+        
     padding-top: 0em;    
-    #header{@include span-columns($mobile);}
-    #content-global{@include span-columns($mobile);}
-    .content-top{//ok fonctionne 29/11
+    #header{
+        //@include span-columns($mobile);
+    @include set-container-width;
+    }
+    #content-global{
         //@include span-columns($mobile);
         @include set-container-width;
-        clear: both;
+    }
+    .content-top{//ok fonctionne 29/11
+                 //@include span-columns($mobile);
+                 @include set-container-width;
+                 clear: both;
     }
     #content-inner{
         @include span-columns($mobile);
         //@include set-container-width;
     }
-     #middle-content{
+    .middle-content{
         //@include set-container-width();
         @include span-columns($mobile);
     }
@@ -56,20 +62,23 @@ body #general{
     #left-content{}
    
     #right-content{}
-    #footer{@include span-columns($mobile);
+    #footer{
+        //@include span-columns($mobile);
+        @include set-container-width;
             @include background-size;}
     }
 
 /*    //Dimensions pour les pc*/
     @include at-breakpoint($desktop) {
         padding-top: 2em;
-        @include set-container-width;
-
         background: transparent;
-        #header{@include span-columns($desktop);}
-        #content-global{//ok fonctionne le 04/12,les 2 options fonctionnent !
-          @include span-columns($desktop);
-          //@include set-container-width;
+        #header{
+           //@include span-columns($desktop);
+         @include set-container-width;
+        }
+        #content-global{
+          //@include span-columns($desktop);
+          @include set-container-width;
         }
         .content-top{
             //@include span-columns($desktop);
@@ -80,17 +89,19 @@ body #general{
         .content-bottom-home{}
         #left-content{@include span-columns(2 alpha,$desktop);}
         #content-inner{
-            @include span-columns($desktop);
-           //@include set-container-width();
+           //@include span-columns($desktop);
+           @include set-container-width();
         }
         .middle-content{
             //imbrication bien meilleure avec span-columns
-            //@include set-container-width();
-            @include span-columns($desktop);
+            @include set-container-width();
+            //@include span-columns($desktop);
         }
         #right-content{@include span-columns(2 omega,$desktop);}
-        #footer{@include span-columns($desktop);
-                @include background-size(auto);
+        #footer{
+            //@include span-columns($desktop);
+            @include set-container-width;
+            @include background-size(auto);
         }
 
     }
@@ -129,7 +140,7 @@ body #general{
 //Pour le dev, code visuel sur les blocs selon le breakpoint
 // à commenter ou supprimer pour la production
 
-body #general{
+body .conteneur{
     //Approche mobile-first,réglage pour mobile
     @include susy-grid-background;
     #header{background: tan;}
@@ -144,7 +155,7 @@ body #general{
     #footer{}
 }   
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    body #general{
+    body .conteneur{
         @include susy-grid-background;
         
         #header{background: seashell;}
@@ -163,7 +174,7 @@ body #general{
     }
 }
 @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
-    body #general{
+    body .conteneur{
         @include susy-grid-background;
         
         #header{}

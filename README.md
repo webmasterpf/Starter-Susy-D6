@@ -56,7 +56,7 @@ Dans la logique Mobile first, la div "content" aura 5 colonnes, si c'est un écr
 Ordre et hierarchie des blocs du layout
 -------------------------
 <pre>
-#general
+.conteneur
     #header
         #header-inner
             .headHaut

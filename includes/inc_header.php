@@ -24,7 +24,7 @@ include ($theme_path.'/js/google_font.php');
 
  <body class="<?php print $body_classes; ?>">
 
-     <section id="general">
+     <section class="conteneur">
 
     <!-- ______________________ HEADER _______________________ -->
     <header id="header">
