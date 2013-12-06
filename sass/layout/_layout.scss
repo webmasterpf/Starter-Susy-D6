@@ -32,107 +32,85 @@ body .conteneur{
     //Approche mobile-first,réglage pour mobile
     @include container($total-columns, $desktop, $tablet);
     background: transparent;
-    
+    padding-top: 2em;  
+        #header{@include set-container-width();}
+        #content-global{
+            @include set-container-width();
+        }
+       .content-inner{
+            @include set-container-width();
+            overflow: hidden;
+            .content-top{
+                @include set-container-width();
+                //@include span-columns($tablet);
+                clear: both;        
+                .ariane{clear: both;}
+            }
+            .middle-content{
+                @include set-container-width();
+                overflow: hidden;
+
+            }
+            .content-bottom{@include set-container-width();}
+        .content-bottom-home{@include set-container-width();}
+        } 
+      
+        #left-content{}
+        #right-content{}
+        #footer{
+            //@include set-container-width();
+            clear: both;
+            @include background-size(auto);
+        }
+    /*    //Dimensions pour les mobiles*/
     @include at-breakpoint ($mobile){
         
     padding-top: 0em;    
-    #header{
-        //@include span-columns($mobile);
-    @include set-container-width;
+    #header{}
+    #content-global{}
+    .content-inner{
+        .content-top{}
+        .middle-content{}
+        .content-bottom{}
+        .content-bottom-home{}
     }
-    #content-global{
-        //@include span-columns($mobile);
-        @include set-container-width;
-    }
-    .content-top{//ok fonctionne 29/11
-                 //@include span-columns($mobile);
-                 @include set-container-width;
-                 clear: both;
-    }
-    #content-inner{
-        @include span-columns($mobile);
-        //@include set-container-width;
-    }
-    .middle-content{
-        //@include set-container-width();
-        @include span-columns($mobile);
-    }
-    .content-bottom{}
-    .content-bottom-home{}
     #left-content{}
-   
     #right-content{}
     #footer{
         //@include span-columns($mobile);
-        @include set-container-width;
-            @include background-size;}
+        @include background-size;}
     }
 
 /*    //Dimensions pour les pc*/
     @include at-breakpoint($desktop) {
-        padding-top: 2em;
+        
         background: transparent;
-        #header{
-           //@include span-columns($desktop);
-         @include set-container-width;
+        #header{}
+        #content-global{}
+        .content-inner{
+            .content-top{}
+            .middle-content{}
+            .content-bottom{}
+            .content-bottom-home{}
         }
-        #content-global{
-          //@include span-columns($desktop);
-          @include set-container-width;
-        }
-        .content-top{
-            //@include span-columns($desktop);
-            @include set-container-width;
-            clear: both;
-        }
-        .content-bottom{}
-        .content-bottom-home{}
-        #left-content{@include span-columns(2 alpha,$desktop);}
-        #content-inner{
-           //@include span-columns($desktop);
-           @include set-container-width();
-        }
-        .middle-content{
-            //imbrication bien meilleure avec span-columns
-            @include set-container-width();
-            //@include span-columns($desktop);
-        }
-        #right-content{@include span-columns(2 omega,$desktop);}
-        #footer{
-            //@include span-columns($desktop);
-            @include set-container-width;
-            @include background-size(auto);
-        }
+        #left-content{}
+        #right-content{}
+        #footer{@include background-size(auto);}
 
     }
     @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
         @include set-container-width;
         #header{}
-        #content-global{
-            @include span-columns($tablet);
-        }
-        .content-top{
-            @include set-container-width();
-            //@include span-columns($tablet);
-            clear: both;
-        }
-         #content-inner{
-            @include span-columns($tablet);
-           //@include set-container-width();
-        } 
-         .middle-content{
-            //imbrication bien meilleure avec span-columns
-            //@include set-container-width();
-            @include span-columns($tablet);
-        }
+    #content-global{}
+    .content-inner{
+        .content-top{}
+        .middle-content{}
         .content-bottom{}
         .content-bottom-home{}
-        #left-content{}
-        #right-content{}
-        #footer{
-            @include span-columns($tablet);
-            @include background-size(auto);
-        }
+    }
+    #left-content{}
+    #right-content{}
+        #footer{@include background-size(auto);}
 
     }
 }
@@ -149,10 +127,11 @@ body .conteneur{
     .content-bottom{}
     .content-bottom-home{}
     #left-content{}
-    #content-inner{}
+    .content-inner{}
     .middle-content{background-color:deeppink;}
     #right-content{}
-    #footer{}
+    #footer{background-color: firebrick;
+        }
 }   
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
     body .conteneur{
@@ -164,13 +143,14 @@ body .conteneur{
         .content-bottom{}
         .content-bottom-home{}
         #left-content{background: tomato;}
-        #content-inner{@include susy-grid-background;
+        .content-inner{@include susy-grid-background;
         background: blueviolet;}
         .middle-content{
             background-color:yellow;
         @include susy-grid-background;}
         #right-content{background: violet;}
-        #footer{}
+        #footer{background-color: palegreen;
+        }
     }
 }
 @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
@@ -180,13 +160,14 @@ body .conteneur{
         #header{}
         #content-global{}
         .content-top{background-color: mistyrose;}
-        #content-inner{}
+        .content-inner{}
         .middle-content{
             background-color: #C8D215;
         @include susy-grid-background;}
         #left-content{}
         #right-content{}
-        #footer{}
+        #footer{background-color: peachpuff;
+        }
     }
 }
 /////////////////////////////////////////////
@@ -197,17 +178,7 @@ body .conteneur{
 	padding:0;
 	}
 
-/*Contenu de page  CONTENT */
 
-#content-global {
-	margin:0 auto;
-	background-color:RosyBrown;
-}
-#content-inner,#left-content,#right-content{
-height: 100%;
-}
-/*//////SOUS ENTETE/////*/
-.content-top{}
 //classe sur le bloc
 aside.content_top{
  text-align: center;
@@ -217,32 +188,13 @@ aside.content_top{
     margin: 0 auto;
     padding: em(5px);  
         }	
-/*/// debut des colonnes ///*/
-#left-content{
-	background-color:#00CC99;
-	left:0px;
-}
-
-/*/// partie de droite ///*/
-#right-content{
-background-color:#FF66CC;
-}
-/*inner content*/
-#content-inner{
-background-color: #CFD0D2;
-}
 
 
-/*PIED DE CONTENU*/
-#content-bottom{
-background:#C0c0c0;
-
-}
 /*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
 ********** LAYOUT NODE.TPL OVERRIDE **********
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 /*//////////////// COLONNE 1 \\\\\\\\\\\\\\\\*/
-#content-inner .middle-content .col1_layout_3_8_3{
+.content-inner .middle-content .col1_layout_3_8_3{
      @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -259,7 +211,7 @@ background:#C0c0c0;
          background: #00CC99;
     }
 }
-#content-inner .middle-content .col1_layout_4_5_5{
+.content-inner .middle-content .col1_layout_4_5_5{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -272,7 +224,7 @@ background:#C0c0c0;
         @include span-columns($tablet);
     }
 }
-#content-inner .middle-content .col1_layout_5_9{
+.content-inner .middle-content .col1_layout_5_9{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -286,7 +238,7 @@ background:#C0c0c0;
     }
 }
 /*//////////////// COLONNE 2 \\\\\\\\\\\\\\\\*/
-#content-inner .middle-content .col2_layout_3_8_3{
+.content-inner .middle-content .col2_layout_3_8_3{
      @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -305,7 +257,7 @@ background:#C0c0c0;
         background: tomato;
     }
 }
-#content-inner .middle-content .col2_layout_4_5_5{
+.content-inner .middle-content .col2_layout_4_5_5{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -318,7 +270,7 @@ background:#C0c0c0;
         @include span-columns($tablet);
     }
 }
-#content-inner .middle-content .col2_layout_5_9{
+.content-inner .middle-content .col2_layout_5_9{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -332,7 +284,7 @@ background:#C0c0c0;
     }
 }
 /*//////////////// COLONNE 3 \\\\\\\\\\\\\\\\*/
-#content-inner .middle-content .col3_layout_3_8_3{
+.content-inner .middle-content .col3_layout_3_8_3{
      @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -349,7 +301,7 @@ background:#C0c0c0;
         background: purple;
     }
 }
-#content-inner .middle-content .col3_layout_4_5_5{
+.content-inner .middle-content .col3_layout_4_5_5{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){

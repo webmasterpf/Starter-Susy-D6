@@ -75,11 +75,11 @@ include ($theme_path.'/js/google_font.php');
     <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
 
 
-       <div id="content-inner" class="page-MODELE">
+       <div class="content-inner page-MODELE">
            
             <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
-            <div id="content-top">
+            <div class="content-top">
 	<span class="ariane"> <?php print $breadcrumb; ?></span>
 
               <?php print $content_top; ?>
@@ -126,8 +126,7 @@ include ($theme_path.'/js/google_font.php');
             <?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); } ?>
           </div> <!-- /navigation -->
         <?php endif; ?>
-
-    	 <br clear="all"/>
+   	
          <!-- ______________________ CONTENU BAS _______________________ -->
 <?php if ($content_bottom): ?>
             <div class="content-bottom">

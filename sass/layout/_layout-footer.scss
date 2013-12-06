@@ -8,7 +8,6 @@
 // @include at-breakpoint ($tablet){}
 
 #footer{
-    margin:0 auto;
     padding:em(30px) 0;
     color: #FFF;
     background: transparent image-url('bg_footer.jpg') no-repeat scroll right bottom;
@@ -27,7 +26,7 @@
     }
     @include at-breakpoint ($mobile){
         aside{
-        background: teal;     
+        background-color: teal;     
     }      
          @include background-size();
     }
@@ -38,7 +37,11 @@
     }  
          
     }
-    @include at-breakpoint ($tablet){}
+    @include at-breakpoint ($tablet){
+        aside{
+      background:sandybrown;
+    }  
+    }
 }
 /*Bas de page  FOOTER*/
 
