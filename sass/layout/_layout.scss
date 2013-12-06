@@ -123,11 +123,13 @@ body .conteneur{
     @include susy-grid-background;
     #header{background: tan;}
     #content-global{}
+    
+    #left-content{}
+    .content-inner{@include susy-grid-background;
     .content-top{background: chocolate;}
     .content-bottom{}
     .content-bottom-home{}
-    #left-content{}
-    .content-inner{}
+    }
     .middle-content{background-color:deeppink;}
     #right-content{}
     #footer{background-color: firebrick;
@@ -139,15 +141,17 @@ body .conteneur{
         
         #header{background: seashell;}
         #content-global{@include susy-grid-background;}
+        
+        .content-inner{
+        background: blueviolet;
         .content-top{background-color: yellow;}
         .content-bottom{}
         .content-bottom-home{}
-        #left-content{background: tomato;}
-        .content-inner{@include susy-grid-background;
-        background: blueviolet;}
-        .middle-content{
+          .middle-content{
             background-color:yellow;
         @include susy-grid-background;}
+        }
+        #left-content{background: tomato;}
         #right-content{background: violet;}
         #footer{background-color: palegreen;
         }
