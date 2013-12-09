@@ -5,36 +5,37 @@
 // Layout du header et de ses parties haute et basse (logique mobile first)
  //Imbrication à 100% (full nested)
  #header {
-     .headHaut {//@include span-columns($mobile);
-                .logoHead {  @include span-columns($mobile);
+     .headHaut {
+         //@include span-columns($mobile);
+                overflow: hidden; 
+                
+                .logoHead {@include span-columns($mobile);
                 img{margin: 0 auto;display: block;}
                 }
                 .menuImg {  @include span-columns($mobile);}
      }
      .headBas {
-         //@include span-columns($mobile);
-           @include set-container-width;
-           clear: both;
-               .site-slogan{@include span-columns($mobile);}
+            overflow: hidden; 
+               .site-slogan{
+                  //@include span-columns($mobile);
+                   @include set-container-width;
+               }
                .headSearch{@include span-columns($mobile);}
                .menuHead{clear: both;}
      }                
  
 @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
- .headHaut {@include set-container-width;
-            overflow: hidden; 
-                .logoHead { @include span-columns(4,$desktop);}
-                .menuImg {  @include span-columns(8 omega,$desktop);
-                padding-top: 1em;
-                }
-     }
-     .headBas {//@include span-columns($desktop);
-                @include set-container-width;
-               // clear: both;
-               overflow: hidden; 
+    .headHaut {
+        .logoHead { @include span-columns(4,$desktop);}
+        .menuImg {  @include span-columns(8 omega,$desktop);
+                    padding-top: 1em;
+        }
+    }
+     .headBas {
+          
                .site-slogan{@include span-columns(5,$desktop);}
                .headSearch{@include span-columns(6 omega);}
-               .menuHead{clear: both;}
+               .menuHead{}
      } 
 }
 @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/}
@@ -111,19 +112,16 @@
 .headSearch {
   text-align: right;
   margin: em(2px) 0 0 0;
-  background: image-url ('bg_recherche.gif') no-repeat left em(5px);
+  background: image-url ("/bg_recherche.gif") no-repeat left em(5px);
     
 }
 
 .search {
- 
-  padding: 0 em(3px) 0 0;
+   padding: 0 em(3px) 0 0;
 }
 
 .name-and-slogan {
-
   vertical-align: bottom;
-  
 }
 
 .site-name {

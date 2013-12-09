@@ -52,6 +52,9 @@ stylesheets[all][] = css/navigation/responsive-nav.css
 regions[header] = Header
 regions[menuDyn] = Menu Header - Menu dynamique JS
 regions[navStatic] = Navigation statique - Bloc
+regions[site_slogan] = Slogan du site - Bloc
+regions[search_box] = Zone recherche - Bloc
+
 
 ;Diaporama HP selon layout choisi (décommenter pour choisir)
 regions[DiapoHP] = Diaporama Homepage - Bloc

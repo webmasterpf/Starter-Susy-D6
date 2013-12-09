@@ -74,7 +74,7 @@ include ($theme_path.'/js/google_font.php');
     </header> <!-- /header -->
     <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
 
-
+    <div class="content-global">
        <div class="content-inner page-MODELE">
            
             <!-- ______________________ CONTENT TOP _______________________ -->
@@ -134,6 +134,7 @@ include ($theme_path.'/js/google_font.php');
             </div><!-- /#content-bottom -->
           <?php endif; ?>
     </div> <!-- /content-inner /content -->
+    </div>
 <!-- ______________________ FOOTER _______________________ -->
       <?php if(!empty($footer_message) || !empty($footer_block)): ?>
 <footer id="footer">

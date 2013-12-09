@@ -5,7 +5,7 @@ include ($theme_path.'/includes/inc_header.php');
  <!-- ______________________ LAYOUT PAGE RECHERCHE _______________________ -->
   <!-- ______________________ CONTENU _______________________ -->
   
-      <div id="content-global">
+      <div class="content-global">
       
           <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top ): ?>
@@ -29,7 +29,7 @@ include ($theme_path.'/includes/inc_header.php');
 		
 		<!--fin du contenu gauche -->
         
-        <div id="content-inner" class="inner column center">
+        <div class="content-inner" class="inner column center">
 		             
 		 
            

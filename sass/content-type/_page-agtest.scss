@@ -53,18 +53,16 @@ h2 {
   padding-bottom: 1.8rem;
 }
 .ag1 {
-  @include span-columns(2);
+  @include span-columns(3,12);
 }
 
-.ag2 {
-  @include span-columns(8, 12);
-  // Optionally, you can choose to include the context.
-}
 .ag3 {
-  @include span-columns(2 omega);
+  @include span-columns(3 omega,12);
   // The omega flag is set here to tell Susy that ag3 is the final column. 
 }
 .ag2 {
+    @include span-columns(6,12);
+  // Optionally, you can choose to include the context.
   // overflow hidden is used to self clear children
   overflow: hidden; 
 }
@@ -97,7 +95,9 @@ h2 {
 }
 
 .ag10 {
-  // There is no need to use span columns on AG 10 since elements take up 100% of the space by default in display block. In this case, we just have to make sure to clear the floats from ag8 and ag9. 
+  // There is no need to use span columns on AG 10 since elements take up 100% of 
+  //the space by default in display block. In this case, we just have to make sure to clear the floats 
+  //from ag8 and ag9. 
   clear: both;
 
   // You can still use span-columns if you want to though. There's no fault in using that. 

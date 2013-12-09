@@ -30,19 +30,21 @@ body {
 /*-- LAYOUT PRINCIPAL --*/
 body .conteneur{
     //Approche mobile-first,réglage pour mobile
-    @include container($total-columns, $desktop, $tablet);
+    @include container($total-columns, $tablet,$desktop );
     background: transparent;
     padding-top: 2em;  
-        #header{@include set-container-width();}
+        #header{
+            //@include set-container-width();
+            clear: both;
+        }
         #content-global{
             @include set-container-width();
         }
        .content-inner{
             @include set-container-width();
-            overflow: hidden;
+            
             .content-top{
                 @include set-container-width();
-                //@include span-columns($tablet);
                 clear: both;        
                 .ariane{clear: both;}
             }
@@ -58,59 +60,53 @@ body .conteneur{
         #left-content{}
         #right-content{}
         #footer{
-            //@include set-container-width();
+            //pas besoin de mixin car bloc prend toute la largeur
             clear: both;
-            @include background-size(auto);
+            @include background-size;
         }
-    /*    //Dimensions pour les mobiles*/
-    @include at-breakpoint ($mobile){
-        
-    padding-top: 0em;    
-    #header{}
-    #content-global{}
-    .content-inner{
-        .content-top{}
-        .middle-content{}
-        .content-bottom{}
-        .content-bottom-home{}
-    }
-    #left-content{}
-    #right-content{}
-    #footer{
-        //@include span-columns($mobile);
-        @include background-size;}
-    }
 
-/*    //Dimensions pour les pc*/
-    @include at-breakpoint($desktop) {
-        
-        background: transparent;
-        #header{}
-        #content-global{}
+    @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
+       
+        #header{
+            //pas besoin de mixin car bloc prend toute la largeur
+        }
+        #content-global{@include set-container-width();}
         .content-inner{
-            .content-top{}
-            .middle-content{}
-            .content-bottom{}
-            .content-bottom-home{}
+            @include set-container-width();
+            .content-top{@include set-container-width();}
+            .middle-content{@include set-container-width();}
+            .content-bottom{@include set-container-width();}
+            .content-bottom-home{@include set-container-width();}
         }
         #left-content{}
         #right-content{}
-        #footer{@include background-size(auto);}
+        #footer{
+           // @include set-container-width();
+            @include background-size(auto);
+        }
 
     }
-    @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
-        @include set-container-width;
-        #header{}
-    #content-global{}
-    .content-inner{
-        .content-top{}
-        .middle-content{}
-        .content-bottom{}
-        .content-bottom-home{}
-    }
-    #left-content{}
-    #right-content{}
-        #footer{@include background-size(auto);}
+    /*    //Dimensions pour les pc*/
+    @include at-breakpoint($desktop) {
+        
+         #header{
+            //pas besoin de mixin car bloc prend toute la largeur
+        }
+        #content-global{@include set-container-width();}
+        .content-inner{
+           // @include set-container-width();
+           overflow: hidden;
+            .content-top{@include set-container-width();}
+            .middle-content{@include set-container-width();}
+            .content-bottom{@include set-container-width();}
+            .content-bottom-home{@include set-container-width();}
+        }
+        #left-content{}
+        #right-content{}
+        #footer{
+            //@include set-container-width();
+            @include background-size(auto);
+        }
 
     }
 }
@@ -135,28 +131,7 @@ body .conteneur{
     #footer{background-color: firebrick;
         }
 }   
-@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    body .conteneur{
-        @include susy-grid-background;
-        
-        #header{background: seashell;}
-        #content-global{@include susy-grid-background;}
-        
-        .content-inner{
-        background: blueviolet;
-        .content-top{background-color: yellow;}
-        .content-bottom{}
-        .content-bottom-home{}
-          .middle-content{
-            background-color:yellow;
-        @include susy-grid-background;}
-        }
-        #left-content{background: tomato;}
-        #right-content{background: violet;}
-        #footer{background-color: palegreen;
-        }
-    }
-}
+
 @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
     body .conteneur{
         @include susy-grid-background;
@@ -173,6 +148,30 @@ body .conteneur{
         #footer{background-color: peachpuff;
         }
     }
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    body .conteneur{
+        @include susy-grid-background;
+        
+        #header{background: seashell;}
+        #content-global{
+            //@include susy-grid-background;
+        }
+        
+        .content-inner{
+        background: blueviolet;
+        .content-top{background-color: yellow;}
+        .content-bottom{}
+        .content-bottom-home{}
+          .middle-content{
+            background-color:yellow;
+        @include susy-grid-background;}
+        }
+        #left-content{background: tomato;}
+        #right-content{background: violet;}
+        #footer{background-color: palegreen;
+        }
+    }
+}
 }
 /////////////////////////////////////////////
 /*Haut de page  HEADER*/

@@ -2,7 +2,7 @@
 global $theme_path;
 include ($theme_path.'/includes/inc_header.php');
 ?>
-<div id="content-global">
+<div class="content-global">
 
  <!-- ______________________ CONTENU HAUT _______________________ -->
  
@@ -35,7 +35,7 @@ include ($theme_path.'/includes/inc_header.php');
         <?php endif; ?>
 	  
 </div><!--    /Partie Droite -->
-	<br clear="all"/>
+	
     <!-- ______________________ FIN LAYOUT PAGE _______________________ -->
         
 

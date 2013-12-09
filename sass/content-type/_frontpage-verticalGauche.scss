@@ -14,51 +14,53 @@
 //Code imbriqué à 100%
 body .conteneur {
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
-       
-    .HPDiapoVerticalGaucheVerticalGauche{@include span-columns($mobile);//image ok sur mob mais pas sur desk
-             //@include set-container-width(); bloc diapo disparait sur desktop
-             overflow : hidden;}
-    .HPDroite{}
+
+    .HPDiapoVerticalGaucheVerticalGauche{
+        //@include span-columns($mobile);//image ok sur mob mais pas sur desk
+        @include set-container-width();
+        overflow : hidden;}
+    .HPDroite{@include set-container-width();}
     .HPDroite1{}
     .HPDroite2{}
     .HPDroite3{}
-}
-    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    //Taille du conteneur du groupe    
-        //@include set-container-width(); inutile
-        
-        .HPDiapoVerticalGauche{
-            //@include set-container-width($desktop/2);
-            @include span-columns(6);
-        }
-        .HPDroite{
-           //@include span-columns($desktop/2 omega);
-            @include span-columns(6 omega,12);
-            clear: both;
-        }
-        .HPDroite1{
-           // @include set-container-width();
-            
-        }
-        .HPDroite2{
-           // @include set-container-width();
-            //@include span-columns($desktop/2 omega);
-            
-        }
-        .HPDroite3{
-            
-        }
-    }
-  
+
     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         //Taille du conteneur du groupe
-     @include set-container-width;
-        .HPDiapoVerticalGauche{@include span-columns(5);}
-        .HPDroite{@include span-columns(5 omega);}
+        @include set-container-width;
+        .HPDiapoVerticalGauche{@include span-columns(4);}
+        .HPDroite{@include span-columns(4 omega);}
         .HPDroite1{}
         .HPDroite2{}
         .HPDroite3{}
-    
+
+    }
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+        //Taille du conteneur du groupe    
+        //@include set-container-width(); inutile
+
+        .HPDiapoVerticalGauche{
+            @include span-columns(6);
+            overflow : hidden;
+        }
+        .HPDroite{
+            //@include span-columns($desktop/2 omega);
+            @include span-columns(5 omega);
+            clear: both;
+        }
+        .HPDroite1{
+            // @include set-container-width();
+
+        }
+        .HPDroite2{
+            // @include set-container-width();
+            //@include span-columns($desktop/2 omega);
+
+        }
+        .HPDroite3{
+
+        }
+    }
+
 }
 //Pour le dev, code visuel sur les blocs selon le breakpoint
 // à commenter ou supprimer pour la production
@@ -121,9 +123,8 @@ body .conteneur {
 //Layout du diaporama dynamique (Views slideshow)
 //Code imbriqué à 100%
 aside.DiapoHP{
-     img{@include adaptable-img;}
-    @include at-breakpoint($mobile) {
-        @include set-container-width;
+   
+     @include set-container-width;
         #transparency{
             //@include set-container-width;
             display: none;
@@ -132,24 +133,26 @@ aside.DiapoHP{
             //@include set-container-width;
             display: none;
         }
+    img{@include adaptable-img;}
+       @include at-breakpoint($tablet) {
+        #transparency{display: block;}
+        #contenu-diapo{display: block;}
+
     }
     @include at-breakpoint($desktop) { 
-
-       // @include set-container-width($desktop/2); pas besoin si parent bien réglé
+       
       @include set-container-width;
         #transparency{
-           @include set-container-width(3);
+            //display: block;
+           @include set-container-width(4);
         }
         #contenu-diapo{
-            @include set-container-width(3);
+           // display: block;
+            @include set-container-width(4);
         }
 
     }
-    @include at-breakpoint($tablet) {
-        #transparency{}
-        #contenu-diapo{}
-
-    }
+ 
 }
 
 // Style du diaporama dynamique

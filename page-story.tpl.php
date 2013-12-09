@@ -6,13 +6,13 @@ include ($theme_path.'/includes/inc_header.php');
 
 <!-- ______________________ CONTENU _______________________ -->
   
-      <div id="content-global">
+      <div class="content-global">
       
    
       
        
         
-        <div id="content-inner" class="inner column center story">
+        <div class="content-inner" class="inner column center story">
 		
 			<?php if ($breadcrumb || $title ||$content_top ): ?>
             <div id="content-top">

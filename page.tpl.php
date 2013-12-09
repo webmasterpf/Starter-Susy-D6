@@ -4,7 +4,7 @@ include ($theme_path.'/includes/inc_header.php');
 ?>
   <!-- ______________________ CONTENU _______________________ -->
   
-      <div id="content-global">
+      <div class="content-global">
       
    
       
@@ -18,7 +18,7 @@ include ($theme_path.'/includes/inc_header.php');
 		
 		<!--fin du contenu gauche -->
         
-        <div id="content-inner" class="inner column center">
+        <div class="content-inner" class="inner column center">
 		
 			<?php if ($breadcrumb || $title ||$content_top ): ?>
             <div id="content-top">
@@ -89,7 +89,7 @@ include ($theme_path.'/includes/inc_header.php');
         <?php endif; ?> <!-- /sidebar-right -->
 
    
-    	  <br clear="all" />
+    
 	 </div> <!-- /content-global -->
 	  
 	<?php

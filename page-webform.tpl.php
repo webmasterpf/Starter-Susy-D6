@@ -5,7 +5,7 @@ include ($theme_path.'/includes/inc_header.php');
  <!-- ______________________ LAYOUT WEBFORM GENERIK OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
   <!-- ______________________ CONTENU _______________________ -->
   
-      <div id="content-global">
+      <div class="content-global">
       
           <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top ): ?>

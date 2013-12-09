@@ -4,7 +4,7 @@ include ($theme_path.'/includes/inc_header.php');
 ?>
  <!-- ______________________ LAYOUT CONTENU VDL OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
   <!-- ______________________ CONTENU _______________________ -->
-<div id="content-global">
+<div class="content-global">
   
           <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
@@ -23,7 +23,7 @@ include ($theme_path.'/includes/inc_header.php');
             <?php endif; ?>
   
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
-<div id="content-inner">
+<div class="content-inner">
     
           <?php if ($mission || $messages || $help || $tabs): ?>
             <div id="content-header">
@@ -59,8 +59,6 @@ include ($theme_path.'/includes/inc_header.php');
           </div> <!-- /navigation -->
         <?php endif; ?>
 
-
-    	 <br clear="all"/>
          <!-- ______________________ CONTENU BAS _______________________ -->
 <?php if ($content_bottom): ?>
             <div id="content-bottom">

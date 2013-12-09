@@ -12,7 +12,7 @@
          * .col3_layout_200_590_200{} .col3_layout_330_all{} .col3_layout_18_56_25{}
          * .col1_layout_215_520_235{} .col2_layout_215_520_235{} .col3_layout_215_520_235{}
          */?>
-        <div class="colonne-1 col1_layout_3_8_3">
+        <div class="col1_layout_3_8_3">
             <?php if ($title): /*copier le titre dans la colonne desirée*/?>
             <h1 class="vdl_titre"><?php print $title; ?></h1>
             <?php endif; ?>
@@ -39,7 +39,7 @@
         </div>
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div class="colonne-2 col2_layout_3_8_3 vdl-content">
+        <div class="col2_layout_3_8_3 vdl-content">
 
             <?php print $picture; ?>
 
@@ -72,7 +72,7 @@
         </div>
 
         <!--______________COLONNE 3________________ -->
-        <div class="colonne-3 col3_layout_3_8_3">
+        <div class="col3_layout_3_8_3">
             
                     <?php
               global $theme_path;

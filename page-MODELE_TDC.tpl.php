@@ -5,14 +5,14 @@ include ($theme_path.'/includes/inc_header.php');
  <!-- ______________________ LAYOUT PAGE MODELE OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
   <!-- ______________________ CONTENU _______________________ -->
 
-      <div id="content-global">
+      <div class="content-global">
 
          
 
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
 
 
-       <div id="content-inner" class="page-MODELE">
+       <div class="content-inner" class="page-MODELE">
            
             <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
@@ -64,7 +64,7 @@ include ($theme_path.'/includes/inc_header.php');
           </div> <!-- /navigation -->
         <?php endif; ?>
 
-    	 <br clear="all"/>
+    	 
          <!-- ______________________ CONTENU BAS _______________________ -->
 <?php if ($content_bottom): ?>
             <div class="content-bottom">
