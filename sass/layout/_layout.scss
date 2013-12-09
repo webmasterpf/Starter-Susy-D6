@@ -51,6 +51,9 @@ body .conteneur{
             .middle-content{
                 @include set-container-width();
                 overflow: hidden;
+                .node-inner{
+                    overflow: hidden;
+                }
 
             }
             .content-bottom{@include set-container-width();}
@@ -97,7 +100,12 @@ body .conteneur{
            // @include set-container-width();
            overflow: hidden;
             .content-top{@include set-container-width();}
-            .middle-content{@include set-container-width();}
+            .middle-content{
+                //@include set-container-width();
+                .node-inner{
+                   
+                }
+            }
             .content-bottom{@include set-container-width();}
             .content-bottom-home{@include set-container-width();}
         }
@@ -197,24 +205,20 @@ aside.content_top{
 ********** LAYOUT NODE.TPL OVERRIDE **********
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 /*//////////////// COLONNE 1 \\\\\\\\\\\\\\\\*/
-.content-inner .middle-content .col1_layout_3_8_3{
-     @include set-container-width;
+.node-inner .col1_layout_3_8_3{
+     //@include set-container-width;
      padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        //@include span-columns($mobile);
-        @include set-container-width;
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(2,$desktop);
-        //@include span-columns(3,$desktop);
-        background: darkorange;
-    }
+   
     @include at-breakpoint ($tablet){
         @include span-columns(2);
          background: #00CC99;
     }
+     @include at-breakpoint ($desktop){
+        @include span-columns(2,$desktop);
+        background: darkorange;
+    }
 }
-.content-inner .middle-content .col1_layout_4_5_5{
+.node-inner .col1_layout_4_5_5{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -227,7 +231,7 @@ aside.content_top{
         @include span-columns($tablet);
     }
 }
-.content-inner .middle-content .col1_layout_5_9{
+.node-inner .col1_layout_5_9{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -241,26 +245,22 @@ aside.content_top{
     }
 }
 /*//////////////// COLONNE 2 \\\\\\\\\\\\\\\\*/
-.content-inner .middle-content .col2_layout_3_8_3{
-     @include set-container-width;
+.node-inner .col2_layout_3_8_3{
+     //@include set-container-width;
      padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        //@include span-columns($mobile);
-        @include set-container-width;
-        background: khaki;
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(8);
-        //@include set-container-width(7);
-        background: hotpink;
-    }
-    @include at-breakpoint ($tablet){
+     background: khaki;
+     @include at-breakpoint ($tablet){
         @include span-columns(3);
         //@include set-container-width();
         background: tomato;
     }
+    @include at-breakpoint ($desktop){
+        @include span-columns(7, $desktop );
+        background: hotpink;
+    }
+  
 }
-.content-inner .middle-content .col2_layout_4_5_5{
+.node-inner .col2_layout_4_5_5{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -273,7 +273,7 @@ aside.content_top{
         @include span-columns($tablet);
     }
 }
-.content-inner .middle-content .col2_layout_5_9{
+.node-inner .col2_layout_5_9{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){
@@ -287,24 +287,21 @@ aside.content_top{
     }
 }
 /*//////////////// COLONNE 3 \\\\\\\\\\\\\\\\*/
-.content-inner .middle-content .col3_layout_3_8_3{
-     @include set-container-width;
+.node-inner .col3_layout_3_8_3{
+    //@include set-container-width;
      padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        //@include span-columns($mobile);
-        @include set-container-width;
-        background: #00c9fe;
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(3 omega,$desktop);
-        background: teal;
-    }
+     background: #00c9fe;
     @include at-breakpoint ($tablet){
         @include span-columns(2);
         background: purple;
     }
+    @include at-breakpoint ($desktop){
+        @include span-columns(2 omega,$desktop);
+        background: teal;
+    }
+   
 }
-.content-inner .middle-content .col3_layout_4_5_5{
+.node-inner .col3_layout_4_5_5{
     @include set-container-width;
      padding: 0.3em;
     @include at-breakpoint ($mobile){

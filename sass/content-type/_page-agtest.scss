@@ -53,18 +53,56 @@ h2 {
   padding-bottom: 1.8rem;
 }
 .ag1 {
-  @include span-columns(3,12);
+      display: none;
+  // removes the left sidebar 
+
+  // Tells Susy that this portion should be used only in the large media query 
+  @include at-breakpoint($desktop) {
+    display: block;
+    // shows the left sidebar at the $large layout
+    @include span-columns(3,12);
+  }
+  
 }
 
 .ag3 {
-  @include span-columns(3 omega,12);
+     // small layout
+  display: none;
+
+  // medium layout
+  @include at-breakpoint($tablet) {
+    display: block;
+    @include span-columns(2 omega, 8);
+  }
+
+  // large layout
+  @include at-breakpoint($desktop) {
+    @include span-columns(3 omega,12);
   // The omega flag is set here to tell Susy that ag3 is the final column. 
+    // notice we don't need a display:block here because changes cascade from
+    //small to large in Susy. Since display block is declared in the medium layout, 
+    //the large layout will have the display:block property through inheritance. 
+  }
+  
 }
 .ag2 {
-    @include span-columns(6,12);
-  // Optionally, you can choose to include the context.
+    // small layout
+  @include span-columns(4, 4);
   // overflow hidden is used to self clear children
   overflow: hidden; 
+
+  // medium layout
+  @include at-breakpoint($tablet) {
+    @include span-columns(6, 8);
+  }
+
+  // large layout
+  @include at-breakpoint($desktop) {
+    @include span-columns(6,$desktop);
+  // Optionally, you can choose to include the context.
+  }
+    
+  
 }
 
 .ag4 {
