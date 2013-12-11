@@ -18,9 +18,12 @@
             overflow: hidden; 
                .site-slogan{
                   //@include span-columns($mobile);
-                   @include set-container-width;
+                   //@include set-container-width;
                }
-               .headSearch{@include span-columns($mobile);}
+               .headSearch{
+                   //@include span-columns($mobile);
+                   clear: both;
+               }
                .menuHead{clear: both;}
      }                
  
@@ -82,43 +85,22 @@
 }
 
 
-.navPicto {
-    border: 0;
-
-    td {
-        border: 0;
-        padding: em(5px);
-    }  
-}
-
-
 /*---- HEADER BAS ----*/
 
 .headBas {
  //background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
-    margin: em(5px) 0 0 0;
+  //  margin: em(5px) 0 0 0;
   background: #cfd0d2 image-url ('bg_menu_rp.gif') repeat-x top left;
 }
 
-/*Menu principal haut du header*/
-
-.menuHead {
-  float: none;
-  height: auto;
-  padding: 0;
-  
-}
 
 .headSearch {
   text-align: right;
   margin: em(2px) 0 0 0;
-  background: image-url ("/bg_recherche.gif") no-repeat left em(5px);
-    
+  background: image-url ("bg_recherche.gif") no-repeat left em(5px);
 }
 
-.search {
-   padding: 0 em(3px) 0 0;
-}
+
 
 .name-and-slogan {
   vertical-align: bottom;
