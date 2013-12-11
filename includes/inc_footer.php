@@ -4,7 +4,7 @@
           <?php print $footer_message; ?>
           <?php print $footer_block; ?>
      <div id="bloc_stats">
-      V&eacute;rifier les codes pour les stats
+         <p>V&eacute;rifier les codes pour les stats</p>
       <?php
 global $theme_path;
 include ($theme_path.'/js/code_stats.php');
@@ -14,15 +14,9 @@ include ($theme_path.'/js/code_stats.php');
       <?php endif; ?>
        
     </section> <!-- /general OR /page -->
-    <!-- Usage de navjs pour menu responsive -->
-<!--	<script>
-		var nav = responsiveNav(".nav-collapse");
-      	</script>-->
-<!--        <script>          $(function () {
-    $(".navfixe").tinyNav();
-  });</script>-->
-    <script>$('.horizontal-nav').navobile();</script>
-    <script>$('#header').navobile();</script>
+       
 	<?php print $closure ?>
+     <!-- Usage de navjs pour menu responsive -->
+    <script> $(function () {$(".horizontal-nav").tinyNav();});</script>
   </body>
 </html>
