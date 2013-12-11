@@ -1,25 +1,35 @@
 //Navigation horizontale secondaire, responsive pour mobile
 
 aside.navStatic{
-     ul.horizontal-nav {
-        @include horizontal-list;
-        li {
-            padding: 0;
-            @include span-columns(1);
-            img{@include adaptable-img;}
-            a {
-                // vertical alignment
-                margin: 0 em(1px);
-                border: 0;
-                font-family: $AristaFont;
-                color: $gris-anthracite;
-                text-decoration: none;
-                display: block;
-                @include adjust-font-size-to(20px);
-                &:hover {
-                    color: $orange-fonce;
+    .tinynav { display: block; }
+    .horizontal-nav { display: none; }
+    @include at-breakpoint ($desktop){
+        .tinynav { display: none; }
+        .horizontal-nav { display:block; }
+        ul.horizontal-nav {        
+            @include horizontal-list;
+            li {
+                padding: 0;
+                @include isolate-grid(1,8);
+                text-align:center;
+                img{
+                    //@include span-columns(1);
+                    @include adaptable-img;
+                }
+                a {
+                    // vertical alignment
+                    margin: 0 em(2px);
+                    border: 0;
+                    font-family: $AristaFont;
+                    color: $gris-anthracite;
+                    text-decoration: none;
+                    display: block;
+                    @include adjust-font-size-to(20px);
+                    &:hover {
+                        color: $orange-fonce;
 
 
+                    }
                 }
             }
         }
