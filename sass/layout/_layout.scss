@@ -204,119 +204,84 @@ aside.content_top{
 /*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
 ********** LAYOUT NODE.TPL OVERRIDE **********
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
-/*//////////////// COLONNE 1 \\\\\\\\\\\\\\\\*/
-.node-inner .col1_layout_3_8_3{
-     //@include set-container-width;
-     padding: 0.3em;
-   
-    @include at-breakpoint ($tablet){
-        @include span-columns(2);
-         background: #00CC99;
+
+/*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_layout_3_8_3{
+        @include set-container-width;
+        padding: 0.3em;
+
+        @include at-breakpoint ($tablet){
+            @include span-columns(2);
+            background: #00CC99;
+        }
+        @include at-breakpoint ($desktop){
+            @include span-columns(2);
+            //@include span-columns(2,$desktop);
+            background: darkorange;
+        }
     }
-     @include at-breakpoint ($desktop){
-        @include span-columns(2,$desktop);
-        background: darkorange;
+    .col2_layout_3_8_3{
+        @include set-container-width;
+        padding: 0.3em;
+        background: khaki;
+        @include at-breakpoint ($tablet){
+            @include span-columns(3);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+            @include span-columns(8, $desktop );
+           // @include span-columns(8);
+            background: hotpink;
+        }
+
+    }
+    .col3_layout_3_8_3{
+        @include set-container-width;
+        padding: 0.3em;
+        background: #00c9fe;
+        @include at-breakpoint ($tablet){
+            @include span-columns(2);
+            background: purple;
+        }
+        @include at-breakpoint ($desktop){
+            //@include span-columns(2 omega,$desktop);
+            @include span-columns(2);
+            background: teal;
+        }
+
     }
 }
-.node-inner .col1_layout_4_5_5{
-    @include set-container-width;
-     padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        @include span-columns($mobile);
+/*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_layout_4_8{
+        @include set-container-width;
+        padding: 0.3em;
+
+        @include at-breakpoint ($tablet){
+            @include span-columns(2);
+            background: #00CC99;
+        }
+        @include at-breakpoint ($desktop){
+            @include span-columns(4);
+            //@include span-columns(2,$desktop);
+            background: darkorange;
+        }
     }
-    @include at-breakpoint ($desktop){
-        @include span-columns(4 , $desktop);
-    }
-    @include at-breakpoint ($tablet){
-        @include span-columns($tablet);
-    }
-}
-.node-inner .col1_layout_5_9{
-    @include set-container-width;
-     padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        @include span-columns($mobile);
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(5 , $desktop);
-    }
-    @include at-breakpoint ($tablet){
-        @include span-columns($tablet);
-    }
-}
-/*//////////////// COLONNE 2 \\\\\\\\\\\\\\\\*/
-.node-inner .col2_layout_3_8_3{
-     //@include set-container-width;
-     padding: 0.3em;
-     background: khaki;
-     @include at-breakpoint ($tablet){
-        @include span-columns(3);
-        //@include set-container-width();
-        background: tomato;
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(7, $desktop );
-        background: hotpink;
+    .col2_layout_4_8{
+        @include set-container-width;
+        padding: 0.3em;
+        background: khaki;
+        @include at-breakpoint ($tablet){
+            @include span-columns(3);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+            @include span-columns(8, $desktop );
+           // @include span-columns(8);
+            background: hotpink;
+        }
+
     }
   
 }
-.node-inner .col2_layout_4_5_5{
-    @include set-container-width;
-     padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        @include span-columns($mobile);
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(5);
-    }
-    @include at-breakpoint ($tablet){
-        @include span-columns($tablet);
-    }
-}
-.node-inner .col2_layout_5_9{
-    @include set-container-width;
-     padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        @include span-columns($mobile);
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(9);
-    }
-    @include at-breakpoint ($tablet){
-        @include span-columns($tablet);
-    }
-}
-/*//////////////// COLONNE 3 \\\\\\\\\\\\\\\\*/
-.node-inner .col3_layout_3_8_3{
-    //@include set-container-width;
-     padding: 0.3em;
-     background: #00c9fe;
-    @include at-breakpoint ($tablet){
-        @include span-columns(2);
-        background: purple;
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(2 omega,$desktop);
-        background: teal;
-    }
-   
-}
-.node-inner .col3_layout_4_5_5{
-    @include set-container-width;
-     padding: 0.3em;
-    @include at-breakpoint ($mobile){
-        @include span-columns($mobile);
-    }
-    @include at-breakpoint ($desktop){
-        @include span-columns(5);
-    }
-    @include at-breakpoint ($tablet){
-        @include span-columns($tablet);
-    }
-}
-/*  PAGE STORY TPL  */
-#middle-content-story{
-    width: 95%;
-    margin: 0 auto;
-}
-.story{}
