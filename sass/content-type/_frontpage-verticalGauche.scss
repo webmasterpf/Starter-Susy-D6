@@ -43,9 +43,8 @@ body .conteneur {
             overflow : hidden;
         }
         .HPDroite{
-            //@include span-columns($desktop/2 omega);
-            @include span-columns(5 omega);
-            clear: both;
+            @include span-columns(6 omega);
+            
         }
         .HPDroite1{
             // @include set-container-width();
