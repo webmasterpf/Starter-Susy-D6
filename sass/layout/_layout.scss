@@ -39,8 +39,9 @@ body .conteneur{
             //@include set-container-width();
             clear: both;
         }
-        #content-global{
+        .content-global{
             @include set-container-width();
+            overflow: hidden;
         }
        .content-inner{
             @include set-container-width();
@@ -75,7 +76,7 @@ body .conteneur{
         #header{
             //pas besoin de mixin car bloc prend toute la largeur
         }
-        #content-global{@include set-container-width();}
+        .content-global{@include set-container-width();}
         .content-inner{
             @include set-container-width();
             .content-top{@include set-container-width();}
@@ -101,7 +102,7 @@ body .conteneur{
          #header{
             //pas besoin de mixin car bloc prend toute la largeur
         }
-        #content-global{@include set-container-width();}
+        .content-global{@include set-container-width();}
         .content-inner{
            // @include set-container-width();
            overflow: hidden;
@@ -131,8 +132,8 @@ body .conteneur{
 body .conteneur{
     //Approche mobile-first,réglage pour mobile
     @include susy-grid-background;
-    #header{background: tan;}
-    #content-global{}
+    #header{}
+    .content-global{}
     
     #left-content{}
     .content-inner{@include susy-grid-background;
@@ -151,7 +152,7 @@ body .conteneur{
         @include susy-grid-background;
         
         #header{}
-        #content-global{}
+        .content-global{}
         .content-top{background-color: mistyrose;}
         .content-inner{}
         .middle-content{
@@ -167,7 +168,7 @@ body .conteneur{
         @include susy-grid-background;
         
         #header{background: seashell;}
-        #content-global{
+        .content-global{
             //@include susy-grid-background;
         }
         
