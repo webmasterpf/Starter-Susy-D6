@@ -6,8 +6,7 @@ aside.navStatic{
     .horizontal-nav { display: none; }
     .js #subnav { display: none; }
     .js .selectnav {display: block;}
-     select{width: 100%}    
-     //test de patch
+    select{width: 100%}    
     @include at-breakpoint ($desktop){
         .selectnav { display: none; }
         .horizontal-nav { display:block; }
