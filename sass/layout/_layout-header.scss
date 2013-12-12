@@ -12,7 +12,7 @@
                 .logoHead {@include span-columns($mobile);
                 img{margin: 0 auto;display: block;}
                 }
-                .menuImg {  @include span-columns($mobile);}
+                .menuImg {@include span-columns($mobile);}
      }
      .headBas {
             overflow: hidden; 

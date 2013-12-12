@@ -14,4 +14,13 @@ h1.vdl_titre{color: $gris-clair;}
 .vdl-content{}
 .vdl-illustration{}
 .vdl-passerelle{}
+.vdl-video{}
+.vdl-liste-docs{}
+.vdl-galerie-image{}
+.vdl-galerie-image .gallery-slides
+{
+    img{@include adaptable-img;}
+}
+
+
 

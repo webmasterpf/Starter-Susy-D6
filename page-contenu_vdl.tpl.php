@@ -43,11 +43,11 @@ include ($theme_path.'/includes/inc_header.php');
             </div> <!-- /#content-header -->
           <?php endif; ?>
 		  <!-- ______________________ CONTENU CENTRAL _______________________ -->
-          <div class="middle-content page-MODELE">
+                  <article class="middle-content page-MODELE">
 
             <?php print $content; ?>
               <?php print $feed_icons; ?>
-          </div> <!-- /#content-area -->
+                  </article> <!-- /#content-area -->
 
       </div> <!-- /content-inner /content -->
 

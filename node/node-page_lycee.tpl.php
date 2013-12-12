@@ -11,7 +11,7 @@
          * .col2_layout_3_8_3{} .col2_layout_4_5_5{} .col2_layout_5_9{}
          * .col3_layout_3_8_3{} .col3_layout_4_5_5{}
          */?>
-        <div class="colonne-1 col1_layout_3_8_3">
+        <div class="col1_layout_4_8">
             <?php if ($title): /*copier le titre dans la colonne desirée*/?>
             <h1 class="titre_page"><?php print $title; ?></h1>
             <?php endif; ?>
@@ -24,7 +24,7 @@ include($theme_path .'/includes/inc_region_col_1.php');
         </div>
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div class="colonne-2 col2_layout_3_8_3">
+        <div class="col2_layout_4_8">
 
             <?php print $picture; ?>
 
@@ -40,12 +40,7 @@ include($theme_path .'/includes/inc_region_col_1.php');
   global $theme_path;
 include($theme_path .'/includes/inc_region_col_2.php');
 ?>
-        </div>
-
-        <!--______________COLONNE 3________________ -->
-        <div class="colonne-3 col3_layout_3_8_3">
-            
-                       <?php 
+                        <?php 
   //$theme_path = drupal_get_path('theme', 'NOM_THEME');
   global $theme_path;
 include($theme_path .'/includes/inc_region_col_3.php');
@@ -56,9 +51,9 @@ include($theme_path .'/includes/inc_region_col_3.php');
                     <?php  print $node->nom_du_champ[0]['view']  ?>
             </div>
             <?php endif;?>
-
-
         </div>
+
+      
 
         <?php if ($terms): ?>
         <div class="taxonomy"><?php //print $terms; ?></div>

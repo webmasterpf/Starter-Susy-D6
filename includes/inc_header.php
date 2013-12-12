@@ -12,14 +12,16 @@
     <meta name="msvalidate.01" content="" />
     <?php print $head; ?>
     <?php print $styles; ?>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <?php print $scripts; ?>
     <script src="<?php print $base_path . path_to_theme() ?>/js/typos.js" type="text/javascript" charset="utf-8"></script>
 
+    
  <?php
 $theme_path = drupal_get_path('theme', 'starterd6_pf_susy'); 
 include ($theme_path.'/js/google_font.php');
 ?>
+        
   </head>
 
  <body class="<?php print $body_classes; ?>">

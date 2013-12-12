@@ -44,11 +44,11 @@ include ($theme_path.'/includes/inc_header.php');
             </div> <!-- /#content-header -->
           <?php endif; ?>
 		  <!-- ______________________ CONTENU CENTRAL _______________________ -->
-         <div class="middle-content page-MODELE">
+             <article class="middle-content page-MODELE">
 
             <?php print $content; ?>
               <?php print $feed_icons; ?>
-          </div> <!-- /#middle-content -->
+                  </article> <!-- /#content-area -->
 
       </div> <!-- /content-inner /content -->
 
@@ -60,8 +60,6 @@ include ($theme_path.'/includes/inc_header.php');
           </div> <!-- /navigation -->
         <?php endif; ?>
 
-
-    	 <br clear="all"/>
          <!-- ______________________ CONTENU BAS _______________________ -->
 <?php if ($content_bottom): ?>
             <div class="content-bottom">

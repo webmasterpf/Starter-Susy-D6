@@ -24,7 +24,9 @@ body {
   //@include at-breakpoint ($desktop){}
   //@include at-breakpoint ($tablet){}
   
-// il faut utiliser pour un même bloc et pour chaque breakpoint soit span-columns soit @include set-container-width();
+// il faut utiliser pour un même bloc et pour chaque breakpoint 
+//soit span-columns pour partitionner un bloc
+//soit @include set-container-width(); pour utiliser la taille du conteneur parent
 // sinon problèmes dans la grille !
  
 /*-- LAYOUT PRINCIPAL --*/
@@ -77,7 +79,11 @@ body .conteneur{
         .content-inner{
             @include set-container-width();
             .content-top{@include set-container-width();}
-            .middle-content{@include set-container-width();}
+            .middle-content{@include set-container-width();
+                            .node-inner{
+                                @include span-columns($tablet );
+                            }
+            }
             .content-bottom{@include set-container-width();}
             .content-bottom-home{@include set-container-width();}
         }
@@ -103,7 +109,7 @@ body .conteneur{
             .middle-content{
                 //@include set-container-width();
                 .node-inner{
-                   
+                   @include span-columns($desktop );
                 }
             }
             .content-bottom{@include set-container-width();}
@@ -181,13 +187,7 @@ body .conteneur{
     }
 }
 }
-/////////////////////////////////////////////
-/*Haut de page  HEADER*/
 
-#header{
-	margin:0 auto;
-	padding:0;
-	}
 
 
 //classe sur le bloc
@@ -206,11 +206,11 @@ aside.content_top{
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 
 /*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
-body .conteneur{
+body .node-inner{
     .col1_layout_3_8_3{
         @include set-container-width;
         padding: 0.3em;
-
+        overflow: hidden;
         @include at-breakpoint ($tablet){
             @include span-columns(2);
             background: #00CC99;
@@ -225,13 +225,14 @@ body .conteneur{
         @include set-container-width;
         padding: 0.3em;
         background: khaki;
+        overflow: hidden;
         @include at-breakpoint ($tablet){
             @include span-columns(3);
             background: tomato;
         }
         @include at-breakpoint ($desktop){
-            @include span-columns(8, $desktop );
-           // @include span-columns(8);
+           // @include span-columns(8, $desktop );
+            @include span-columns(8);
             background: hotpink;
         }
 
@@ -240,6 +241,7 @@ body .conteneur{
         @include set-container-width;
         padding: 0.3em;
         background: #00c9fe;
+        overflow: hidden;
         @include at-breakpoint ($tablet){
             @include span-columns(2);
             background: purple;
@@ -252,8 +254,12 @@ body .conteneur{
 
     }
 }
+.node-inner
+{
+    img,iframe,object,embed{@include adaptable-img;}
+}
 /*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
-body .conteneur{
+body .node-inner{
     .col1_layout_4_8{
         @include set-container-width;
         padding: 0.3em;
@@ -263,8 +269,8 @@ body .conteneur{
             background: #00CC99;
         }
         @include at-breakpoint ($desktop){
-            @include span-columns(4);
-            //@include span-columns(2,$desktop);
+            //@include span-columns(4);
+            @include span-columns(4,$desktop);
             background: darkorange;
         }
     }
@@ -277,9 +283,9 @@ body .conteneur{
             background: tomato;
         }
         @include at-breakpoint ($desktop){
-            @include span-columns(8, $desktop );
-           // @include span-columns(8);
-            background: hotpink;
+           //@include span-columns(8, $desktop );
+           @include span-columns(8);
+            background: indianred;
         }
 
     }

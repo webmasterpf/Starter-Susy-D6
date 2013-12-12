@@ -51,15 +51,15 @@
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
             
                 <?php if ($node->field_video_vdl[0]['view']): ?>
-            <div id="vdl-video">
+            <aside class="vdl-video">
                     <?php  print $node->field_video_vdl[0]['view']  ?>
-            </div>
+            </aside>
             <?php endif;?>
                 
                 <?php if ($node->field_choix_galerie_vdl[0]['view']): ?>
-            <div id="vdl-galerie-image">
+            <aside class="vdl-galerie-image">
                     <?php  print $node->field_choix_galerie_vdl[0]['view']  ?>
-            </div>
+            </aside>
             <?php endif;?>
                 
                 
@@ -73,7 +73,11 @@
 
         <!--______________COLONNE 3________________ -->
         <div class="col3_layout_3_8_3">
-            
+            <?php if ($node->field_liste_doc_joint[0]['view']): ?>
+            <div class="vdl-liste-docs">
+                    <?php  print $node->field_liste_doc_joint[0]['view']  ?>
+            </div>
+            <?php endif;?>
                     <?php
               global $theme_path;
               include ($theme_path.'/includes/inc_region_col_3.php');
@@ -81,7 +85,7 @@
             
             <!--***********!!!!!!  EXEMPLE DE CHAMP CCK INCLUS AVEC CONDITION !!!!!!!!************ -->
             <?php if ($node->nom_du_champ[0]['view']): ?>
-            <div id="nom-css">
+            <div class="nom-css">
                     <?php  print $node->nom_du_champ[0]['view']  ?>
             </div>
             <?php endif;?>

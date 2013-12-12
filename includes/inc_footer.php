@@ -14,9 +14,11 @@ include ($theme_path.'/js/code_stats.php');
       <?php endif; ?>
        
     </section> <!-- /general OR /page -->
-       
+           <?php
+global $theme_path;
+include ($theme_path.'/includes/inc_responsivenav.php');
+?>    
 	<?php print $closure ?>
-     <!-- Usage de navjs pour menu responsive -->
-    <script> $(function () {$(".horizontal-nav").tinyNav();});</script>
+   
   </body>
 </html>

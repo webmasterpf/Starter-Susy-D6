@@ -1,10 +1,13 @@
 //Navigation horizontale secondaire, responsive pour mobile
 
 aside.navStatic{
-    .tinynav { display: block; }
     .horizontal-nav { display: none; }
+    .js #subnav { display: none; }
+    .js .selectnav {display: block;}
+     select{width: 100%}
+    
     @include at-breakpoint ($desktop){
-        .tinynav { display: none; }
+        .selectnav { display: none; }
         .horizontal-nav { display:block; }
         ul.horizontal-nav {        
             @include horizontal-list;

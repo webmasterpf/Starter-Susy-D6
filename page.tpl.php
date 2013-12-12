@@ -48,15 +48,11 @@ include ($theme_path.'/includes/inc_header.php');
             </div> <!-- /#content-header -->
           <?php endif; ?>
 		  <!-- ______________________ CONTENU CENTRAL _______________________ -->
-          <div id="middle-content">
+              <article class="middle-content page-MODELE">
+
             <?php print $content; ?>
               <?php print $feed_icons; ?>
-          </div> <!-- /#content-area -->
-<?php if ($frontpageSlideshow): ?>
-         <div id="fps">
-            <?php print $frontpageSlideshow; ?>
-          </div>
-             <?php endif; ?>
+                  </article> <!-- /#content-area -->
         
 
           <?php if ($content_bottom): ?>
