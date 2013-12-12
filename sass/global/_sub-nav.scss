@@ -1,13 +1,11 @@
 //Navigation horizontale secondaire, responsive pour mobile
-// Utilisation de selectnav.js pour avoir un menu responsive
-// http://lukaszfiszer.github.io/selectnav.js/
 
 aside.navStatic{
     .horizontal-nav { display: none; }
     .js #subnav { display: none; }
     .js .selectnav {display: block;}
-     select{width: 100%}    
-     //test de patch
+     select{width: 100%}
+    
     @include at-breakpoint ($desktop){
         .selectnav { display: none; }
         .horizontal-nav { display:block; }
@@ -18,6 +16,7 @@ aside.navStatic{
                 @include isolate-grid(1,8);
                 text-align:center;
                 img{
+                    //@include span-columns(1);
                     @include adaptable-img;
                 }
                 a {
@@ -31,6 +30,8 @@ aside.navStatic{
                     @include adjust-font-size-to(20px);
                     &:hover {
                         color: $orange-fonce;
+
+
                     }
                 }
             }
