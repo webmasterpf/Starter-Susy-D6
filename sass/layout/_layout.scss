@@ -32,7 +32,7 @@ body {
 /*-- LAYOUT PRINCIPAL --*/
 body .conteneur{
     //Approche mobile-first,réglage pour mobile
-    @include container($total-columns, $tablet,$desktop );
+    @include container($total-columns, $tablet,$desktop);
     background: transparent;
     padding-top: 2em;  
         #header{
@@ -41,31 +41,33 @@ body .conteneur{
         }
         .content-global{
             @include set-container-width();
-            overflow: hidden;
+            overflow: hidden;            
         }
         .content-inner{
             @include set-container-width();
-
-            .content-top{
-                @include set-container-width();
-                clear: both;        
-                .ariane{clear: both;}
-            }
-            .middle-content{
-                //@include set-container-width();
-                overflow: hidden;
-                .node-inner{
-                    overflow: hidden;
-                }
-
-            }
-            .content-bottom{@include set-container-width();}
-            .content-bottom-home{
-                //@include set-container-width();
-                overflow: hidden;
-                clear: both;       
-            }
-        } 
+            overflow: hidden;
+        }
+        .content-top{
+            @include set-container-width();
+            clear: both;        
+            .ariane{clear: both;}
+        }
+        .middle-content{
+            //@include set-container-width();
+            @include span-columns($mobile);
+           overflow: hidden;
+        }
+        .node-inner{
+            
+            overflow: hidden;
+        }
+        .content-bottom{@include set-container-width();}
+        .content-bottom-home{
+            //@include set-container-width();
+            overflow: hidden;
+            clear: both;       
+        }
+         
             
             #left-content{}
             #right-content{}
@@ -81,22 +83,27 @@ body .conteneur{
             //pas besoin de mixin car bloc prend toute la largeur
             
         }
-        .content-global{@include set-container-width();}
+        .content-global{
+            @include set-container-width();            
+        }
         .content-inner{
-            @include set-container-width();
-            .content-top{@include set-container-width();}
-            .middle-content{
-                //@include set-container-width();
-                .node-inner{
-                    //@include span-columns($tablet );
-                    //@include set-container-width();
-                }
-            }
-            .content-bottom{@include set-container-width();}
+            @include set-container-width();               
+        } 
+        .content-top{@include set-container-width();}
+        .middle-content{
+            //@include set-container-width();
+            @include span-columns($tablet);
+        }
+        .node-inner{
+            //@include span-columns($tablet );
+            //@include set-container-width();
+            
+        }
+        .content-bottom{@include set-container-width();}
         .content-bottom-home{
             //@include set-container-width();
         }
-        }
+       
         
         #left-content{}
         #right-content{}
@@ -113,23 +120,28 @@ body .conteneur{
             //pas besoin de mixin car bloc prend toute la largeur
            
         }
-        .content-global{@include set-container-width();}
+        .content-global{
+            @include set-container-width();        
+            
+        }
         .content-inner{
-            @include set-container-width();
-            overflow: hidden;
-            .content-top{@include set-container-width();}
-            .middle-content{
-                //@include set-container-width();
-                .node-inner{
-                    //@include span-columns($desktop);
-                    //@include set-container-width();
-                }
-            }
-             .content-bottom{@include set-container-width();}
+            @include set-container-width();                           
+        }
+        .content-top{@include set-container-width();}
+        .middle-content{
+            //@include set-container-width();
+             @include span-columns($desktop);
+        }
+        .node-inner{  
+            //@include span-columns($desktop);
+            //@include set-container-width();
+           
+        }                       
+        .content-bottom{@include set-container-width();}
         .content-bottom-home{
             //@include set-container-width();
         }
-        }
+        
        
         #left-content{}
         #right-content{}
@@ -151,8 +163,10 @@ body .conteneur{
     .content-global{}
     
     #left-content{}
-    .content-inner{@include susy-grid-background;
-    .content-top{background: chocolate;}
+    .content-inner{
+        @include susy-grid-background;
+        background-color: #F29400;
+    .content-top{background-color: chocolate;}
     .content-bottom{}
     .content-bottom-home{}
     }
@@ -190,17 +204,17 @@ body .conteneur{
             background: seashell;}
         .content-global{
             //@include susy-grid-background;
+             
         }
-        
         .content-inner{
-        background: blueviolet;
+        background-color: palevioletred;     
+        }
+        .middle-content{
+            background-color:yellow;
+            @include susy-grid-background;}
         .content-top{background-color: yellow;}
         .content-bottom{}
         .content-bottom-home{}
-          .middle-content{
-            background-color:yellow;
-        @include susy-grid-background;}
-        }
         #left-content{background: tomato;}
         #right-content{background: violet;}
         #footer{background-color: palegreen;
@@ -227,9 +241,9 @@ aside.content_top{
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 
 /*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
-body .node-inner{
+body .conteneur{
     .col1_layout_3_8_3{
-       // @include set-container-width;
+       @include span-columns($mobile);
         padding: 0.3em;
         overflow: hidden;
         @include at-breakpoint ($tablet){
@@ -237,30 +251,27 @@ body .node-inner{
             background: #00CC99;
         }
         @include at-breakpoint ($desktop){
-            //@include span-columns(2);
-            @include span-columns(2, $desktop);
+           @include span-columns(2, $desktop);
             background: darkorange;
         }
     }
     .col2_layout_3_8_3{
-        //@include set-container-width;
+       @include span-columns($mobile);
         padding: 0.3em;
         background: khaki;
         overflow: hidden;
         @include at-breakpoint ($tablet){
-            //@include span-columns(4);
-            @include span-columns(4, $tablet);
+           @include span-columns(4, $tablet);
             background: tomato;
         }
         @include at-breakpoint ($desktop){
-            @include span-columns(6, $desktop );
-          //  @include span-columns(6);
-            background: hotpink;
+          @include span-columns(6, $desktop );
+          background: hotpink;
         }
 
     }
     .col3_layout_3_8_3{
-        //@include set-container-width;
+        @include span-columns($mobile);
         padding: 0.3em;
         background: #00c9fe;
         overflow: hidden;
@@ -269,9 +280,8 @@ body .node-inner{
             background: purple;
         }
         @include at-breakpoint ($desktop){
-            @include span-columns(4 omega, $desktop);
-            //@include span-columns(4 omega);
-            background: teal;
+           @include span-columns(3 omega, $desktop);
+           background: teal;
         }
 
     }
@@ -281,9 +291,9 @@ body .node-inner{
     img,iframe,object,embed{@include adaptable-img;}
 }
 /*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
-body .node-inner{
+body .conteneur{
     .col1_layout_4_8{
-        @include set-container-width;
+        //@include span-columns($mobile);
         padding: 0.3em;
 
         @include at-breakpoint ($tablet){
@@ -297,7 +307,7 @@ body .node-inner{
         }
     }
     .col2_layout_4_8{
-        @include set-container-width;
+        @include span-columns($mobile);
         padding: 0.3em;
         background: khaki;
         @include at-breakpoint ($tablet){
