@@ -72,9 +72,10 @@ body .conteneur{
         }
 
     @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
-       
+       @include set-container-width();
         #header{
             //pas besoin de mixin car bloc prend toute la largeur
+            
         }
         .content-global{@include set-container-width();}
         .content-inner{
@@ -98,9 +99,10 @@ body .conteneur{
     }
     /*    //Dimensions pour les pc*/
     @include at-breakpoint($desktop) {
-        
+       @include set-container-width(); 
          #header{
             //pas besoin de mixin car bloc prend toute la largeur
+           
         }
         .content-global{@include set-container-width();}
         .content-inner{
@@ -110,7 +112,7 @@ body .conteneur{
             .middle-content{
                 //@include set-container-width();
                 .node-inner{
-                   @include span-columns($desktop );
+                   @include span-columns($desktop);
                 }
             }
             .content-bottom{@include set-container-width();}
@@ -151,7 +153,10 @@ body .conteneur{
     body .conteneur{
         @include susy-grid-background;
         
-        #header{}
+        #header{
+            @include susy-grid-background;
+            background-color: sienna;
+        }
         .content-global{}
         .content-top{background-color: mistyrose;}
         .content-inner{}
@@ -167,7 +172,9 @@ body .conteneur{
     body .conteneur{
         @include susy-grid-background;
         
-        #header{background: seashell;}
+        #header{
+            @include susy-grid-background;
+            background: seashell;}
         .content-global{
             //@include susy-grid-background;
         }
