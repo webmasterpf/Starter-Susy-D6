@@ -15,7 +15,7 @@
 //.content-top #annonce
 aside.content_top .annonce-container .annonce
 {
-  //@include set-container-width();
+ // @include set-container-width();
   color: $color-defilant;
   font-weight: bold;
   margin: 0;
@@ -29,17 +29,12 @@ aside.content_top .annonce-container .annonce
       text-decoration: underline;
     }
   }
-  @include at-breakpoint ($mobile){
-      @include set-container-width();
-      //@include span-columns($mobile);
-  }
+ 
   @include at-breakpoint ($desktop){
-     // @include span-columns($desktop);
-      @include set-container-width($desktop);
+      //@include set-container-width();
   }
   @include at-breakpoint ($tablet){
-      //@include span-columns($tablet);
-      @include set-container-width();
+     // @include set-container-width();
   }
 }
 /*DEFILANT CLASSIQUE*/
