@@ -43,16 +43,16 @@ body .conteneur{
             @include set-container-width();
             overflow: hidden;
         }
-       .content-inner{
+        .content-inner{
             @include set-container-width();
-            
+
             .content-top{
                 @include set-container-width();
                 clear: both;        
                 .ariane{clear: both;}
             }
             .middle-content{
-                @include set-container-width();
+                //@include set-container-width();
                 overflow: hidden;
                 .node-inner{
                     overflow: hidden;
@@ -60,12 +60,16 @@ body .conteneur{
 
             }
             .content-bottom{@include set-container-width();}
-        .content-bottom-home{@include set-container-width();}
+            .content-bottom-home{
+                //@include set-container-width();
+                overflow: hidden;
+                clear: both;       
+            }
         } 
-      
-        #left-content{}
-        #right-content{}
-        #footer{
+            
+            #left-content{}
+            #right-content{}
+            #footer{
             //pas besoin de mixin car bloc prend toute la largeur
             clear: both;
             @include background-size;
@@ -81,18 +85,23 @@ body .conteneur{
         .content-inner{
             @include set-container-width();
             .content-top{@include set-container-width();}
-            .middle-content{@include set-container-width();
-                            .node-inner{
-                                @include span-columns($tablet );
-                            }
+            .middle-content{
+                //@include set-container-width();
+                .node-inner{
+                    //@include span-columns($tablet );
+                    //@include set-container-width();
+                }
             }
             .content-bottom{@include set-container-width();}
-            .content-bottom-home{@include set-container-width();}
+        .content-bottom-home{
+            //@include set-container-width();
         }
+        }
+        
         #left-content{}
         #right-content{}
         #footer{
-           // @include set-container-width();
+            // @include set-container-width();
             @include background-size(auto);
         }
 
@@ -106,18 +115,22 @@ body .conteneur{
         }
         .content-global{@include set-container-width();}
         .content-inner{
-           // @include set-container-width();
-           overflow: hidden;
+            @include set-container-width();
+            overflow: hidden;
             .content-top{@include set-container-width();}
             .middle-content{
                 //@include set-container-width();
                 .node-inner{
-                   @include span-columns($desktop);
+                    //@include span-columns($desktop);
+                    //@include set-container-width();
                 }
             }
-            .content-bottom{@include set-container-width();}
-            .content-bottom-home{@include set-container-width();}
+             .content-bottom{@include set-container-width();}
+        .content-bottom-home{
+            //@include set-container-width();
         }
+        }
+       
         #left-content{}
         #right-content{}
         #footer{
@@ -216,7 +229,7 @@ aside.content_top{
 /*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
 body .node-inner{
     .col1_layout_3_8_3{
-        @include set-container-width;
+       // @include set-container-width;
         padding: 0.3em;
         overflow: hidden;
         @include at-breakpoint ($tablet){
@@ -224,39 +237,40 @@ body .node-inner{
             background: #00CC99;
         }
         @include at-breakpoint ($desktop){
-            @include span-columns(2);
-            //@include span-columns(2,$desktop);
+            //@include span-columns(2);
+            @include span-columns(2, $desktop);
             background: darkorange;
         }
     }
     .col2_layout_3_8_3{
-        @include set-container-width;
+        //@include set-container-width;
         padding: 0.3em;
         background: khaki;
         overflow: hidden;
         @include at-breakpoint ($tablet){
-            @include span-columns(3);
+            //@include span-columns(4);
+            @include span-columns(4, $tablet);
             background: tomato;
         }
         @include at-breakpoint ($desktop){
-           // @include span-columns(8, $desktop );
-            @include span-columns(8);
+            @include span-columns(6, $desktop );
+          //  @include span-columns(6);
             background: hotpink;
         }
 
     }
     .col3_layout_3_8_3{
-        @include set-container-width;
+        //@include set-container-width;
         padding: 0.3em;
         background: #00c9fe;
         overflow: hidden;
         @include at-breakpoint ($tablet){
-            @include span-columns(2);
+            @include span-columns(2 omega);
             background: purple;
         }
         @include at-breakpoint ($desktop){
-            //@include span-columns(2 omega,$desktop);
-            @include span-columns(2);
+            @include span-columns(4 omega, $desktop);
+            //@include span-columns(4 omega);
             background: teal;
         }
 
