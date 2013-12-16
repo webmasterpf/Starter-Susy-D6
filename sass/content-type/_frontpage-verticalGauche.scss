@@ -13,6 +13,7 @@
 
 //Code imbriqué à 100%
 body .conteneur {
+    @include container($total-columns, $tablet,$desktop );
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
 
     .HPDiapoVerticalGaucheVerticalGauche{
@@ -36,7 +37,7 @@ body .conteneur {
     }
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
         //Taille du conteneur du groupe    
-        //@include set-container-width(); inutile
+        @include set-container-width();
 
         .HPDiapoVerticalGauche{
             @include span-columns(6);
