@@ -4,6 +4,7 @@ include ($theme_path.'/includes/inc_header.php');
 ?>
 <div class="content-global">
 
+
  <!-- ______________________ CONTENU HAUT _______________________ -->
  
    <?php if ($content_top): ?>
@@ -50,7 +51,7 @@ include ($theme_path.'/includes/inc_header.php');
     </div><!-- /#content-bottom -->
    
 	
-	
+
 </div> <!-- /content-global -->
     <?php
 global $theme_path;
