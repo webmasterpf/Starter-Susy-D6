@@ -15,7 +15,8 @@
 //.content-top #annonce
 aside.content_top .annonce-container .annonce
 {
- // @include set-container-width();
+ @include set-container-width();
+ 
   color: $color-defilant;
   font-weight: bold;
   margin: 0;
@@ -29,13 +30,13 @@ aside.content_top .annonce-container .annonce
       text-decoration: underline;
     }
   }
- 
-  @include at-breakpoint ($desktop){
-      //@include set-container-width();
-  }
   @include at-breakpoint ($tablet){
-     // @include set-container-width();
+     @include set-container-width();
   }
+  @include at-breakpoint ($desktop){
+      @include set-container-width();
+  }
+  
 }
 /*DEFILANT CLASSIQUE*/
 //#block-views-liste_annonce_accueil-block_1{display: block;margin: 5px 0;height: 50px;}
