@@ -1,0 +1,83 @@
+/*
+Défini les layouts possibles pour les node.tpl custom
+Ne s'applique que si présence d'un node-TYPE.tpl.php
+*/
+
+/*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
+********** LAYOUT NODE.TPL OVERRIDE **********
+\\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
+
+/*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_layout_3_8_3{
+       @include span-columns($mobile);
+       
+        overflow: hidden;
+        @include at-breakpoint ($tablet){
+            @include span-columns(2, $tablet);
+            background: #00CC99;
+        }
+        @include at-breakpoint ($desktop){
+           @include span-columns(3, $desktop);
+            background: darkorange;
+        }
+    }
+    .col2_layout_3_8_3{
+       @include span-columns($mobile);
+        
+        background: khaki;
+        overflow: hidden;
+        @include at-breakpoint ($tablet){
+           @include span-columns(4, $tablet);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+          @include span-columns(6, $desktop );
+          background: hotpink;
+        }
+
+    }
+    .col3_layout_3_8_3{
+        @include span-columns($mobile);
+       
+        background: #00c9fe;
+        overflow: hidden;
+        @include at-breakpoint ($tablet){
+            @include span-columns(2 omega);
+            background: purple;
+        }
+        @include at-breakpoint ($desktop){
+           @include span-columns(3 omega, $desktop);
+           background: teal;
+        }
+
+    }
+}
+/*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_layout_4_8{
+        @include at-breakpoint ($tablet){
+            @include span-columns(3, $tablet);
+            background: #00CC99;
+        }
+        @include at-breakpoint ($desktop){
+            @include span-columns(4, $desktop);
+            background: darkorange;
+        }
+    }
+    .col2_layout_4_8{
+        @include span-columns($mobile);
+        
+        background: khaki;
+        @include at-breakpoint ($tablet){
+            @include span-columns(5 omega, $tablet);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+           @include span-columns(8 omega, $desktop);
+            background: indianred;
+        }
+
+    }
+  
+}
