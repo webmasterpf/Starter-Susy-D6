@@ -11,8 +11,8 @@ html {
 
 
 body {	
-	font-family: $TrebuchetFont;
-	
+    font-family: $TrebuchetFont;
+
 }
 
  /*------------------------------------------------------*
@@ -32,7 +32,7 @@ body {
 /*-- LAYOUT PRINCIPAL --*/
 body .conteneur{
     //Approche mobile-first,réglage pour mobile
-    @include container($total-columns, $tablet,$desktop);
+    @include container($total-columns, $tablet, $desktop);
     background: transparent;
     padding-top: 2em;  
         #header{
@@ -53,12 +53,12 @@ body .conteneur{
             .ariane{clear: both;}
         }
         .middle-content{
-            //@include set-container-width();
-            @include span-columns($mobile);
+            @include set-container-width();
+           // @include span-columns($mobile);
            overflow: hidden;
         }
         .node-inner{
-            
+            @include set-container-width();
             overflow: hidden;
         }
         .content-bottom{@include set-container-width();}
@@ -67,8 +67,7 @@ body .conteneur{
             overflow: hidden;
             clear: both;       
         }
-         
-            
+        
             #left-content{}
             #right-content{}
             #footer{
@@ -91,12 +90,12 @@ body .conteneur{
         } 
         .content-top{@include set-container-width();}
         .middle-content{
-            //@include set-container-width();
-            @include span-columns($tablet);
+            @include set-container-width();
+           // @include span-columns($tablet);
         }
         .node-inner{
             //@include span-columns($tablet );
-            //@include set-container-width();
+            @include set-container-width();
             
         }
         .content-bottom{@include set-container-width();}
@@ -129,12 +128,12 @@ body .conteneur{
         }
         .content-top{@include set-container-width();}
         .middle-content{
-            //@include set-container-width();
-             @include span-columns($desktop);
+            @include set-container-width();
+            //@include span-columns($desktop);
         }
         .node-inner{  
             //@include span-columns($desktop);
-            //@include set-container-width();
+            @include set-container-width();
            
         }                       
         .content-bottom{@include set-container-width();}
@@ -233,93 +232,9 @@ aside.content_top{
     background-color: #999;
     margin: 0 auto;
     padding: em(5px);  
-        }	
-
-
-/*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
-********** LAYOUT NODE.TPL OVERRIDE **********
-\\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
-
-/*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
-body .conteneur{
-    .col1_layout_3_8_3{
-       @include span-columns($mobile);
-        padding: 0.3em;
-        overflow: hidden;
-        @include at-breakpoint ($tablet){
-            @include span-columns(2);
-            background: #00CC99;
         }
-        @include at-breakpoint ($desktop){
-           @include span-columns(2, $desktop);
-            background: darkorange;
-        }
-    }
-    .col2_layout_3_8_3{
-       @include span-columns($mobile);
-        padding: 0.3em;
-        background: khaki;
-        overflow: hidden;
-        @include at-breakpoint ($tablet){
-           @include span-columns(4, $tablet);
-            background: tomato;
-        }
-        @include at-breakpoint ($desktop){
-          @include span-columns(6, $desktop );
-          background: hotpink;
-        }
-
-    }
-    .col3_layout_3_8_3{
-        @include span-columns($mobile);
-        padding: 0.3em;
-        background: #00c9fe;
-        overflow: hidden;
-        @include at-breakpoint ($tablet){
-            @include span-columns(2 omega);
-            background: purple;
-        }
-        @include at-breakpoint ($desktop){
-           @include span-columns(3 omega, $desktop);
-           background: teal;
-        }
-
-    }
-}
+//Images RWD pour nodes
 .node-inner
 {
     img,iframe,object,embed{@include adaptable-img;}
-}
-/*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
-body .conteneur{
-    .col1_layout_4_8{
-        //@include span-columns($mobile);
-        padding: 0.3em;
-
-        @include at-breakpoint ($tablet){
-            @include span-columns(2);
-            background: #00CC99;
-        }
-        @include at-breakpoint ($desktop){
-            //@include span-columns(4);
-            @include span-columns(4,$desktop);
-            background: darkorange;
-        }
     }
-    .col2_layout_4_8{
-        @include span-columns($mobile);
-        padding: 0.3em;
-        background: khaki;
-        @include at-breakpoint ($tablet){
-            @include span-columns(3);
-            background: tomato;
-        }
-        @include at-breakpoint ($desktop){
-           //@include span-columns(8, $desktop );
-           @include span-columns(8);
-            background: indianred;
-        }
-
-    }
-  
-}

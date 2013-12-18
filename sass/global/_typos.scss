@@ -82,12 +82,17 @@ h6, .h6 {
      
 }
 /*------------ PARAGRAPHES ---------------*/
+//Vertical Rythm via compass
 .conteneur{
     p{@include leader();}
     #header{@include adjust-font-size-to(12px);}
-    #content-global{}
+    .content-global{}
     #left-content{}
-    #content-inner{}
+    .content-inner{
+        p,td{
+            padding: 0.3em;
+        }
+    }
     #right-content{}
     #footer{@include adjust-font-size-to(10px);
         p{@include trailer();}

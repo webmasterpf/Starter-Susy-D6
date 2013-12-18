@@ -13,14 +13,16 @@
 
 //Code imbriqué à 100%
 body .conteneur {
-    @include container($total-columns, $tablet,$desktop );
-    background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
+    @include container($total-columns, $tablet, $desktop);
+    background:transparent image-url("bg_content_etoile.gif") no-repeat left bottom;
 
     .HPDiapoVerticalGaucheVerticalGauche{
         //@include span-columns($mobile);//image ok sur mob mais pas sur desk
         @include set-container-width();
         overflow : hidden;}
-    .HPDroite{@include set-container-width();}
+    .HPDroite{
+        //@include set-container-width();
+    }
     .HPDroite1{}
     .HPDroite2{}
     .HPDroite3{}
@@ -40,11 +42,14 @@ body .conteneur {
         @include set-container-width();
 
         .HPDiapoVerticalGauche{
-            @include span-columns(6);
+            //@include span-columns(6);
+            @include span-columns(6, $desktop);
             overflow : hidden;
         }
         .HPDroite{
-            @include span-columns(6 omega);
+            @include span-columns(6 omega, $desktop);
+           // @include span-columns(6 omega);
+            
             
         }
         .HPDroite1{

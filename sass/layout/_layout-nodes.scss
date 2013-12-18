@@ -7,6 +7,13 @@ Ne s'applique que si présence d'un node-TYPE.tpl.php
 ********** LAYOUT NODE.TPL OVERRIDE **********
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 
+/*//////////////// 1 COLONNE \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_12{
+        @include set-container-width();
+    }
+}
+
 /*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
 body .conteneur{
     .col1_layout_3_8_3{
@@ -53,6 +60,35 @@ body .conteneur{
 
     }
 }
+//Pour un 3 colonnes egales : page pole
+body .conteneur{
+    .layout_3col_all4{
+       @include span-columns($mobile);
+        
+        background: khaki;
+        @include at-breakpoint ($tablet){
+            @include span-columns(3, $tablet);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+           @include span-columns(4, $desktop);
+            background: indianred;
+        }
+    }
+    .layout_3col_all4last{
+       @include span-columns($mobile);
+        
+        background: khaki;
+        @include at-breakpoint ($tablet){
+            @include span-columns(2 omega, $tablet);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+           @include span-columns(4 omega, $desktop);
+            background: indianred;
+        }
+    }
+}
 /*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
 body .conteneur{
     .col1_layout_4_8{
@@ -80,4 +116,57 @@ body .conteneur{
 
     }
   
+  .col1_layout_3_9{}
+  .col2_layout_3_9{}
+  
+  .col1_layout_2_10{}
+  .col2_layout_2_10{}
+  
+  .col1_layout_5_7{}
+  .col2_layout_5_7{}
+  
+  .col1_layout_6_6{}
+  .col2_layout_6_6{}
+  
+  .col1_layout_7_5{}
+  .col2_layout_7_5{}
+  
+  .col1_layout_8_4{}
+  .col2_layout_8_4{}
+  
+  .col1_layout_9_3{}
+  .col2_layout_9_3{}
+  
+  .col1_layout_10_2{}
+  .col2_layout_10_2{}
+}
+
+/*//////////////// 4 COLONNES \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .layout_4col_all3{
+       @include span-columns($mobile);
+        
+        background: khaki;
+        @include at-breakpoint ($tablet){
+            @include span-columns(2, $tablet);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+           @include span-columns(3, $desktop);
+            background: indianred;
+        }
+    }
+    .layout_4col_all3last{
+       @include span-columns($mobile);
+        
+        background: khaki;
+        @include at-breakpoint ($tablet){
+            @include span-columns(2 omega, $tablet);
+            background: tomato;
+        }
+        @include at-breakpoint ($desktop){
+           @include span-columns(3 omega, $desktop);
+            background: indianred;
+        }
+    }
 }

@@ -2,11 +2,19 @@
 global $theme_path;
 include ($theme_path.'/includes/inc_header.php');
 ?>
- <!-- ______________________ LAYOUT CONTENU VDL OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
+ <!-- ______________________ LAYOUT PAGE POLE _______________________ -->
   <!-- ______________________ CONTENU _______________________ -->
-<div class="content-global">
-  
-          <!-- ______________________ CONTENT TOP _______________________ -->
+
+      <div class="content-global">
+
+         
+
+       <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
+
+
+       <div class="content-inner" class="page-MODELE">
+           
+            <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
             <div id="content-top">
 	<span class="ariane"> <?php print $breadcrumb; ?></span>
@@ -21,12 +29,9 @@ include ($theme_path.'/includes/inc_header.php');
 	              <?php print $content_top_node; ?>
             </div> <!-- /#content-top-node -->
             <?php endif; ?>
-  
-       <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
-<div class="content-inner">
-    
+
           <?php if ($mission || $messages || $help || $tabs): ?>
-            <div id="content-header">
+            <div class="content-header">
 
               <?php if ($mission): ?>
                 <div id="mission"><?php print $mission; ?></div>
@@ -43,14 +48,13 @@ include ($theme_path.'/includes/inc_header.php');
             </div> <!-- /#content-header -->
           <?php endif; ?>
 		  <!-- ______________________ CONTENU CENTRAL _______________________ -->
-                  <article class="middle-content page-MODELE">
+          <div class="middle-content page-MODELE">
 
             <?php print $content; ?>
               <?php print $feed_icons; ?>
-                  </article> <!-- /#content-area -->
+          </div> <!-- /#middle-content -->
 
-      </div> 
-  <!-- /content-inner /content -->
+      </div> <!-- /content-inner /content -->
 
 
         <?php if (!empty($primary_links) or !empty($secondary_links)): ?>
@@ -60,13 +64,14 @@ include ($theme_path.'/includes/inc_header.php');
           </div> <!-- /navigation -->
         <?php endif; ?>
 
+    	 
          <!-- ______________________ CONTENU BAS _______________________ -->
 <?php if ($content_bottom): ?>
-            <div id="content-bottom">
+            <div class="content-bottom">
               <?php print $content_bottom; ?>
             </div><!-- /#content-bottom -->
           <?php endif; ?>
-	 </div> <!-- /contentPage -->
+	 </div> <!-- /content-global -->
 <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_footer.php');

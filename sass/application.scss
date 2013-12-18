@@ -43,6 +43,7 @@ zocial (0.0.3)
 // Import des partiels du layout du thème Drupal
 
 @import "layout/layout";
+@import "layout/layout-nodes";
 @import "layout/layout-header";
 @import "layout/layout-footer";
 @import "layout/layout-defilant";
@@ -68,6 +69,8 @@ zocial (0.0.3)
 
 @import "content-type/page-lycee";
 @import "content-type/contenu-vdl";
+@import "content-type/page-pole";
+
 
 //developpement
 @import "content-type/page-agtest";

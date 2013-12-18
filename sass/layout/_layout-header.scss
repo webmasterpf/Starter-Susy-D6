@@ -7,41 +7,47 @@
  #header {
      .headHaut {
          //@include span-columns($mobile);
-                overflow: hidden; 
-                
-                .logoHead {@include span-columns($mobile);
-                img{margin: 0 auto;display: block;}
-                }
-                .menuImg {@include span-columns($mobile);}
+         overflow: hidden; 
+
+         .logoHead {@include span-columns($mobile);
+                    img{margin: 0 auto;display: block;}
+         }
+         .menuImg {@include span-columns($mobile);}
      }
      .headBas {
-            overflow: hidden; 
-               .site-slogan{
-                  //@include span-columns($mobile);
-                   //@include set-container-width;
-               }
-               .headSearch{
-                   //@include span-columns($mobile);
-                   clear: both;
-               }
-               .menuHead{clear: both;}
+         overflow: hidden; 
+         .site-slogan{
+             //@include span-columns($mobile);
+             //@include set-container-width;
+         }
+         .headSearch{}
+         .menuHead{clear: both;}
      }                
- 
-@include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    .headHaut {
-        .logoHead { @include span-columns(4,$desktop);}
-        .menuImg {  @include span-columns(8 omega,$desktop);
-                    padding-top: 1em;
-        }
-    }
-     .headBas {
-          
-               .site-slogan{@include span-columns(5,$desktop);}
-               .headSearch{@include span-columns(6 omega);}
-               .menuHead{}
-     } 
-}
-@include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/}
+
+     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+         .headHaut {
+             .logoHead { @include span-columns(4,$desktop);}
+             .menuImg {  @include span-columns(8 omega,$desktop);
+                         padding-top: 1em;
+             }
+         }
+         .headBas {
+             .site-slogan{@include span-columns(5,$desktop);}
+             .headSearch{@include span-columns(5 omega,$desktop);}
+             .menuHead{}
+         } 
+     }
+     @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+         .headHaut {
+             .logoHead { }
+             .menuImg {  }
+         }
+         .headBas {
+             .site-slogan{@include span-columns(3,$tablet);}
+             .headSearch{@include span-columns(4 omega,$tablet);}
+             .menuHead{}
+         }                
+     }
  }
 
 
