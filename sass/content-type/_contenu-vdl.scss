@@ -16,7 +16,10 @@ h1.vdl_titre{color: $gris-clair;}
     
 }
 .vdl-passerelle{}
-.vdl-video{}
+.vdl-video{
+    width: 89%;
+    margin: 0 auto;
+}
 .vdl-liste-docs{}
 .vdl-galerie-image{}
 .vdl-galerie-image .gallery-slides
