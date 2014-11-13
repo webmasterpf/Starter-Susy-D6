@@ -157,13 +157,13 @@ body .conteneur{
 
 body .conteneur{
     //Approche mobile-first,réglage pour mobile
-    @include susy-grid-background;
+    //@include susy-grid-background;
     #header{}
     .content-global{}
     
     #left-content{}
     .content-inner{
-        @include susy-grid-background;
+        //@include susy-grid-background;
         background-color: #F29400;
     .content-top{background-color: chocolate;}
     .content-bottom{}
@@ -177,10 +177,10 @@ body .conteneur{
 
 @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
     body .conteneur{
-        @include susy-grid-background;
+        //@include susy-grid-background;
         
         #header{
-            @include susy-grid-background;
+            //@include susy-grid-background;
             background-color: sienna;
         }
         .content-global{}
@@ -188,7 +188,8 @@ body .conteneur{
         .content-inner{}
         .middle-content{
             background-color: #C8D215;
-        @include susy-grid-background;}
+        //@include susy-grid-background;
+        }
         #left-content{}
         #right-content{}
         #footer{background-color: peachpuff;
@@ -196,13 +197,13 @@ body .conteneur{
     }
     @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
     body .conteneur{
-        @include susy-grid-background;
+        //@include susy-grid-background;
         
         #header{
-            @include susy-grid-background;
+            //@include susy-grid-background;
             background: seashell;}
         .content-global{
-            //@include susy-grid-background;
+            ////@include susy-grid-background;
              
         }
         .content-inner{
@@ -210,7 +211,8 @@ body .conteneur{
         }
         .middle-content{
             background-color:yellow;
-            @include susy-grid-background;}
+            //@include susy-grid-background;
+        }
         .content-top{background-color: yellow;}
         .content-bottom{}
         .content-bottom-home{}

@@ -9,7 +9,7 @@
 // webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
 
 /*---- VERSIONS ----
---- 2013-11-05 ---
+--- 2013-05-10 ---
 compass (0.12.2)
 sass (3.2.12)
 susy (1.0.9)
@@ -19,15 +19,15 @@ zocial (0.0.3)
 ---------------------*/
 
 //Reset des propriétés
-@import "normalize";
+//@import "normalize";
 
 // Import de Compass
 @import "compass";
 
 //Import des plugins de Compass
-@import "susy";
+@import "susyone";// utiliser susyone si syntaxe ancienne(Susy v1),sinon susy pour utiliser v2
 @import 'modular-scale';
-@import "recipes";
+//@import "recipes";//cause une erreur avec compass-recipes-0.3.0
 
 
 // Import des réglages susy
